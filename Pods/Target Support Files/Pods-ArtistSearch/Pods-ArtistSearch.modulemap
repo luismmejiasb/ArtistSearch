@@ -1,0 +1,6 @@
+framework module Pods_ArtistSearch {
+  umbrella header "Pods-ArtistSearch-umbrella.h"
+
+  export *
+  module * { export * }
+}

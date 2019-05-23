@@ -1,0 +1,46 @@
+/* 
+  Localizable.strings
+  ArtistSearch
+  Created by Luis Mejías on 5/22/19.
+  Copyright © 2019 Luis Mejías. All rights reserved.
+*/
+
+"unknown_error" = "An unknown error has occurred, please try later.";
+"operation_canceled" = "The operation has been canceled, please try later.";
+"bad_url" = "We have problems with our service, please try later.";
+"timed_out"= "The time of the operation has run out, please check your internet connection and try later.";
+"service_url_unsupported" = "We have problems with our service, please try later.";
+"problem_with_host" = "We have problems with our service, please try later.";
+"problem_with_host" = "We have problems with our service, please try later.";
+"connection_lost" = "Connection with lost server. Please try again.";
+"problems_with_service" = "We have problems with our service, please try later.";
+"too_many_redirects" = "Please try later";
+"resource_not_available" = "We have problems with our service, please try later.";
+"offline" = "Please check your internet connection and try again.";
+"server_problem" = "The server had a problem with your response, please try later.";
+"authentication" = "You must log in to use the service.";
+"authentication" = "You must log in to use the service.";
+"no_information" = "The server had an empty response.";
+"security_error" = "The service does not have the necessary security to work.";
+"non-existent_service" = "The service no longer exists.";
+"very_large_response" = "The server responded with a very large response, try again later";
+"server_problem" = "The server had a problem with your response, please try later.";
+"unkown_error" = "An unknown error has occurred. Please, try later.";
+"generic_error" = "Something went wrong";
+"generic_error_title" = "Something went wrong";
+"search_artist_default_information" = "All set, now you can start looking for your favorite artists";
+"search_artist_nothing_found_information" = "Oops. No results for the current search. Try with other artist";
+"cancel_button_title" = "Cancel";
+"search_bar_placeholder_text" = "Search an artist";
+"unmark_favorite_success_message" = "Artist unmarked as favorite correctly";
+"unmark_favorite_failure_message" = "There was an error trying to unmark artist as favorite. Plese try again later";
+"mark_favorite_success_message" = "Artist marked as favorite correctly";
+"mark_favorite_failure_message" = "There was an error trying to mark artist as favorite. Plese try again later";
+"favorite_artist_alert_title" = "Hey there";
+"favorite_artist_alert_message" = "Seems like you really like %@ 😄";
+"favorite_artist_alert_message_conecting" = "that artist";
+"no_favorite_artist_message" = "No favorite artist marked yet";
+"mark_favorite_artist_button_title" = "Mark as favorite";
+"unmark_favorite_artist_button_title" = "Unmark as favorite";
+"success_action_title" = "Success";
+"failure_action_title" = "Failure";

@@ -1,6 +1,6 @@
-#  ArtistSeach
+#  ArtistSearch
 
-Codebase for [ArtistSeach]
+Codebase for [ArtistSearch]
 
 Application that uses [iTunes Search API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api//)  web services to have a look at how API REST services can be consumed with VIPER architecture using the Swift programming language. The dependencies are managed with CocoaPods. The information Property List is used to store custom key-values such as API keys and base URLs. The Application is capable to handle the Localization/Internalization behavior.
 

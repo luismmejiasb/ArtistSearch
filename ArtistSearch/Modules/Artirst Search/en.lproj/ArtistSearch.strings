@@ -1,0 +1,18 @@
+
+/* Class = "UINavigationItem"; title = "Artist Search"; ObjectID = "42u-ns-BAw"; */
+"42u-ns-BAw.title" = "Artist Search";
+
+/* Class = "UISearchBar"; placeholder = "Search an artist"; ObjectID = "FK9-qa-ezb"; */
+"FK9-qa-ezb.placeholder" = "Search an artist";
+
+/* Class = "UILabel"; text = "Information detail"; ObjectID = "FRP-9q-jx8"; */
+"FRP-9q-jx8.text" = "Information detail";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "d5u-vI-vSk"; */
+"d5u-vI-vSk.title" = "Item";
+
+/* Class = "UILabel"; text = "Artist Name"; ObjectID = "onv-Tw-7bF"; */
+"onv-Tw-7bF.text" = "Artist Name";
+
+/* Class = "UIViewController"; title = "Artist Search"; ObjectID = "w6n-lj-Isu"; */
+"w6n-lj-Isu.title" = "Artist Search";

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3sV-Bt-Xq0">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Artist Search-->
+        <scene sceneID="SaF-Zq-4vW">
+            <objects>
+                <viewController storyboardIdentifier="ArtistSearchViewController" title="Artist Search" id="w6n-lj-Isu" customClass="ArtistSearchViewController" customModule="ArtistSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8d0-AI-ELK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="FK9-qa-ezb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="eJR-Ja-h1x"/>
+                                    <constraint firstAttribute="width" constant="375" id="svz-lY-WVu"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.062745098039215685" green="0.0" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3O4-SJ-CHx">
+                                <rect key="frame" x="76" y="89" width="223" height="199"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="artistSearchIcon" translatesAutoresizingMaskIntoConstraints="NO" id="DFr-ds-0W1">
+                                        <rect key="frame" x="61.5" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="hv5-Dm-fyQ"/>
+                                            <constraint firstAttribute="height" constant="100" id="voz-5V-VvE"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information detail" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRP-9q-jx8">
+                                        <rect key="frame" x="0.0" y="108" width="223" height="91"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="223" id="4k6-BF-AUx"/>
+                                            <constraint firstAttribute="height" constant="91" id="yYB-Q7-P4W"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="199" id="CiM-qt-oEc"/>
+                                    <constraint firstAttribute="width" constant="223" id="MaA-OW-hmn"/>
+                                </constraints>
+                            </stackView>
+                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TGM-p5-O7u">
+                                <rect key="frame" x="9" y="66" width="356" height="537"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="356" id="7Wn-WH-zkP"/>
+                                    <constraint firstAttribute="height" constant="537" id="EUg-6A-ZUi"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cfe-vb-D0l">
+                                    <size key="itemSize" width="117" height="61"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="artistCollectionCell" id="O6x-VU-GQC" customClass="ArtistCollectionViewCell" customModule="ArtistSearch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="117" height="61"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="117" height="61"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onv-Tw-7bF">
+                                                    <rect key="frame" x="6" y="5" width="104" height="51"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="104" id="GKA-aq-489"/>
+                                                        <constraint firstAttribute="height" constant="51" id="qlV-No-kwQ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" red="0.87058823529999996" green="0.87058823529999996" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="onv-Tw-7bF" secondAttribute="trailing" constant="7" id="GGD-AP-tAy"/>
+                                            <constraint firstAttribute="bottom" secondItem="onv-Tw-7bF" secondAttribute="bottom" constant="5" id="bWm-zW-BAT"/>
+                                            <constraint firstItem="onv-Tw-7bF" firstAttribute="leading" secondItem="O6x-VU-GQC" secondAttribute="leading" constant="6" id="fC7-eE-Yt5"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="artistNameLabel" destination="onv-Tw-7bF" id="lH1-64-cF2"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.062745098040000002" green="0.0" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FK9-qa-ezb" firstAttribute="top" secondItem="F0X-xk-tj6" secondAttribute="top" id="0Pq-2x-Dx7"/>
+                            <constraint firstItem="3O4-SJ-CHx" firstAttribute="centerX" secondItem="F0X-xk-tj6" secondAttribute="centerX" id="4B5-xp-apg"/>
+                            <constraint firstItem="FK9-qa-ezb" firstAttribute="centerX" secondItem="F0X-xk-tj6" secondAttribute="centerX" id="637-QS-VNM"/>
+                            <constraint firstItem="TGM-p5-O7u" firstAttribute="top" secondItem="F0X-xk-tj6" secondAttribute="top" constant="66" id="7h4-Gy-aKv"/>
+                            <constraint firstItem="F0X-xk-tj6" firstAttribute="trailing" secondItem="FK9-qa-ezb" secondAttribute="trailing" id="RHb-sp-QGe"/>
+                            <constraint firstItem="F0X-xk-tj6" firstAttribute="bottom" secondItem="TGM-p5-O7u" secondAttribute="bottom" id="erV-5E-ER4"/>
+                            <constraint firstItem="F0X-xk-tj6" firstAttribute="trailing" secondItem="TGM-p5-O7u" secondAttribute="trailing" constant="10" id="fRp-yt-N8E"/>
+                            <constraint firstItem="F0X-xk-tj6" firstAttribute="top" secondItem="FK9-qa-ezb" secondAttribute="bottom" constant="-56" id="hk0-cx-18l"/>
+                            <constraint firstItem="FK9-qa-ezb" firstAttribute="leading" secondItem="F0X-xk-tj6" secondAttribute="leading" id="lRc-ip-OMM"/>
+                            <constraint firstItem="TGM-p5-O7u" firstAttribute="leading" secondItem="F0X-xk-tj6" secondAttribute="leading" constant="9" id="tXQ-0n-SbZ"/>
+                            <constraint firstItem="3O4-SJ-CHx" firstAttribute="top" secondItem="F0X-xk-tj6" secondAttribute="top" constant="89" id="zQB-p6-h7Q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="F0X-xk-tj6"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Artist Search" id="42u-ns-BAw">
+                        <barButtonItem key="rightBarButtonItem" image="favoriteIcon" id="1Nu-bD-X6z">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="showFavoriteSearchs:" destination="w6n-lj-Isu" id="9Y5-DV-Cch"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="FK9-qa-ezb" id="thD-Og-ZZ9"/>
+                        <outlet property="searchCollectionView" destination="TGM-p5-O7u" id="vHO-bh-Tkc"/>
+                        <outlet property="searchDisplayController" destination="yPJ-0h-BAt" id="Vyu-y0-HqD"/>
+                        <outlet property="searchInformationImageView" destination="DFr-ds-0W1" id="uDo-mP-GSP"/>
+                        <outlet property="searchInformationLabel" destination="FRP-9q-jx8" id="0cx-ux-ln8"/>
+                        <outlet property="searchInformationView" destination="3O4-SJ-CHx" id="NVc-SV-j8h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wkk-U0-CF5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="yPJ-0h-BAt">
+                    <connections>
+                        <outlet property="delegate" destination="w6n-lj-Isu" id="lWE-ur-KYL"/>
+                        <outlet property="searchContentsController" destination="w6n-lj-Isu" id="zBY-BS-bdy"/>
+                        <outlet property="searchResultsDataSource" destination="w6n-lj-Isu" id="kvG-Qs-Uds"/>
+                        <outlet property="searchResultsDelegate" destination="w6n-lj-Isu" id="FI7-dd-fuF"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1594.4000000000001" y="-352.17391304347831"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="EIQ-sW-cg2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3sV-Bt-Xq0" customClass="ArtistNavigationController" customModule="ArtistSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="d5u-vI-vSk"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="nhN-j8-n4E">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.062745098040000002" green="0.0" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="w6n-lj-Isu" kind="relationship" relationship="rootViewController" id="hNv-ZJ-ggp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TfR-ud-NoU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="655.20000000000005" y="-352.17391304347831"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="artistSearchIcon" width="480" height="480"/>
+        <image name="favoriteIcon" width="24" height="24"/>
+    </resources>
+</document>
