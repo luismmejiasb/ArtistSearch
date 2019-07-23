@@ -12,12 +12,12 @@ import UIKit
 public enum FilteringType: String {
     case artist = "artistTerm"
     
-    static let all: [String]! = ["Artist Name"]
+    static let allFilters: [String]! = ["Artist Name"]
     
     public var filteringTypeURL: String {
         switch self {
         case .artist:
-            return Constants.BASE_URL + Constants.ATTRIBUTE_URL + FilteringType.artist.rawValue + Constants.END_URL
+            return Constants.baseUrl + Constants.attributeUrl + FilteringType.artist.rawValue + Constants.endUrl
         }
     }
 }
@@ -35,7 +35,7 @@ public enum InformationType: Int {
         }
     }
     
-    public var informationIcon: UIImage{
+    public var informationIcon: UIImage {
         switch self {
         case .defaultInformation:
             return #imageLiteral(resourceName: "artistSearchIcon")

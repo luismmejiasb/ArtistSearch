@@ -43,18 +43,14 @@ extension ArtistSearchInteractor: ArtistSearchInteractorInterface {
                         completion(artistsData, 0)
                         print(error.localizedDescription)
                     }
-                }
-                else {
+                } else {
                     completion(artistsData, 0)
                 }
-                break
                 
             case .failure(let error):
                 if error._code != NSURLErrorCancelled {
                     completion([], error._code)
-                }
-                break
-                
+                }   
             }
         }
     }

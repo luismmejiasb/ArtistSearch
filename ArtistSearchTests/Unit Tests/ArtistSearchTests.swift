@@ -19,7 +19,7 @@ class ArtistSearchTests: XCTestCase {
     var mockInteractor: MockInteractor! = MockInteractor()
     var mockView: MockView! = MockView()
     var mockWireFrame: MockWireFrame! = MockWireFrame()
-    var mockPresenter: ArtistSearchPresenter? = nil
+    var mockPresenter: ArtistSearchPresenter?
     
     override func setUp() {
         continueAfterFailure = false
@@ -52,7 +52,7 @@ class ArtistSearchTests: XCTestCase {
     }
     
     func testViewControllerHasTitle() {
-        XCTAssert(artistSearchViewController?.navigationItem.title?.count != 0, "ArtistSearchViewController must have a title text")
+        XCTAssert(artistSearchViewController?.navigationItem.title?.isEmpty ?? false, "ArtistSearchViewController must have a title text")
     }
     
     func testCollectionViewHasDelegate() {
@@ -64,11 +64,13 @@ class ArtistSearchTests: XCTestCase {
     }
     
     func testControllerConfromsToCollectionViewDelegateProtocol() {
+        // swiftlint:disable line_length
         XCTAssertTrue((artistSearchViewController?.conforms(to: UICollectionViewDelegate.self))!, "ArtistSearchViewController must conforms UICollectionViewDelegate Protocol")
         XCTAssertTrue((artistSearchViewController?.responds(to: #selector(artistSearchViewController?.collectionView(_:didSelectItemAt:))))!, "ArtistSearchViewController must responds to :didSelectItemAt method")
     }
     
     func testControllerConformsToCollectionViewDataSourceProtocol() {
+        // swiftlint:disable line_length
         XCTAssertTrue((artistSearchViewController?.conforms(to: UICollectionViewDataSource.self))!, "ArtistSearchViewController must conforms DataSUICollectionViewDataSourceource Prototol")
         XCTAssertTrue((artistSearchViewController?.responds(to: #selector(artistSearchViewController?.collectionView(_:numberOfItemsInSection:))))!, "ArtistSearchViewController must responds to :numberOfRowsInSection method")
         XCTAssertTrue((artistSearchViewController?.responds(to: #selector(artistSearchViewController?.collectionView(_:cellForItemAt:))))!, "ArtistSearchViewController must responds to :cellForRowAt method")

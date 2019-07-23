@@ -27,7 +27,7 @@ extension ArtistDetailInteractor: ArtistDetailInteractorInterface {
         selectedArtistObject.artistType = artist.artistType
         selectedArtistObject.artistLinkUrl = artist.artistLinkUrl
         selectedArtistObject.primaryGenreId = artist.primaryGenreId
-        
+        // swiftlint:disable force_try
         let realm = try! Realm()
         
         try! realm.write {
@@ -52,13 +52,9 @@ extension ArtistDetailInteractor: ArtistDetailInteractorInterface {
         
     }
     
-    func consultIfFavoriteArtist(_ artist : Artist) -> Bool {
-        
+    func isFavorite(_ artist : Artist) -> Bool {
         let realm = try! Realm()
-        
         let artistResult = realm.objects(ArtistObject.self).filter("artistId == %@", artist.artistId)
-        
-        return artistResult.count != 0
-        
+        return artistResult.isEmpty
     }
 }

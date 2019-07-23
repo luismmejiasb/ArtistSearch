@@ -8,11 +8,13 @@ target 'ArtistSearch' do
   pod 'SVProgressHUD'
   pod 'Alamofire'
   pod 'RealmSwift'
+  pod 'SwiftLint'
 
   target 'ArtistSearchTests' do
     inherit! :search_paths
     pod 'Alamofire'
     pod 'RealmSwift'
+    pod 'SwiftLint'
   end
 
   target 'ArtistSearchUITests' do

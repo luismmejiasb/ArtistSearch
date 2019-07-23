@@ -9,8 +9,8 @@
 import Foundation
 
 public struct Constants {
-    static let BASE_URL : String = Bundle.main.object(forInfoDictionaryKey: "BASE_URL")! as! String
-    static let ATTRIBUTE_URL : String = Bundle.main.object(forInfoDictionaryKey: "ATTRIBUTE_URL")! as! String
-    static let END_URL : String = Bundle.main.object(forInfoDictionaryKey: "END_URL")! as! String
-    
+    // swiftlint:disable force_cast
+    static let baseUrl : String = Bundle.main.object(forInfoDictionaryKey: "BASE_URL")! as! String
+    static let attributeUrl : String = Bundle.main.object(forInfoDictionaryKey: "ATTRIBUTE_URL")! as! String
+    static let endUrl : String = Bundle.main.object(forInfoDictionaryKey: "END_URL")! as! String
 }

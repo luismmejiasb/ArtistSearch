@@ -57,11 +57,10 @@ extension FavoriteSearchViewController: FavoriteSearchViewInterface {
     func reloadDataInView(with artistData: [ArtistObject]) {
         favoriteArtistData = artistData
         
-        if favoriteArtistData.count == 0 {
+        if favoriteArtistData.isEmpty {
             showInformationView(true)
             favoriteSearchCollectionView.isHidden = true
-        }
-        else {
+        } else {
             showInformationView(false)
             favoriteSearchCollectionView.isHidden = false
         }
@@ -77,11 +76,17 @@ extension FavoriteSearchViewController: FavoriteSearchViewInterface {
 extension FavoriteSearchViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if favoriteArtistData.count != 0 {
+        if favoriteArtistData.isEmpty {
             
             if let selectedArtist: ArtistObject = favoriteArtistData?[indexPath.row] {
                 
-                let artist: Artist = Artist.init(artistId: selectedArtist.artistId, primaryGenreName: selectedArtist.primaryGenreName, wrapperType: selectedArtist.wrapperType, artistName: selectedArtist.artistName, artistType: selectedArtist.artistType, artistLinkUrl: selectedArtist.artistLinkUrl, primaryGenreId: selectedArtist.primaryGenreId)
+                let artist: Artist = Artist.init(artistId: selectedArtist.artistId, 
+                                                 primaryGenreName: selectedArtist.primaryGenreName, 
+                                                 wrapperType: selectedArtist.wrapperType, 
+                                                 artistName: selectedArtist.artistName, 
+                                                 artistType: selectedArtist.artistType, 
+                                                 artistLinkUrl: selectedArtist.artistLinkUrl, 
+                                                 primaryGenreId: selectedArtist.primaryGenreId)
                 
                 let artistDetailWireframe: ArtistDetailWireframe = ArtistDetailWireframe.init(selectedArtist: artist)
                 navigationController?.pushWireframe(artistDetailWireframe)
@@ -103,11 +108,20 @@ extension FavoriteSearchViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: ArtistCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "artistCollectionCell", for: indexPath) as! ArtistCollectionViewCell
+        guard let cell: ArtistCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "artistCollectionCell", 
+                                                                                      for: indexPath) as? ArtistCollectionViewCell else {
+                                                                                        return UICollectionViewCell()
+        }
         
         let artistObject: ArtistObject = favoriteArtistData[indexPath.row]
         
-        let artist: Artist = Artist.init(artistId: artistObject.artistId, primaryGenreName: artistObject.primaryGenreName, wrapperType: artistObject.wrapperType, artistName: artistObject.artistName, artistType: artistObject.artistType, artistLinkUrl: artistObject.artistLinkUrl, primaryGenreId: artistObject.primaryGenreId)
+        let artist: Artist = Artist.init(artistId: artistObject.artistId,
+                                         primaryGenreName: artistObject.primaryGenreName,
+                                         wrapperType: artistObject.wrapperType, 
+                                         artistName: artistObject.artistName, 
+                                         artistType: artistObject.artistType, 
+                                         artistLinkUrl: artistObject.artistLinkUrl, 
+                                         primaryGenreId: artistObject.primaryGenreId)
         
         cell.configureCell(with: artist)
         
@@ -127,15 +141,21 @@ extension FavoriteSearchViewController : UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: height)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    func collectionView(_ collectionView: UICollectionView, 
+                        layout collectionViewLayout: UICollectionViewLayout, 
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets.zero
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, 
+                        layout collectionViewLayout: UICollectionViewLayout, 
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 2
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, 
+                        layout collectionViewLayout: UICollectionViewLayout, 
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10
     }
     

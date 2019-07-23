@@ -76,7 +76,7 @@ extension ArtistSearchViewController: ArtistSearchViewInterface {
     func reloadDataInView(with artistData: [Artist]) {
         searchData = artistData
         
-        if searchData.count == 0 {
+        if searchData.isEmpty {
             showInformationView(true, type: .noResults)
         }
         
@@ -91,7 +91,7 @@ extension ArtistSearchViewController: ArtistSearchViewInterface {
 extension ArtistSearchViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if searchData.count != 0 {
+        if searchData.isEmpty {
             if let selectedArtist: Artist = searchData?[indexPath.row] {
                 let artistDetailWireframe: ArtistDetailWireframe = ArtistDetailWireframe.init(selectedArtist: selectedArtist)
                 navigationController?.pushWireframe(artistDetailWireframe)
@@ -109,7 +109,10 @@ extension ArtistSearchViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: ArtistCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "artistCollectionCell", for: indexPath) as! ArtistCollectionViewCell
+        guard let cell: ArtistCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "artistCollectionCell", 
+                                                                                      for: indexPath) as? ArtistCollectionViewCell else {
+                                                                                        return UICollectionViewCell()
+        }
         
         let artist: Artist = searchData[indexPath.row]
         
@@ -131,15 +134,21 @@ extension ArtistSearchViewController : UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: height)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    func collectionView(_ collectionView: UICollectionView, 
+                        layout collectionViewLayout: UICollectionViewLayout, 
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets.zero
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, 
+                        layout collectionViewLayout: UICollectionViewLayout, 
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 2
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, 
+                        layout collectionViewLayout: UICollectionViewLayout, 
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10
     }
     
@@ -165,13 +174,12 @@ extension ArtistSearchViewController: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if searchBar.text?.count != 0 {
+        if searchBar.text?.isEmpty ?? true {
             searchBar.resignFirstResponder()
             searchCollectionView.isHidden = false
             presenter.searchTerm(with: selectedFilterType, and: searchBar.text!)
             showInformationView(false, type: .defaultInformation)
-        }
-        else {
+        } else {
             searchData = []
             searchCollectionView.reloadData()
             searchCollectionView.isHidden = true

@@ -11,19 +11,19 @@ import XCTest
 @testable import ArtistSearch
 
 class AppDelegateTests: XCTestCase {
-    
-    var appDelegate: AppDelegate = AppDelegate()
+    // swiftlint:disable weak_delegate
+    let appDelegate: AppDelegate? = AppDelegate()
     var window: UIWindow? = UIWindow()
     
     override func setUp() {
         super.setUp()
-        appDelegate.window = window
+        appDelegate?.window = window
     }
     
     override func tearDown() {
         super.tearDown()
         window = nil
-        appDelegate.window = window
+        appDelegate?.window = window
     }
     
     // MARK: Test after application launch
@@ -37,7 +37,9 @@ class AppDelegateTests: XCTestCase {
     }
     
     func testThatDidFinishLaunchingWithOptionsReturnsTrue() {
-        XCTAssertTrue(appDelegate.application(UIApplication.shared, didFinishLaunchingWithOptions: nil), "Should return true from didFinishLaunchingWithOptions")
+        // swiftlint:disable line_length
+        XCTAssertNotNil((appDelegate?.application(UIApplication.shared, didFinishLaunchingWithOptions: nil))!, "Method didFinishLaunchingWithOptions can't be nil")
+        XCTAssertTrue((appDelegate?.application(UIApplication.shared, didFinishLaunchingWithOptions: nil))!, "Should return true from didFinishLaunchingWithOptions")
     }
     
 }

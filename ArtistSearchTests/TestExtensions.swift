@@ -41,4 +41,3 @@ extension URL {
         return Bundle.main.url(forResource: "MockImage", withExtension: "png")!
     }
 }
-

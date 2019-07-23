@@ -41,14 +41,14 @@ extension ArtistDetailPresenter: ArtistDetailPresenterInterface {
     }
     
     func showItunesProfileFrom() {
-        guard let artistLinkUrlString = selectedArtist?.artistLinkUrl, let url = URL(string: artistLinkUrlString) else {
+        guard let artistLinkUrlString = selectedArtist?.artistLinkUrl, let artistLinkUrl = URL(string: artistLinkUrlString) else {
             return
         }
         
         if #available(iOS 10.0, *) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            UIApplication.shared.open(artistLinkUrl, options: [:], completionHandler: nil)
         } else {
-            UIApplication.shared.openURL(url)
+            UIApplication.shared.openURL(artistLinkUrl)
         }
     }
     
@@ -56,7 +56,11 @@ extension ArtistDetailPresenter: ArtistDetailPresenterInterface {
 
         let messageString = NSLocalizedString("favorite_artist_alert_message", comment: "")
 
-        let alert = UIAlertController(title: NSLocalizedString("favorite_artist_alert_title", comment: ""), message: String(format: messageString, selectedArtist?.artistName ?? NSLocalizedString("favorite_artist_alert_message_conecting", comment: "")), preferredStyle: .alert)
+        let alert = UIAlertController(title: NSLocalizedString("favorite_artist_alert_title", comment: ""), 
+                                      message: String(format: messageString, 
+                                                      selectedArtist?.artistName ?? NSLocalizedString("favorite_artist_alert_message_conecting", 
+                                                      comment: "")), 
+                                      preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         viewController.present(alert, animated: true, completion: nil)
     }
@@ -64,9 +68,11 @@ extension ArtistDetailPresenter: ArtistDetailPresenterInterface {
     func markFavoriteArtist() {
         interactor.saveArtist(selectedArtist!) { completion in
             if completion {
-                self.wireframe.showAlert(with: NSLocalizedString("success_action_title", comment: ""), message: NSLocalizedString("mark_favorite_success_message", comment: ""))
-            }  else {
-                self.wireframe.showAlert(with: NSLocalizedString("failure_action_title", comment: ""), message: NSLocalizedString("mark_favorite_failure_message", comment: ""))
+                self.wireframe.showAlert(with: NSLocalizedString("success_action_title", comment: ""), 
+                                         message: NSLocalizedString("mark_favorite_success_message", comment: ""))
+            } else {
+                self.wireframe.showAlert(with: NSLocalizedString("failure_action_title", comment: ""), 
+                                         message: NSLocalizedString("mark_favorite_failure_message", comment: ""))
             }
             
             self.validateFavoriteArtist()
@@ -76,9 +82,11 @@ extension ArtistDetailPresenter: ArtistDetailPresenterInterface {
     func unmarkFavoriteArtist() {
         interactor.deleteArtist(selectedArtist!) { completion in
             if completion {
-                self.wireframe.showAlert(with: NSLocalizedString("success_action_title", comment: ""), message: NSLocalizedString("unmark_favorite_success_message", comment: ""))
+                self.wireframe.showAlert(with: NSLocalizedString("success_action_title", comment: ""), 
+                                         message: NSLocalizedString("unmark_favorite_success_message", comment: ""))
             } else {
-                self.wireframe.showAlert(with: NSLocalizedString("failure_action_title", comment: ""), message: NSLocalizedString("unmark_favorite_failure_message", comment: ""))
+                self.wireframe.showAlert(with: NSLocalizedString("failure_action_title", comment: ""), 
+                                         message: NSLocalizedString("unmark_favorite_failure_message", comment: ""))
             }
             self.validateFavoriteArtist()
         }
@@ -86,7 +94,7 @@ extension ArtistDetailPresenter: ArtistDetailPresenterInterface {
     
     func validateFavoriteArtist() {
         if let artist = selectedArtist {
-            view.setFavoriteState(interactor.consultIfFavoriteArtist(artist))
+            view.setFavoriteState(interactor.isFavorite(artist))
         } else {
             view.setFavoriteState(false)
         }
