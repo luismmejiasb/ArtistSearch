@@ -6,11 +6,13 @@ PODS:
   - RealmSwift (3.14.1):
     - Realm (= 3.14.1)
   - SVProgressHUD (2.2.5)
+  - SwiftLint (0.33.1)
 
 DEPENDENCIES:
   - Alamofire
   - RealmSwift
   - SVProgressHUD
+  - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -18,13 +20,15 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - SVProgressHUD
+    - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   Realm: e12c9c2387d05c5bba3a9c394838f5870e85763b
   RealmSwift: a82eab9b04c3e1616082c7e17aa300740847769c
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftLint: 9fc1143bbacec37f94994a7d0d2a85b2154b6294
 
-PODFILE CHECKSUM: 77de0033104c3a814bcdef10b9d1a2c92cd08263
+PODFILE CHECKSUM: b900bd15043f9c204802961147774e4ec31250d2
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.4

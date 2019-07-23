@@ -49,6 +49,7 @@ class ArtistObject: Object {
 extension Artist: Decodable {
     
     enum MyStructKeys: String, CodingKey {
+        // swiftlint:disable redundant_string_enum_value
         case artistId = "artistId"
         case primaryGenreName = "primaryGenreName"
         case wrapperType = "wrapperType"
@@ -76,6 +77,12 @@ extension Artist: Decodable {
         
         let primaryGenreId: Int = try container.decodeIfPresent(Int.self, forKey: .primaryGenreId) ?? 0
         
-        self.init(artistId: artistId, primaryGenreName: primaryGenreName, wrapperType: wrapperType, artistName: artistName, artistType: artistType, artistLinkUrl: artistLinkUrl, primaryGenreId: primaryGenreId)
+        self.init(artistId: artistId, 
+                  primaryGenreName: primaryGenreName, 
+                  wrapperType: wrapperType, 
+                  artistName: artistName, 
+                  artistType: artistType, 
+                  artistLinkUrl: artistLinkUrl, 
+                  primaryGenreId: primaryGenreId)
     }
 }

@@ -26,6 +26,4 @@ class ArtistCollectionViewCell: UICollectionViewCell {
         artistNameLabel.text = artistData.artistName
         artistNameLabel.textColor = GColors.textColor
     }
-    
-    
 }

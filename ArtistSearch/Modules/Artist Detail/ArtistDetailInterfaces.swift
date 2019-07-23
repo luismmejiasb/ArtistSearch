@@ -28,5 +28,5 @@ protocol ArtistDetailPresenterInterface: PresenterInterface {
 protocol ArtistDetailInteractorInterface: InteractorInterface {
     func saveArtist(_ artist: Artist, completion: @escaping (Bool) -> Void)
     func deleteArtist(_ artist: Artist, completion: @escaping (Bool) -> Void)
-    func consultIfFavoriteArtist(_ artist : Artist) -> Bool
+    func isFavorite(_ artist : Artist) -> Bool
 }

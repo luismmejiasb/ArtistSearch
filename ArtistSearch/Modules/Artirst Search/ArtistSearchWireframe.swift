@@ -30,7 +30,4 @@ final class ArtistSearchWireframe: BaseWireframe {
 
 // MARK: - Extensions -
 
-extension ArtistSearchWireframe: ArtistSearchWireframeInterface {
-    
-    
-}
+extension ArtistSearchWireframe: ArtistSearchWireframeInterface {}

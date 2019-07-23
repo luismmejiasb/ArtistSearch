@@ -25,6 +25,7 @@ class BaseWireframe {
 }
 
 extension BaseWireframe: WireframeInterface {
+    // swiftlint:disable redundant_discardable_let
     func popFromNavigationController(animated: Bool) {
         let _ = navigationController?.popViewController(animated: animated)
     }
@@ -49,7 +50,8 @@ extension BaseWireframe: WireframeInterface {
         navigationController?.present(alert, animated: true, completion: nil)
     }
 
-
+    // swiftlint:disable cyclomatic_complexity
+    // swiftlint:disable function_body_length
     func handdleHTTPError(withErrorCode errorCode : Int) {
         
         switch errorCode {
@@ -58,192 +60,130 @@ extension BaseWireframe: WireframeInterface {
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("unkown_error", comment: ""))
             
-            break
-            
         case NSURLErrorCancelled:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("operation_canceled", comment: ""))
-            
-            break
             
         case NSURLErrorBadURL:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("unkown_error", comment: ""))
             
-            break
-            
         case NSURLErrorTimedOut:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("timed_out", comment: ""))
-            
-            break
             
         case NSURLErrorUnsupportedURL:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("service_url_unsupported", comment: ""))
             
-            break
-            
         case NSURLErrorCannotFindHost:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("problem_with_host", comment: ""))
-            
-            break
             
         case NSURLErrorCannotConnectToHost:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("problem_with_host", comment: ""))
             
-            break
-            
         case NSURLErrorNetworkConnectionLost:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("connection_lost", comment: ""))
-            
-            break
             
         case NSURLErrorDNSLookupFailed:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("timed_out", comment: ""))
             
-            break
-            
         case NSURLErrorHTTPTooManyRedirects:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("timed_out", comment: ""))
-            
-            break
             
         case NSURLErrorResourceUnavailable:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("timed_out", comment: ""))
             
-            break
-            
         case NSURLErrorNotConnectedToInternet:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("timed_out", comment: ""))
-            
-            break
             
         case NSURLErrorRedirectToNonExistentLocation:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("timed_out", comment: ""))
             
-            break
-            
         case NSURLErrorBadServerResponse:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("server_problem", comment: ""))
-            
-            break
             
         case NSURLErrorUserCancelledAuthentication:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("authentication", comment: ""))
             
-            break
-            
         case NSURLErrorUserAuthenticationRequired:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("authentication", comment: ""))
-            
-            break
             
         case NSURLErrorZeroByteResource:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("no_information", comment: ""))
             
-            break
-            
         case NSURLErrorCannotDecodeRawData:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("incompatible_information", comment: ""))
-            
-            break
             
         case NSURLErrorCannotDecodeContentData:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("incompatible_information", comment: ""))
             
-            break
-            
         case NSURLErrorCannotParseResponse:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("incompatible_information", comment: ""))
-            
-            break
             
         case NSURLErrorAppTransportSecurityRequiresSecureConnection:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("security_error", comment: ""))
             
-            break
-            
         case NSURLErrorFileDoesNotExist:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("non-existent_service", comment: ""))
-            
-            break
             
         case NSURLErrorNoPermissionsToReadFile:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("no_permissions", comment: ""))
             
-            break
-            
         case NSURLErrorDataLengthExceedsMaximum:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("very_large_response", comment: ""))
-            
-            break
             
         // SSL errors
         case NSURLErrorSecureConnectionFailed:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("server_problem", comment: ""))
-            break
+
         case NSURLErrorServerCertificateHasBadDate:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("server_problem", comment: ""))
-            
-            break
             
         case NSURLErrorServerCertificateUntrusted:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("server_problem", comment: ""))
             
-            break
-            
         case NSURLErrorServerCertificateHasUnknownRoot:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("server_problem", comment: ""))
-            
-            break
             
         case NSURLErrorServerCertificateNotYetValid:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("server_problem", comment: ""))
             
-            break
-            
         case NSURLErrorClientCertificateRejected:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("server_problem", comment: ""))
-            
-            break
             
         case NSURLErrorClientCertificateRequired:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("server_problem", comment: ""))
             
-            break
-            
         case NSURLErrorCannotLoadFromNetwork:
             
             showAlert( with : NSLocalizedString("generic_error_title", comment: ""), message: NSLocalizedString("server_problem", comment: ""))
-            
-            break
             
         default:
             
@@ -290,4 +230,3 @@ extension UINavigationController {
     }
     
 }
-

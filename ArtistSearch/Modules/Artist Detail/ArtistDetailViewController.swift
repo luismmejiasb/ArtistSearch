@@ -62,10 +62,14 @@ final class ArtistDetailViewController: UIViewController {
 extension ArtistDetailViewController: ArtistDetailViewInterface {
     
     func setFavoriteState(_ state: Bool) {
+        let titleMarkArtist = NSLocalizedString("mark_favorite_artist_button_title", comment: "")
+        let titleUnMarkArtist = NSLocalizedString("unmark_favorite_artist_button_title", comment: "")
+        
         isFavorite = state
         favoriteIndicatorButton.image = !isFavorite ? nil : #imageLiteral(resourceName: "favoriteIcon")
         buttonSetterImageView.image = !isFavorite ? #imageLiteral(resourceName: "favoriteIcon") : nil
-        favoriteSetterButton.setTitle( !isFavorite ? NSLocalizedString("mark_favorite_artist_button_title", comment: "") : NSLocalizedString("unmark_favorite_artist_button_title", comment: ""), for: .normal)
+
+        favoriteSetterButton.setTitle( !isFavorite ? titleMarkArtist: titleUnMarkArtist, for: .normal)
     }
     
 }

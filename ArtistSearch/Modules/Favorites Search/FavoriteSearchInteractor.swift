@@ -19,7 +19,7 @@ final class FavoriteSearchInteractor {
 extension FavoriteSearchInteractor: FavoriteSearchInteractorInterface {
     
     func findAllFavoriteArtist( completion: @escaping ([ArtistObject]) -> Void) {
-        
+        // swiftlint:disable force_try
         let realm = try! Realm()
         let artists = realm.objects(ArtistObject.self).sorted(byKeyPath: "artistName")
         

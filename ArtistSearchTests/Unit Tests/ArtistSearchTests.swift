@@ -19,7 +19,7 @@ class ArtistSearchTests: XCTestCase {
     var mockInteractor: MockInteractor! = MockInteractor()
     var mockView: MockView! = MockView()
     var mockWireFrame: MockWireFrame! = MockWireFrame()
-    var mockPresenter: ArtistSearchPresenter? = nil
+    var mockPresenter: ArtistSearchPresenter?
     
     override func setUp() {
         continueAfterFailure = false
@@ -46,13 +46,13 @@ class ArtistSearchTests: XCTestCase {
     
     func testPresenterUpdateView() {
         mockPresenter = ArtistSearchPresenter.init(view: mockView, interactor: mockInteractor, wireframe: mockWireFrame)
-        mockPresenter?.searchTerm(with: .artist, and: "Bruno")
+        mockPresenter?.searchTerm(type: .artist, and: "Bruno")
         XCTAssertTrue(mockView.viewReloaded)
         mockView.viewReloaded = false
     }
     
     func testViewControllerHasTitle() {
-        XCTAssert(artistSearchViewController?.navigationItem.title?.count != 0, "ArtistSearchViewController must have a title text")
+        XCTAssert(artistSearchViewController?.navigationItem.title?.isEmpty ?? true == false, "ArtistSearchViewController must have a title text")
     }
     
     func testCollectionViewHasDelegate() {
@@ -63,12 +63,14 @@ class ArtistSearchTests: XCTestCase {
         XCTAssertNotNil(artistSearchViewController?.searchCollectionView?.dataSource, "ArtistSearchViewController must have DataSource")
     }
     
-    func testControllerConfromsToCollectionViewDelegateProtocol() {
+    func testControllerConformsToCollectionViewDelegateProtocol() {
+        // swiftlint:disable line_length
         XCTAssertTrue((artistSearchViewController?.conforms(to: UICollectionViewDelegate.self))!, "ArtistSearchViewController must conforms UICollectionViewDelegate Protocol")
         XCTAssertTrue((artistSearchViewController?.responds(to: #selector(artistSearchViewController?.collectionView(_:didSelectItemAt:))))!, "ArtistSearchViewController must responds to :didSelectItemAt method")
     }
     
     func testControllerConformsToCollectionViewDataSourceProtocol() {
+        // swiftlint:disable line_length
         XCTAssertTrue((artistSearchViewController?.conforms(to: UICollectionViewDataSource.self))!, "ArtistSearchViewController must conforms DataSUICollectionViewDataSourceource Prototol")
         XCTAssertTrue((artistSearchViewController?.responds(to: #selector(artistSearchViewController?.collectionView(_:numberOfItemsInSection:))))!, "ArtistSearchViewController must responds to :numberOfRowsInSection method")
         XCTAssertTrue((artistSearchViewController?.responds(to: #selector(artistSearchViewController?.collectionView(_:cellForItemAt:))))!, "ArtistSearchViewController must responds to :cellForRowAt method")

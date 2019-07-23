@@ -11,6 +11,7 @@ import UIKit
 extension UIStoryboard {
     
     func instantiateViewController<T: UIViewController>(ofType _: T.Type, withIdentifier identifier: String? = nil) -> T {
+        // swiftlint:disable force_cast
         let identifier = identifier ?? String(describing: T.self)
         return instantiateViewController(withIdentifier: identifier) as! T
     }
@@ -42,7 +43,6 @@ public struct GColors {
     static let clearColor          = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
 }
 
-
 extension UIStoryboard {
     
     class func artistSearchStoryBoard() -> UIStoryboard {
@@ -58,43 +58,7 @@ extension UIStoryboard {
     }
 
     class func artistSearchNavigationController() -> ArtistNavigationController {
-        let navigationController: ArtistNavigationController! = UIStoryboard.artistSearchStoryBoard().instantiateInitialViewController() as? ArtistNavigationController
-        return navigationController
+        return UIStoryboard.artistSearchStoryBoard().instantiateInitialViewController() as? ArtistNavigationController ?? ArtistNavigationController()
     }
-    
-    /*class func prospectorFollowUpViewController() -> UINavigationController {
-        let viewController: UINavigationController! = UIStoryboard.prospectorFollowUpStoryboard().instantiateInitialViewController() as? UINavigationController
-        return viewController
-    }
-    
-    class func prospectorHotContactsViewController() -> UINavigationController {
-        let viewController: UINavigationController! = UIStoryboard.prospectorHotContactsStoryboard().instantiateInitialViewController() as? UINavigationController
-        return viewController
-    }
-    
-    class func prospectorWhyViewController() -> UIViewController {
-        var viewController: ProspectorWhyViewController!
-        
-        viewController = UIStoryboard.prospectorWhyStoryboard().instantiateInitialViewController() as? ProspectorWhyViewController
-        return viewController
-    }
-    
-    class func prospectorImportContactsViewController() -> UIViewController {
-        var viewController: UINavigationController!
-        
-        viewController = UIStoryboard.prospectorImportContactsStoryboard().instantiateInitialViewController() as? UINavigationController
-        return viewController
-    }
-    
-    
-    class func prospectorResourceViewController() -> UINavigationController {
-        let navController: UINavigationController! = UIStoryboard.prospectorResourceStoryboard().instantiateInitialViewController() as? UINavigationController
-        return navController
-    }
-    
-    class func resourcePreviewViewController() -> ResourcePreviewViewController {
-        let viewController: ResourcePreviewViewController! = UIStoryboard.ProspectorResourcePreviewStoryboard().instantiateInitialViewController() as? ResourcePreviewViewController
-        return viewController
-    }*/
-    
+
 }
