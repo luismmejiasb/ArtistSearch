@@ -17,7 +17,7 @@ protocol ArtistSearchViewInterface: ViewInterface {
 }
 
 protocol ArtistSearchPresenterInterface: PresenterInterface {
-    func searchTerm(with filterType: FilteringType, and termString: String)
+    func searchTerm(type filterType: FilteringType, and termString: String)
     func cancelAPIRequest()
 }
 

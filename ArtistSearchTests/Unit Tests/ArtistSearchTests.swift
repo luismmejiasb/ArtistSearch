@@ -46,13 +46,13 @@ class ArtistSearchTests: XCTestCase {
     
     func testPresenterUpdateView() {
         mockPresenter = ArtistSearchPresenter.init(view: mockView, interactor: mockInteractor, wireframe: mockWireFrame)
-        mockPresenter?.searchTerm(with: .artist, and: "Bruno")
+        mockPresenter?.searchTerm(type: .artist, and: "Bruno")
         XCTAssertTrue(mockView.viewReloaded)
         mockView.viewReloaded = false
     }
     
     func testViewControllerHasTitle() {
-        XCTAssert(artistSearchViewController?.navigationItem.title?.isEmpty ?? false, "ArtistSearchViewController must have a title text")
+        XCTAssert(artistSearchViewController?.navigationItem.title?.isEmpty ?? true == false, "ArtistSearchViewController must have a title text")
     }
     
     func testCollectionViewHasDelegate() {
@@ -63,7 +63,7 @@ class ArtistSearchTests: XCTestCase {
         XCTAssertNotNil(artistSearchViewController?.searchCollectionView?.dataSource, "ArtistSearchViewController must have DataSource")
     }
     
-    func testControllerConfromsToCollectionViewDelegateProtocol() {
+    func testControllerConformsToCollectionViewDelegateProtocol() {
         // swiftlint:disable line_length
         XCTAssertTrue((artistSearchViewController?.conforms(to: UICollectionViewDelegate.self))!, "ArtistSearchViewController must conforms UICollectionViewDelegate Protocol")
         XCTAssertTrue((artistSearchViewController?.responds(to: #selector(artistSearchViewController?.collectionView(_:didSelectItemAt:))))!, "ArtistSearchViewController must responds to :didSelectItemAt method")

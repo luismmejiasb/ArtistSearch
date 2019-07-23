@@ -177,7 +177,7 @@ extension ArtistSearchViewController: UISearchBarDelegate {
         if searchBar.text?.isEmpty ?? true {
             searchBar.resignFirstResponder()
             searchCollectionView.isHidden = false
-            presenter.searchTerm(with: selectedFilterType, and: searchBar.text!)
+            presenter.searchTerm(type: selectedFilterType, and: searchBar.text!)
             showInformationView(false, type: .defaultInformation)
         } else {
             searchData = []

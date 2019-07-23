@@ -30,7 +30,7 @@ class ArtistSearchPresenter {
 
 extension ArtistSearchPresenter: ArtistSearchPresenterInterface {
     
-    func searchTerm(with filterType: FilteringType, and termString: String) {
+    func searchTerm(type filterType: FilteringType, and termString: String) {
         view.showProgressHUD()
         interactor.searchTerm(withFilteringType: filterType, and: termString) { artistsEntity, resultCode  in
             self.view.hideProgressHUD()
