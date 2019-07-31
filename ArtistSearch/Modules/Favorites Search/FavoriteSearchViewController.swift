@@ -76,21 +76,18 @@ extension FavoriteSearchViewController: FavoriteSearchViewInterface {
 extension FavoriteSearchViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if favoriteArtistData.isEmpty {
+        if !favoriteArtistData.isEmpty, let selectedArtist: ArtistObject = favoriteArtistData?[indexPath.row] {
             
-            if let selectedArtist: ArtistObject = favoriteArtistData?[indexPath.row] {
-                
-                let artist: Artist = Artist.init(artistId: selectedArtist.artistId, 
-                                                 primaryGenreName: selectedArtist.primaryGenreName, 
-                                                 wrapperType: selectedArtist.wrapperType, 
-                                                 artistName: selectedArtist.artistName, 
-                                                 artistType: selectedArtist.artistType, 
-                                                 artistLinkUrl: selectedArtist.artistLinkUrl, 
-                                                 primaryGenreId: selectedArtist.primaryGenreId)
-                
-                let artistDetailWireframe: ArtistDetailWireframe = ArtistDetailWireframe.init(selectedArtist: artist)
-                navigationController?.pushWireframe(artistDetailWireframe)
-            }
+            let artist: Artist = Artist.init(artistId: selectedArtist.artistId, 
+                                             primaryGenreName: selectedArtist.primaryGenreName, 
+                                             wrapperType: selectedArtist.wrapperType, 
+                                             artistName: selectedArtist.artistName, 
+                                             artistType: selectedArtist.artistType, 
+                                             artistLinkUrl: selectedArtist.artistLinkUrl, 
+                                             primaryGenreId: selectedArtist.primaryGenreId)
+            
+            let artistDetailWireframe: ArtistDetailWireframe = ArtistDetailWireframe.init(selectedArtist: artist)
+            navigationController?.pushWireframe(artistDetailWireframe)
         }
     }
 }
