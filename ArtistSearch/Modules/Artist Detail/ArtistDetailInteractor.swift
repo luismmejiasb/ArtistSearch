@@ -41,10 +41,13 @@ extension ArtistDetailInteractor: ArtistDetailInteractorInterface {
     func deleteArtist(_ artist: Artist, completion: @escaping (Bool) -> Void) {
         let realm = try! Realm()
         
-        let artist = realm.objects(ArtistObject.self).filter("artistId == %@", artist.artistId).first
+        guard let artist = realm.objects(ArtistObject.self).filter("artistId == %@", artist.artistId).first else {
+            completion(false)
+            return
+        }
         
         try! realm.write {
-            realm.delete(artist!)
+            realm.delete(artist)
             completion(true)
         }
         
@@ -55,6 +58,6 @@ extension ArtistDetailInteractor: ArtistDetailInteractorInterface {
     func isFavorite(_ artist : Artist) -> Bool {
         let realm = try! Realm()
         let artistResult = realm.objects(ArtistObject.self).filter("artistId == %@", artist.artistId)
-        return artistResult.isEmpty
+        return !artistResult.isEmpty
     }
 }
