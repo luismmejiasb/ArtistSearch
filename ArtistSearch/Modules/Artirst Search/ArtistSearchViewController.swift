@@ -19,7 +19,7 @@ final class ArtistSearchViewController: UIViewController {
     @IBOutlet weak var searchInformationLabel: UILabel!
     
     // MARK: - Public properties
-    var presenter: ArtistSearchPresenterInterface!
+    var presenter: ArtistSearchPresenterInterface?
     var searchData: [Artist]! = []
     var selectedFilterType: FilteringType = .artist
 
@@ -46,9 +46,7 @@ final class ArtistSearchViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
-        if presenter != nil {
-            presenter.cancelAPIRequest()
-        }
+        presenter?.cancelAPIRequest()
     }
 	
     @IBAction func showFavoriteSearchs(_ sender: Any) {
@@ -91,7 +89,7 @@ extension ArtistSearchViewController: ArtistSearchViewInterface {
 extension ArtistSearchViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if searchData.isEmpty {
+        if !searchData.isEmpty {
             if let selectedArtist: Artist = searchData?[indexPath.row] {
                 let artistDetailWireframe: ArtistDetailWireframe = ArtistDetailWireframe.init(selectedArtist: selectedArtist)
                 navigationController?.pushWireframe(artistDetailWireframe)
@@ -174,16 +172,16 @@ extension ArtistSearchViewController: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if searchBar.text?.isEmpty ?? true {
-            searchBar.resignFirstResponder()
-            searchCollectionView.isHidden = false
-            presenter.searchTerm(type: selectedFilterType, and: searchBar.text!)
-            showInformationView(false, type: .defaultInformation)
-        } else {
+        guard let searchBarText = searchBar.text else {
             searchData = []
             searchCollectionView.reloadData()
             searchCollectionView.isHidden = true
             showInformationView(true, type: .defaultInformation)
+            return
         }
+        searchBar.resignFirstResponder()
+        searchCollectionView.isHidden = false
+        presenter?.searchTerm(type: selectedFilterType, and: searchBarText)
+        showInformationView(false, type: .defaultInformation)
     }
 }
