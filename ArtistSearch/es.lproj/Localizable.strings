@@ -28,7 +28,7 @@
 "unkown_error" = "Ha ocurrido un error desconocido. Por favor, intente más tarde.";
 "generic_error" = "Algo salió mal";
 "generic_error_title" = "Algo salió mal";
-"search_artist_default_information" = "Todo listo, ahora puede comenzar a buscar a tus artistas favoritos";
+"search_artist_default_information" = "Todo listo, ahora puedes comenzar a buscar a tus artistas favoritos";
 "search_artist_nothing_found_information" = "Uups. No hay resultados para la búsqueda actual. Prueba con otro artista";
 "cancel_button_title" = "Cancelar";
 "search_bar_placeholder_text" = "Buscar un artista";

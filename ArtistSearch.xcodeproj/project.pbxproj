@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17B76476D0214A2C6F471074 /* Pods_ArtistSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66ECE92278C6CBFEEA60DC56 /* Pods_ArtistSearch.framework */; };
 		28339434229323BD0011B5C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28339433229323BD0011B5C4 /* AppDelegate.swift */; };
 		2833943D229323BF0011B5C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2833943C229323BF0011B5C4 /* Assets.xcassets */; };
 		28339440229323BF0011B5C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2833943E229323BF0011B5C4 /* LaunchScreen.storyboard */; };
@@ -46,8 +45,9 @@
 		28625B2922934EE60095D95A /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28625B2822934EE60095D95A /* Artist.swift */; };
 		28625B2C22934F510095D95A /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28625B2B22934F510095D95A /* Enums.swift */; };
 		28625B2F2293538A0095D95A /* ArtistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28625B2E2293538A0095D95A /* ArtistCollectionViewCell.swift */; };
-		B18C3C948FDE3D78E9E00D0A /* Pods_ArtistSearchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05052626BC860CACE1744007 /* Pods_ArtistSearchUITests.framework */; };
-		FBB7DAA0508BE40841B473F0 /* Pods_ArtistSearchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034B1969D94A2D0D2BEEE2EB /* Pods_ArtistSearchTests.framework */; };
+		4B437EFBA107DEB0D5A462FF /* libPods-ArtistSearchUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7743E36C0289B3855661129 /* libPods-ArtistSearchUITests.a */; };
+		756C27D989A4BAA5DEA424D5 /* libPods-ArtistSearch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4992E7522172E3A3B8E0575F /* libPods-ArtistSearch.a */; };
+		9191F0138B72871302414612 /* libPods-ArtistSearchTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C433504589481D29328B9DF /* libPods-ArtistSearchTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,9 +68,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		034B1969D94A2D0D2BEEE2EB /* Pods_ArtistSearchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtistSearchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		05052626BC860CACE1744007 /* Pods_ArtistSearchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtistSearchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		06CE0C9A557F2BF30A62FBAB /* Pods-ArtistSearchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtistSearchTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArtistSearchTests/Pods-ArtistSearchTests.release.xcconfig"; sourceTree = "<group>"; };
+		0C433504589481D29328B9DF /* libPods-ArtistSearchTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ArtistSearchTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28339430229323BD0011B5C4 /* ArtistSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtistSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28339433229323BD0011B5C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2833943C229323BF0011B5C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,9 +125,10 @@
 		28625B2B22934F510095D95A /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		28625B2E2293538A0095D95A /* ArtistCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistCollectionViewCell.swift; sourceTree = "<group>"; };
 		449916A94C9A8C201054CC94 /* Pods-ArtistSearchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtistSearchUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArtistSearchUITests/Pods-ArtistSearchUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		66ECE92278C6CBFEEA60DC56 /* Pods_ArtistSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtistSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4992E7522172E3A3B8E0575F /* libPods-ArtistSearch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ArtistSearch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FF240941C995CC996604344 /* Pods-ArtistSearchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtistSearchUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArtistSearchUITests/Pods-ArtistSearchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A4D6BC56D78371533F13D089 /* Pods-ArtistSearchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtistSearchTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArtistSearchTests/Pods-ArtistSearchTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B7743E36C0289B3855661129 /* libPods-ArtistSearchUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ArtistSearchUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1C8130F8E26C51E47A422CC /* Pods-ArtistSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtistSearch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArtistSearch/Pods-ArtistSearch.debug.xcconfig"; sourceTree = "<group>"; };
 		C8613B09AC3FDCF1E6693AD1 /* Pods-ArtistSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtistSearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArtistSearch/Pods-ArtistSearch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,7 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17B76476D0214A2C6F471074 /* Pods_ArtistSearch.framework in Frameworks */,
+				756C27D989A4BAA5DEA424D5 /* libPods-ArtistSearch.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,7 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBB7DAA0508BE40841B473F0 /* Pods_ArtistSearchTests.framework in Frameworks */,
+				9191F0138B72871302414612 /* libPods-ArtistSearchTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,7 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B18C3C948FDE3D78E9E00D0A /* Pods_ArtistSearchUITests.framework in Frameworks */,
+				4B437EFBA107DEB0D5A462FF /* libPods-ArtistSearchUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,9 +368,9 @@
 		C602128F11058C8C437ADB01 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				66ECE92278C6CBFEEA60DC56 /* Pods_ArtistSearch.framework */,
-				034B1969D94A2D0D2BEEE2EB /* Pods_ArtistSearchTests.framework */,
-				05052626BC860CACE1744007 /* Pods_ArtistSearchUITests.framework */,
+				4992E7522172E3A3B8E0575F /* libPods-ArtistSearch.a */,
+				0C433504589481D29328B9DF /* libPods-ArtistSearchTests.a */,
+				B7743E36C0289B3855661129 /* libPods-ArtistSearchUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -399,8 +399,8 @@
 				2833942C229323BD0011B5C4 /* Sources */,
 				2833942D229323BD0011B5C4 /* Frameworks */,
 				2833942E229323BD0011B5C4 /* Resources */,
-				9F735B491FDE15D6997D946E /* [CP] Embed Pods Frameworks */,
 				28EAC73222E764C4008870C7 /* ShellScript */,
+				2A6F99C95AB70990C7DF98B0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -419,7 +419,6 @@
 				28339442229323BF0011B5C4 /* Sources */,
 				28339443229323BF0011B5C4 /* Frameworks */,
 				28339444229323BF0011B5C4 /* Resources */,
-				AE975DBFA4EEB21A8E3ACD56 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -564,38 +563,21 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		9F735B491FDE15D6997D946E /* [CP] Embed Pods Frameworks */ = {
+		2A6F99C95AB70990C7DF98B0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ArtistSearch/Pods-ArtistSearch-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ArtistSearch/Pods-ArtistSearch-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ArtistSearch/Pods-ArtistSearch-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ArtistSearch/Pods-ArtistSearch-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ArtistSearch/Pods-ArtistSearch-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AE975DBFA4EEB21A8E3ACD56 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ArtistSearchTests/Pods-ArtistSearchTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ArtistSearchTests/Pods-ArtistSearchTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ArtistSearchTests/Pods-ArtistSearchTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ArtistSearch/Pods-ArtistSearch-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B7C0A51CDD61F8C4F88F43EC /* [CP] Check Pods Manifest.lock */ = {
