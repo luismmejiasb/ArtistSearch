@@ -43,7 +43,7 @@ public struct GColors {
     static let clearColor          = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
 }
 
-extension UIStoryboard {
+/*extension UIStoryboard {
     
     class func artistSearchStoryBoard() -> UIStoryboard {
         return UIStoryboard(name: "ArtistSearch", bundle: .main)
@@ -60,8 +60,20 @@ extension UIStoryboard {
     class func artistSearchNavigationController() -> ArtistNavigationController {
         return UIStoryboard.artistSearchStoryBoard().instantiateInitialViewController() as? ArtistNavigationController ?? ArtistNavigationController()
     }
+    
+    class func artistSearchViewController() -> ArtistSearchViewController {
+        return UIStoryboard.artistSearchStoryBoard().instantiateInitialViewController() as? ArtistSearchViewController ?? ArtistSearchViewController()
+    }
+    
+    class func artistDetailViewController() -> ArtistDetailViewController {
+        return UIStoryboard.artistDetailStoryBoard().instantiateInitialViewController() as? ArtistDetailViewController ?? ArtistDetailViewController()
+    }
+    
+    class func favoriteArtistViewController() -> FavoriteSearchViewController {
+        return UIStoryboard.favoriteSearchStoryBoard().instantiateInitialViewController() as? FavoriteSearchViewController ?? FavoriteSearchViewController()
+    }
 
-}
+}*/
 
 public enum ArtistSearchAI: String {
     case collectionView = "ArtistSearch.collectionView", serachBar = "ArtistSearch.serachBar", informationView = "ArtistSearch.informationView", informationLabel = "ArtistSearch.informationLabel", favoriteButton = "ArtistSearch.favoriteButton"

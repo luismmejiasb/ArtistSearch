@@ -6,7 +6,6 @@
 //  Copyright (c) 2019 Luis Mejías. All rights reserved.
 //
 //
-
 import UIKit
 
 final class ArtistSearchViewController: UIViewController {

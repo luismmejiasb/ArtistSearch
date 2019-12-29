@@ -9,23 +9,19 @@
 
 import UIKit
 
-final class FavoriteSearchWireframe: BaseWireframe {
-
-    // MARK: - Private properties -
-
-    private let storyboard = UIStoryboard.favoriteSearchStoryBoard()
-
-    // MARK: - Module setup -
-
-    init() {
-        let moduleViewController = storyboard.instantiateViewController(ofType: FavoriteSearchViewController.self)
-        super.init(viewController: moduleViewController)
-        
+class FavoriteSearchWireframe: FavoriteSearchWireframeProtocol {
+    static func assemble() -> FavoriteSearchViewController {
         let interactor = FavoriteSearchInteractor()
-        let presenter = FavoriteSearchPresenter(view: moduleViewController, interactor: interactor, wireframe: self)
-        moduleViewController.presenter = presenter
-    }
+        let router = FavoriteSearchRouter()
+        let presenter = FavoriteSearchPresenter(interactor: interactor, router: router)
+        let view = FavoriteSearchViewController()
 
+        router.view = view
+        view.presenter = presenter
+        presenter.view = view
+        
+        return view
+    }
 }
 
 // MARK: - Extensions -

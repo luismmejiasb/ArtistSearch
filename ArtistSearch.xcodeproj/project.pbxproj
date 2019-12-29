@@ -7,16 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2803C8122319C9120064B569 /* ArtistSearchMockInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2803C8112319C9120064B569 /* ArtistSearchMockInteractor.swift */; };
-		2803C8142319C92F0064B569 /* ArtistSearchMockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2803C8132319C92F0064B569 /* ArtistSearchMockView.swift */; };
-		2803C8162319C94E0064B569 /* ArtistSearchMockWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2803C8152319C94E0064B569 /* ArtistSearchMockWireframe.swift */; };
-		2803C8182319CECE0064B569 /* MainUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2803C8172319CECE0064B569 /* MainUITest.swift */; };
 		28339434229323BD0011B5C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28339433229323BD0011B5C4 /* AppDelegate.swift */; };
 		2833943D229323BF0011B5C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2833943C229323BF0011B5C4 /* Assets.xcassets */; };
 		28339440229323BF0011B5C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2833943E229323BF0011B5C4 /* LaunchScreen.storyboard */; };
 		28339456229323BF0011B5C4 /* ArtistSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28339455229323BF0011B5C4 /* ArtistSearchUITests.swift */; };
 		2835DC602295C1E800BBFA9A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2835DC5E2295C1E800BBFA9A /* Localizable.strings */; };
-		2835DC642295C27D00BBFA9A /* ArtistSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2835DC662295C27D00BBFA9A /* ArtistSearch.storyboard */; };
 		2835DC6E2295C3AB00BBFA9A /* ArtistDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2835DC702295C3AB00BBFA9A /* ArtistDetail.storyboard */; };
 		2835DC752295C3B700BBFA9A /* FavoriteSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2835DC772295C3B700BBFA9A /* FavoriteSearch.storyboard */; };
 		2835DC7F2295D5FD00BBFA9A /* ArtistSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2835DC7E2295D5FD00BBFA9A /* ArtistSearchTests.swift */; };
@@ -49,9 +44,12 @@
 		28625B2922934EE60095D95A /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28625B2822934EE60095D95A /* Artist.swift */; };
 		28625B2C22934F510095D95A /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28625B2B22934F510095D95A /* Enums.swift */; };
 		28625B2F2293538A0095D95A /* ArtistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28625B2E2293538A0095D95A /* ArtistCollectionViewCell.swift */; };
-		4B437EFBA107DEB0D5A462FF /* libPods-ArtistSearchUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7743E36C0289B3855661129 /* libPods-ArtistSearchUITests.a */; };
-		756C27D989A4BAA5DEA424D5 /* libPods-ArtistSearch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4992E7522172E3A3B8E0575F /* libPods-ArtistSearch.a */; };
-		9191F0138B72871302414612 /* libPods-ArtistSearchTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C433504589481D29328B9DF /* libPods-ArtistSearchTests.a */; };
+		28872E7623B968D5009E7963 /* ArtistSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28872E7823B968D5009E7963 /* ArtistSearchViewController.xib */; };
+		28872E7F23B96B1B009E7963 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 28872E7E23B96B1B009E7963 /* Alamofire */; };
+		28872E8223B96B59009E7963 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 28872E8123B96B59009E7963 /* Realm */; };
+		28872E8423B96B59009E7963 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 28872E8323B96B59009E7963 /* RealmSwift */; };
+		28D77BC323B84832000E6E7A /* ArtistDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D77BC223B84832000E6E7A /* ArtistDetailRouter.swift */; };
+		28D77BC523B848E7000E6E7A /* FavoriteSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D77BC423B848E7000E6E7A /* FavoriteSearchRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,12 +70,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		06CE0C9A557F2BF30A62FBAB /* Pods-ArtistSearchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtistSearchTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArtistSearchTests/Pods-ArtistSearchTests.release.xcconfig"; sourceTree = "<group>"; };
-		0C433504589481D29328B9DF /* libPods-ArtistSearchTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ArtistSearchTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2803C8112319C9120064B569 /* ArtistSearchMockInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchMockInteractor.swift; sourceTree = "<group>"; };
-		2803C8132319C92F0064B569 /* ArtistSearchMockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchMockView.swift; sourceTree = "<group>"; };
-		2803C8152319C94E0064B569 /* ArtistSearchMockWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchMockWireframe.swift; sourceTree = "<group>"; };
-		2803C8172319CECE0064B569 /* MainUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUITest.swift; sourceTree = "<group>"; };
 		28339430229323BD0011B5C4 /* ArtistSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtistSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28339433229323BD0011B5C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2833943C229323BF0011B5C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,11 +82,8 @@
 		28339457229323BF0011B5C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2835DC5F2295C1E800BBFA9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2835DC612295C1F700BBFA9A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2835DC652295C27D00BBFA9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ArtistSearch.storyboard; sourceTree = "<group>"; };
-		2835DC6A2295C36200BBFA9A /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/ArtistSearch.strings; sourceTree = "<group>"; };
 		2835DC6B2295C36200BBFA9A /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		2835DC6C2295C36300BBFA9A /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2835DC6D2295C39600BBFA9A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ArtistSearch.strings; sourceTree = "<group>"; };
 		2835DC6F2295C3AB00BBFA9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ArtistDetail.storyboard; sourceTree = "<group>"; };
 		2835DC722295C3AE00BBFA9A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ArtistDetail.strings; sourceTree = "<group>"; };
 		2835DC742295C3B100BBFA9A /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/ArtistDetail.strings; sourceTree = "<group>"; };
@@ -132,13 +121,11 @@
 		28625B2822934EE60095D95A /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		28625B2B22934F510095D95A /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		28625B2E2293538A0095D95A /* ArtistCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistCollectionViewCell.swift; sourceTree = "<group>"; };
-		449916A94C9A8C201054CC94 /* Pods-ArtistSearchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtistSearchUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArtistSearchUITests/Pods-ArtistSearchUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		4992E7522172E3A3B8E0575F /* libPods-ArtistSearch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ArtistSearch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8FF240941C995CC996604344 /* Pods-ArtistSearchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtistSearchUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArtistSearchUITests/Pods-ArtistSearchUITests.release.xcconfig"; sourceTree = "<group>"; };
-		A4D6BC56D78371533F13D089 /* Pods-ArtistSearchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtistSearchTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArtistSearchTests/Pods-ArtistSearchTests.debug.xcconfig"; sourceTree = "<group>"; };
-		B7743E36C0289B3855661129 /* libPods-ArtistSearchUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ArtistSearchUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C1C8130F8E26C51E47A422CC /* Pods-ArtistSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtistSearch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArtistSearch/Pods-ArtistSearch.debug.xcconfig"; sourceTree = "<group>"; };
-		C8613B09AC3FDCF1E6693AD1 /* Pods-ArtistSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtistSearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArtistSearch/Pods-ArtistSearch.release.xcconfig"; sourceTree = "<group>"; };
+		28872E7723B968D5009E7963 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ArtistSearchViewController.xib; sourceTree = "<group>"; };
+		28872E7A23B968E5009E7963 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ArtistSearchViewController.strings; sourceTree = "<group>"; };
+		28872E7C23B968E6009E7963 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/ArtistSearchViewController.strings; sourceTree = "<group>"; };
+		28D77BC223B84832000E6E7A /* ArtistDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailRouter.swift; sourceTree = "<group>"; };
+		28D77BC423B848E7000E6E7A /* FavoriteSearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSearchRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +133,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				756C27D989A4BAA5DEA424D5 /* libPods-ArtistSearch.a in Frameworks */,
+				28872E8423B96B59009E7963 /* RealmSwift in Frameworks */,
+				28872E8223B96B59009E7963 /* Realm in Frameworks */,
+				28872E7F23B96B1B009E7963 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,9 +284,9 @@
 		28625AC82293250D0095D95A /* Artirst Search */ = {
 			isa = PBXGroup;
 			children = (
+				28872E7823B968D5009E7963 /* ArtistSearchViewController.xib */,
 				28625B2D229353610095D95A /* UI */,
-				2835DC662295C27D00BBFA9A /* ArtistSearch.storyboard */,
-				28625ABD229325060095D95A /* ArtistSearchInterfaces.swift */,
+				28625ABD229325060095D95A /* ArtistSearchContract.swift */,
 				28625ABE229325060095D95A /* ArtistSearchPresenter.swift */,
 				28625ABF229325060095D95A /* ArtistSearchViewController.swift */,
 				28625AC0229325060095D95A /* ArtistSearchInteractor.swift */,
@@ -427,14 +416,18 @@
 				2833942C229323BD0011B5C4 /* Sources */,
 				2833942D229323BD0011B5C4 /* Frameworks */,
 				2833942E229323BD0011B5C4 /* Resources */,
-				28EAC73222E764C4008870C7 /* ShellScript */,
-				2A6F99C95AB70990C7DF98B0 /* [CP] Copy Pods Resources */,
+				28EAC73222E764C4008870C7 /* Run Script */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = ArtistSearch;
+			packageProductDependencies = (
+				28872E7E23B96B1B009E7963 /* Alamofire */,
+				28872E8123B96B59009E7963 /* Realm */,
+				28872E8323B96B59009E7963 /* RealmSwift */,
+			);
 			productName = ArtistSearch;
 			productReference = 28339430229323BD0011B5C4 /* ArtistSearch.app */;
 			productType = "com.apple.product-type.application";
@@ -510,6 +503,10 @@
 				es,
 			);
 			mainGroup = 28339427229323BD0011B5C4;
+			packageReferences = (
+				28872E7D23B96B1B009E7963 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				28872E8023B96B59009E7963 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = 28339431229323BD0011B5C4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -530,7 +527,7 @@
 				2835DC602295C1E800BBFA9A /* Localizable.strings in Resources */,
 				2833943D229323BF0011B5C4 /* Assets.xcassets in Resources */,
 				2835DC6E2295C3AB00BBFA9A /* ArtistDetail.storyboard in Resources */,
-				2835DC642295C27D00BBFA9A /* ArtistSearch.storyboard in Resources */,
+				28872E7623B968D5009E7963 /* ArtistSearchViewController.xib in Resources */,
 				2835DC752295C3B700BBFA9A /* FavoriteSearch.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -552,29 +549,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		20E20B7CE1A22E678DE8124E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ArtistSearchTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		28EAC73222E764C4008870C7 /* ShellScript */ = {
+		28EAC73222E764C4008870C7 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -583,13 +558,15 @@
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "
+";
 		};
 		2A6F99C95AB70990C7DF98B0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -748,16 +725,6 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		2835DC662295C27D00BBFA9A /* ArtistSearch.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2835DC652295C27D00BBFA9A /* Base */,
-				2835DC6A2295C36200BBFA9A /* es */,
-				2835DC6D2295C39600BBFA9A /* en */,
-			);
-			name = ArtistSearch.storyboard;
-			sourceTree = "<group>";
-		};
 		2835DC702295C3AB00BBFA9A /* ArtistDetail.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -776,6 +743,16 @@
 				2835DC7B2295C3BC00BBFA9A /* es */,
 			);
 			name = FavoriteSearch.storyboard;
+			sourceTree = "<group>";
+		};
+		28872E7823B968D5009E7963 /* ArtistSearchViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28872E7723B968D5009E7963 /* Base */,
+				28872E7A23B968E5009E7963 /* en */,
+				28872E7C23B968E6009E7963 /* es */,
+			);
+			name = ArtistSearchViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1061,6 +1038,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		28872E7D23B96B1B009E7963 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = exactVersion;
+				version = 4.9.1;
+			};
+		};
+		28872E8023B96B59009E7963 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa";
+			requirement = {
+				kind = exactVersion;
+				version = 4.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		28872E7E23B96B1B009E7963 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 28872E7D23B96B1B009E7963 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		28872E8123B96B59009E7963 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 28872E8023B96B59009E7963 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		28872E8323B96B59009E7963 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 28872E8023B96B59009E7963 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 28339428229323BD0011B5C4 /* Project object */;
 }

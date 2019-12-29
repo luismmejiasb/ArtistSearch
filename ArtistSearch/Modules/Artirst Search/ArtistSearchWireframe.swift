@@ -22,8 +22,15 @@ final class ArtistSearchWireframe: BaseWireframe {
         super.init(viewController: moduleViewController)
         
         let interactor = ArtistSearchInteractor()
-        let presenter = ArtistSearchPresenter(view: moduleViewController, interactor: interactor, wireframe: self)
-        moduleViewController.presenter = presenter
+        let router = ArtistSearchRouter()
+        let presenter = ArtistSearchPresenter(interactor: interactor, router: router)
+        let view = ArtistSearchViewController()
+        
+        router.view = view
+        view.presenter = presenter
+        presenter.view = view
+        
+        return view
     }
 
 }
