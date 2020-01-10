@@ -17,7 +17,7 @@ class ArtistCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         setupUI()
     }
-    
+
     func configureCell(with artistData: Artist) {
         artistNameLabel.text = artistData.artistName
         artistNameLabel.textColor = GColors.textColor

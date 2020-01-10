@@ -45,5 +45,8 @@ extension ArtistSearchPresenter: ArtistSearchPresenterInterface {
     func cancelAPIRequest() {
         interactor.cancelAPIRequest()
     }
-    
+
+    func presentArtistDetail(_ artist: Artist) {
+        router?.presentArtistDetail(artist)
+    }
 }

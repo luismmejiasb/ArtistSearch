@@ -18,7 +18,10 @@ class ArtistSearchViewController: UIViewController {
     @IBOutlet weak var searchInformationView: UIStackView!
     @IBOutlet weak var searchInformationImageView: UIImageView!
     @IBOutlet weak var searchInformationLabel: UILabel!
-
+    private lazy var favoriteButton: UIBarButtonItem = {
+        let favoriteButton = UIBarButtonItem(image: UIImage(named: "favoriteIcon"), style: .plain, target: self, action: #selector(showFavoriteSearchs))
+        return favoriteButton
+    }()
     var presenter: ArtistSearchPresenterProtocol?
     var searchData: [Artist]! = [] {
         didSet {
@@ -60,6 +63,8 @@ class ArtistSearchViewController: UIViewController {
         showInformationView(true, type: .defaultInformation)
         searchBar.setValue(NSLocalizedString("cancel_button_title", comment: ""), forKey: "cancelButtonText")
         searchBar.placeholder = NSLocalizedString("search_bar_placeholder_text", comment: "")
+        self.navigationItem.setRightBarButtonItems([favoriteButton], animated: true)
+        self.title = "Artist Search"
     }
     
     func showInformationView(_ withState : Bool, type: InformationType) {
@@ -93,7 +98,7 @@ extension ArtistSearchViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let selectedArtist: Artist = searchData?[indexPath.row] {
-            presenter?.didTapCollectionCell(withArtist: selectedArtist)
+            presenter?.presentArtistDetail(selectedArtist)
         }
     }
 }
