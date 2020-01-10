@@ -53,7 +53,7 @@ final class ArtistDetailViewController: UIViewController {
     }
     
     func setUpUI() {
-        setGradientBackground()
+        self.view.backgroundColor = GColors.darkTintColor
     }
 }
 

@@ -38,7 +38,7 @@ final class FavoriteSearchViewController: UIViewController {
     }
     
     func setUpUI() {
-        setGradientBackground()
+        self.view.backgroundColor = GColors.darkTintColor
         showInformationView(true)
     }
     

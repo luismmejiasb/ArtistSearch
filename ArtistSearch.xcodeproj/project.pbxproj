@@ -50,6 +50,7 @@
 		28872E8423B96B59009E7963 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 28872E8323B96B59009E7963 /* RealmSwift */; };
 		28D77BC323B84832000E6E7A /* ArtistDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D77BC223B84832000E6E7A /* ArtistDetailRouter.swift */; };
 		28D77BC523B848E7000E6E7A /* FavoriteSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D77BC423B848E7000E6E7A /* FavoriteSearchRouter.swift */; };
+		28FB941523C8F10B008C56E4 /* ArtistCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28FB941423C8F10B008C56E4 /* ArtistCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,7 @@
 		28872E7C23B968E6009E7963 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/ArtistSearchViewController.strings; sourceTree = "<group>"; };
 		28D77BC223B84832000E6E7A /* ArtistDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailRouter.swift; sourceTree = "<group>"; };
 		28D77BC423B848E7000E6E7A /* FavoriteSearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSearchRouter.swift; sourceTree = "<group>"; };
+		28FB941423C8F10B008C56E4 /* ArtistCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtistCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,7 +286,7 @@
 		28625AC82293250D0095D95A /* Artirst Search */ = {
 			isa = PBXGroup;
 			children = (
-				28872E7823B968D5009E7963 /* ArtistSearchViewController.xib */,
+				28FB941323C8EFF5008C56E4 /* Xib */,
 				28625B2D229353610095D95A /* UI */,
 				28625ABD229325060095D95A /* ArtistSearchContract.swift */,
 				28625ABE229325060095D95A /* ArtistSearchPresenter.swift */,
@@ -382,27 +384,13 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		C602128F11058C8C437ADB01 /* Frameworks */ = {
+		28FB941323C8EFF5008C56E4 /* Xib */ = {
 			isa = PBXGroup;
 			children = (
-				4992E7522172E3A3B8E0575F /* libPods-ArtistSearch.a */,
-				0C433504589481D29328B9DF /* libPods-ArtistSearchTests.a */,
-				B7743E36C0289B3855661129 /* libPods-ArtistSearchUITests.a */,
+				28872E7823B968D5009E7963 /* ArtistSearchViewController.xib */,
+				28FB941423C8F10B008C56E4 /* ArtistCollectionViewCell.xib */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FC8F35E5F1EE66AF947E23AF /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C1C8130F8E26C51E47A422CC /* Pods-ArtistSearch.debug.xcconfig */,
-				C8613B09AC3FDCF1E6693AD1 /* Pods-ArtistSearch.release.xcconfig */,
-				A4D6BC56D78371533F13D089 /* Pods-ArtistSearchTests.debug.xcconfig */,
-				06CE0C9A557F2BF30A62FBAB /* Pods-ArtistSearchTests.release.xcconfig */,
-				449916A94C9A8C201054CC94 /* Pods-ArtistSearchUITests.debug.xcconfig */,
-				8FF240941C995CC996604344 /* Pods-ArtistSearchUITests.release.xcconfig */,
-			);
-			name = Pods;
+			path = Xib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -523,6 +511,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28FB941523C8F10B008C56E4 /* ArtistCollectionViewCell.xib in Resources */,
 				28339440229323BF0011B5C4 /* LaunchScreen.storyboard in Resources */,
 				2835DC602295C1E800BBFA9A /* Localizable.strings in Resources */,
 				2833943D229323BF0011B5C4 /* Assets.xcassets in Resources */,

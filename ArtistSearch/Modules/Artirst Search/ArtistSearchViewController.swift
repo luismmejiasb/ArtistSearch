@@ -8,19 +8,23 @@
 //
 import UIKit
 
-final class ArtistSearchViewController: UIViewController {
-    
-    // MARK: - IBOutlets
-    @IBOutlet weak var searchCollectionView: UICollectionView!
+class ArtistSearchViewController: UIViewController {
+    @IBOutlet weak var searchCollectionView: UICollectionView! {
+        didSet {
+            searchCollectionView.register(ArtistCollectionViewCell.nib, forCellWithReuseIdentifier: ArtistCollectionViewCell.reusableIdentifier)
+        }
+    }
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchInformationView: UIStackView!
     @IBOutlet weak var searchInformationImageView: UIImageView!
     @IBOutlet weak var searchInformationLabel: UILabel!
-    @IBOutlet weak var favoriteButton: UIBarButtonItem!
-    
-    // MARK: - Public properties
-    var presenter: ArtistSearchPresenterInterface?
-    var searchData: [Artist]! = []
+
+    var presenter: ArtistSearchPresenterProtocol?
+    var searchData: [Artist]! = [] {
+        didSet {
+            searchCollectionView.reloadData()
+        }
+    }
     var selectedFilterType: FilteringType = .artist
 
     // MARK: - Lifecycle -
@@ -31,7 +35,6 @@ final class ArtistSearchViewController: UIViewController {
         searchCollectionView.dataSource = self
         searchBar.delegate = self
         setUpUI()
-        setUpAccessibleIdentifiers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,7 +56,7 @@ final class ArtistSearchViewController: UIViewController {
     }
     
     func setUpUI() {
-        setGradientBackground()
+        self.view.backgroundColor = GColors.darkTintColor
         showInformationView(true, type: .defaultInformation)
         searchBar.setValue(NSLocalizedString("cancel_button_title", comment: ""), forKey: "cancelButtonText")
         searchBar.placeholder = NSLocalizedString("search_bar_placeholder_text", comment: "")
@@ -80,14 +83,7 @@ extension ArtistSearchViewController: ArtistSearchViewInterface {
 
     func reloadDataInView(with artistData: [Artist]) {
         searchData = artistData
-        
-        if searchData.isEmpty {
-            showInformationView(true, type: .noResults)
-        }
-        
-        UIView.transition(with: searchCollectionView, duration: 0.2, options: .transitionCrossDissolve, animations: {
-            self.searchCollectionView.reloadData()
-        }, completion: nil)
+        showInformationView(searchData.isEmpty , type: .noResults)
     }
 }
 
@@ -96,11 +92,8 @@ extension ArtistSearchViewController: ArtistSearchViewInterface {
 extension ArtistSearchViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if !searchData.isEmpty {
-            if let selectedArtist: Artist = searchData?[indexPath.row] {
-                let artistDetailWireframe: ArtistDetailWireframe = ArtistDetailWireframe.init(selectedArtist: selectedArtist)
-                navigationController?.pushWireframe(artistDetailWireframe)
-            }
+        if let selectedArtist: Artist = searchData?[indexPath.row] {
+            presenter?.didTapCollectionCell(withArtist: selectedArtist)
         }
     }
 }
@@ -114,13 +107,13 @@ extension ArtistSearchViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell: ArtistCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "artistCollectionCell", 
+        guard let cell: ArtistCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: ArtistCollectionViewCell.reusableIdentifier,
                                                                                       for: indexPath) as? ArtistCollectionViewCell else {
                                                                                         return UICollectionViewCell()
         }
         
         let artist: Artist = searchData[indexPath.row]
-        
+
         cell.configureCell(with: artist)
         
         return cell
@@ -171,7 +164,6 @@ extension ArtistSearchViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
         searchData = []
-        searchCollectionView.reloadData()
         searchCollectionView.isHidden = true
         searchBar.resignFirstResponder()
         searchBar.setShowsCancelButton(false, animated: true)
@@ -181,7 +173,6 @@ extension ArtistSearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchBarText = searchBar.text else {
             searchData = []
-            searchCollectionView.reloadData()
             searchCollectionView.isHidden = true
             showInformationView(true, type: .defaultInformation)
             return

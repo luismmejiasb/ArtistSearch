@@ -41,7 +41,7 @@ extension ArtistSearchPresenter: ArtistSearchPresenterInterface {
             self.view.reloadDataInView(with: artistsEntity)
         }
     }
-    
+
     func cancelAPIRequest() {
         interactor.cancelAPIRequest()
     }
