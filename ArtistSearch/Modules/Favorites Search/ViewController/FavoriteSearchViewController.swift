@@ -11,16 +11,21 @@ import UIKit
 import RealmSwift
 
 final class FavoriteSearchViewController: UIViewController {
-
     // MARK: - IBOutlets
-    @IBOutlet weak var favoriteSearchCollectionView: UICollectionView!
+    @IBOutlet weak var favoriteSearchCollectionView: UICollectionView! {
+        didSet {
+            favoriteSearchCollectionView.register(FavoriteSearchCollectionViewCell.nib, forCellWithReuseIdentifier: FavoriteSearchCollectionViewCell.reusableIdentifier)
+        }
+    }
     @IBOutlet weak var informationView: UIStackView!
     @IBOutlet weak var searchInformationImageView: UIImageView!
     @IBOutlet weak var searchInformationLabel: UILabel!
-    
-    // MARK: - Public properties
     var presenter: FavoriteSearchPresenter!
-    var favoriteArtistData: [ArtistObject]! = []
+    var favoriteArtistData: [ArtistObject]! = [] {
+        didSet {
+            favoriteSearchCollectionView.reloadData()
+        }
+    }
     
     // MARK: - Lifecycle -
     
@@ -40,19 +45,19 @@ final class FavoriteSearchViewController: UIViewController {
     func setUpUI() {
         self.view.backgroundColor = GColors.darkTintColor
         showInformationView(true)
+        self.title = "Favorite Searchs"
     }
     
     func showInformationView(_ withState : Bool) {
         informationView.isHidden = !withState
         searchInformationLabel.text = NSLocalizedString("no_favorite_artist_message", comment: "")
         searchInformationImageView.image = #imageLiteral(resourceName: "noFavoriteIcon")
-        
     }
 }
 
 // MARK: - Extensions
 
-extension FavoriteSearchViewController: FavoriteSearchViewInterface {
+extension FavoriteSearchViewController: FavoriteSearchViewProtocol {
     
     func reloadDataInView(with artistData: [ArtistObject]) {
         favoriteArtistData = artistData
@@ -64,10 +69,6 @@ extension FavoriteSearchViewController: FavoriteSearchViewInterface {
             showInformationView(false)
             favoriteSearchCollectionView.isHidden = false
         }
-        
-        UIView.transition(with: favoriteSearchCollectionView, duration: 0.2, options: .transitionCrossDissolve, animations: {
-            self.favoriteSearchCollectionView.reloadData()
-        }, completion: nil)
     }
 }
 
@@ -85,9 +86,7 @@ extension FavoriteSearchViewController: UICollectionViewDelegate {
                                              artistType: selectedArtist.artistType, 
                                              artistLinkUrl: selectedArtist.artistLinkUrl, 
                                              primaryGenreId: selectedArtist.primaryGenreId)
-            
-            let artistDetailWireframe: ArtistDetailWireframe = ArtistDetailWireframe.init(selectedArtist: artist)
-            navigationController?.pushWireframe(artistDetailWireframe)
+            presenter?.presentArtistDetail(artist)
         }
     }
 }
@@ -105,7 +104,7 @@ extension FavoriteSearchViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell: ArtistCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "artistCollectionCell", 
+        guard let cell: ArtistCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: FavoriteSearchCollectionViewCell.reusableIdentifier, 
                                                                                       for: indexPath) as? ArtistCollectionViewCell else {
                                                                                         return UICollectionViewCell()
         }

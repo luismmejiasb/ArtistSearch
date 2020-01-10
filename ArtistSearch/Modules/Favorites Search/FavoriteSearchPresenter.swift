@@ -37,4 +37,7 @@ extension FavoriteSearchPresenter: FavoriteSearchPresenterInterface {
         }
     }
     
+    func presentArtistDetail(_ artist: Artist) {
+        router?.presentArtistDetail(artist)
+    }
 }

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ArtistSearchViewController" customModule="ArtistSearch" customModuleProvider="target">
+            <connections>
+                <outlet property="searchBar" destination="Oz3-3Z-wVM" id="yZB-Kw-vqH"/>
+                <outlet property="searchCollectionView" destination="rAP-73-duI" id="Tpv-UY-t8o"/>
+                <outlet property="searchDisplayController" destination="MCx-cI-xSk" id="GAA-ec-1fA"/>
+                <outlet property="searchInformationImageView" destination="C5C-GX-ZVH" id="JvL-Ju-DXP"/>
+                <outlet property="searchInformationLabel" destination="yOh-ou-TGW" id="sfJ-3T-0Er"/>
+                <outlet property="searchInformationView" destination="z62-RN-Bwx" id="O5x-UQ-k7X"/>
+                <outlet property="view" destination="4Oj-j3-LNv" id="Txh-Cv-j0z"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <searchDisplayController id="MCx-cI-xSk"/>
+        <view contentMode="scaleToFill" id="4Oj-j3-LNv">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="rAP-73-duI">
+                    <rect key="frame" x="9" y="66" width="356" height="601"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="601" id="dpe-Un-4ut"/>
+                        <constraint firstAttribute="width" constant="356" id="vvP-5j-sw2"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5hf-zG-DMs">
+                        <size key="itemSize" width="117" height="61"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <cells/>
+                </collectionView>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Oz3-3Z-wVM">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="375" id="69G-Bb-1Qh"/>
+                        <constraint firstAttribute="height" constant="56" id="u4F-iv-Hq0"/>
+                    </constraints>
+                    <color key="barTintColor" red="0.062745098040000002" green="0.0" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="z62-RN-Bwx">
+                    <rect key="frame" x="76" y="89" width="223" height="199"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="artistSearchIcon" translatesAutoresizingMaskIntoConstraints="NO" id="C5C-GX-ZVH">
+                            <rect key="frame" x="61.5" y="0.0" width="100" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="EWC-IT-TLk"/>
+                                <constraint firstAttribute="width" constant="100" id="nan-Vi-dTG"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information detail" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOh-ou-TGW">
+                            <rect key="frame" x="0.0" y="108" width="223" height="91"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="91" id="1W6-jk-2T4"/>
+                                <constraint firstAttribute="width" constant="223" id="e0u-aH-9o1"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="199" id="VGO-i7-6k9"/>
+                        <constraint firstAttribute="width" constant="223" id="Xnd-l8-54D"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="0.062745098039215685" green="0.0" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="rAP-73-duI" firstAttribute="leading" secondItem="seD-Dl-0EM" secondAttribute="leading" constant="9" id="2Ou-6g-kdB"/>
+                <constraint firstItem="seD-Dl-0EM" firstAttribute="trailing" secondItem="Oz3-3Z-wVM" secondAttribute="trailing" id="KYz-Vl-INi"/>
+                <constraint firstItem="seD-Dl-0EM" firstAttribute="bottom" secondItem="rAP-73-duI" secondAttribute="bottom" id="NMI-8S-V4e"/>
+                <constraint firstItem="Oz3-3Z-wVM" firstAttribute="leading" secondItem="seD-Dl-0EM" secondAttribute="leading" id="XUg-jH-5k5"/>
+                <constraint firstItem="z62-RN-Bwx" firstAttribute="centerX" secondItem="seD-Dl-0EM" secondAttribute="centerX" id="hEc-Oa-uaJ"/>
+                <constraint firstItem="Oz3-3Z-wVM" firstAttribute="top" secondItem="seD-Dl-0EM" secondAttribute="top" id="hiJ-hU-iHJ"/>
+                <constraint firstItem="seD-Dl-0EM" firstAttribute="trailing" secondItem="rAP-73-duI" secondAttribute="trailing" constant="10" id="nVH-dN-j8o"/>
+                <constraint firstItem="z62-RN-Bwx" firstAttribute="top" secondItem="seD-Dl-0EM" secondAttribute="top" constant="89" id="xMD-2H-5vc"/>
+                <constraint firstItem="rAP-73-duI" firstAttribute="top" secondItem="seD-Dl-0EM" secondAttribute="top" constant="66" id="xYm-bq-CoH"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="seD-Dl-0EM"/>
+            <point key="canvasLocation" x="565.60000000000002" y="-21.139430284857571"/>
+        </view>
+        <navigationItem title="Artist Search" id="t8u-gR-KHk">
+            <barButtonItem key="rightBarButtonItem" image="favoriteIcon" id="ZMW-hB-gh8">
+                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <connections>
+                    <action selector="showFavoriteSearchs:" destination="-1" id="lAa-DZ-XwN"/>
+                </connections>
+            </barButtonItem>
+        </navigationItem>
+    </objects>
+    <resources>
+        <image name="artistSearchIcon" width="480" height="480"/>
+        <image name="favoriteIcon" width="24" height="24"/>
+    </resources>
+</document>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="artistCollectionCell" id="tqz-hO-gwM" customClass="ArtistCollectionViewCell" customModule="ArtistSearch" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="194" height="106"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ylX-Rg-7bg">
+                <rect key="frame" x="0.0" y="0.0" width="194" height="106"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view alpha="0.34999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n8v-Fr-Zmd">
+                        <rect key="frame" x="4" y="3" width="187" height="99"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZ9-5J-qRD">
+                        <rect key="frame" x="76" y="42.5" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="n8v-Fr-Zmd" secondAttribute="trailing" constant="3" id="A1m-3i-wox"/>
+                    <constraint firstAttribute="bottom" secondItem="n8v-Fr-Zmd" secondAttribute="bottom" constant="4" id="FsP-FY-EH5"/>
+                    <constraint firstItem="n8v-Fr-Zmd" firstAttribute="leading" secondItem="ylX-Rg-7bg" secondAttribute="leading" constant="4" id="QHy-0K-V5n"/>
+                    <constraint firstItem="fZ9-5J-qRD" firstAttribute="centerY" secondItem="ylX-Rg-7bg" secondAttribute="centerY" id="S6t-7Z-PAN"/>
+                    <constraint firstItem="n8v-Fr-Zmd" firstAttribute="top" secondItem="ylX-Rg-7bg" secondAttribute="top" constant="3" id="hSI-r2-OFp"/>
+                    <constraint firstItem="fZ9-5J-qRD" firstAttribute="centerX" secondItem="ylX-Rg-7bg" secondAttribute="centerX" id="m8i-Td-n54"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="194" height="106"/>
+            <connections>
+                <outlet property="artistNameLabel" destination="fZ9-5J-qRD" id="l13-6U-cYK"/>
+                <outlet property="backgroundView" destination="n8v-Fr-Zmd" id="JgH-46-2Nz"/>
+            </connections>
+            <point key="canvasLocation" x="128.98550724637681" y="79.6875"/>
+        </collectionViewCell>
+    </objects>
+</document>

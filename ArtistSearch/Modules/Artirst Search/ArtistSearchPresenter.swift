@@ -41,9 +41,16 @@ extension ArtistSearchPresenter: ArtistSearchPresenterInterface {
             self.view.reloadDataInView(with: artistsEntity)
         }
     }
-    
+
     func cancelAPIRequest() {
         interactor.cancelAPIRequest()
     }
-    
+
+    func presentArtistDetail(_ artist: Artist) {
+        router?.presentArtistDetail(artist)
+    }
+
+    func presentFavoriteSearchs() {
+        router?.presentFavoriteSearchs()
+    }
 }

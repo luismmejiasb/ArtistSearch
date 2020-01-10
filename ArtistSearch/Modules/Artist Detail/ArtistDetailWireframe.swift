@@ -22,8 +22,16 @@ final class ArtistDetailWireframe: BaseWireframe {
         super.init(viewController: moduleViewController)
         
         let interactor = ArtistDetailInteractor()
-        let presenter = ArtistDetailPresenter(view: moduleViewController, interactor: interactor, wireframe: self, selectedArtist: selectedArtist)
-        moduleViewController.presenter = presenter
+        let router = ArtistDetailRouter()
+        let presenter = ArtistDetailPresenter(interactor: interactor, router: router)
+        let view = ArtistDetailViewController()
+        
+        presenter.selectedArtist = withSelectedArtist
+        router.view = view
+        view.presenter = presenter
+        presenter.view = view
+        
+        return view
     }
 
 }

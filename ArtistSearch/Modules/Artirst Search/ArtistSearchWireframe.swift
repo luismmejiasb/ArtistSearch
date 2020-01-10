@@ -6,24 +6,24 @@
 //  Copyright (c) 2019 Luis Mejías. All rights reserved.
 //
 //
-
 import UIKit
 
-final class ArtistSearchWireframe: BaseWireframe {
-
-    // MARK: - Private properties -
-
-    private let storyboard = UIStoryboard.artistSearchStoryBoard()
-
-    // MARK: - Module setup -
-
-    init() {
-        let moduleViewController = storyboard.instantiateViewController(ofType: ArtistSearchViewController.self)
-        super.init(viewController: moduleViewController)
-        
+class ArtistSearchWireframe: ArtistSearchWireframeProtocol {
+    static func assemble() -> UINavigationController {
         let interactor = ArtistSearchInteractor()
-        let presenter = ArtistSearchPresenter(view: moduleViewController, interactor: interactor, wireframe: self)
-        moduleViewController.presenter = presenter
+        let router = ArtistSearchRouter()
+        let presenter = ArtistSearchPresenter(interactor: interactor, router: router)
+        let artistSearchViewController = ArtistSearchViewController()
+        
+        let navigationController = UINavigationController()
+        navigationController.setUpNavigationController()
+        navigationController.setViewControllers([artistSearchViewController], animated: false)
+        
+        router.view = artistSearchViewController
+        artistSearchViewController.presenter = presenter
+        presenter.view = artistSearchViewController
+        
+        return navigationController
     }
 
 }
