@@ -7,28 +7,36 @@
 //
 
 import XCTest
+@testable import ArtistSearch
 
-class ArtistSearchUITests: XCTestCase {
+class ArtistSearchUITests: MainUITest {
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        setupApp()
+        app.launch()
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    func testSearchArtist() {
+        let app = XCUIApplication()
+        let searchAnArtistSearchField = app/*@START_MENU_TOKEN@*/.searchFields["Search an artist"]/*[[".otherElements[\"ArtistSearch.serachBar\"].searchFields[\"Search an artist\"]",".searchFields[\"Search an artist\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        searchAnArtistSearchField.tap()
 
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        app.keys["C"].tap()
+        app/*@START_MENU_TOKEN@*/.keys["o"]/*[[".keyboards.keys[\"o\"]",".keys[\"o\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.keys["l"].tap()
+        app.keys["d"].tap()
+        app.keys["p"].tap()
+        app.keys["l"].tap()
+        app.keys["a"].tap()
+        app.keys["y"].tap()
+
+        app/*@START_MENU_TOKEN@*/.buttons["Search"]/*[[".keyboards",".buttons[\"buscar\"]",".buttons[\"Search\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
+
+        let resultCollectionCell = XCUIApplication().collectionViews["ArtistSearch.collectionView"].staticTexts["Coldplay"] 
+        resultCollectionCell.tap()
     }
-
 }

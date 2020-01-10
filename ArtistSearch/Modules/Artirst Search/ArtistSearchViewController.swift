@@ -17,6 +17,7 @@ final class ArtistSearchViewController: UIViewController {
     @IBOutlet weak var searchInformationView: UIStackView!
     @IBOutlet weak var searchInformationImageView: UIImageView!
     @IBOutlet weak var searchInformationLabel: UILabel!
+    @IBOutlet weak var favoriteButton: UIBarButtonItem!
     
     // MARK: - Public properties
     var presenter: ArtistSearchPresenterInterface?
@@ -30,9 +31,8 @@ final class ArtistSearchViewController: UIViewController {
         searchCollectionView.delegate = self
         searchCollectionView.dataSource = self
         searchBar.delegate = self
-        
         setUpUI()
-        
+        setUpAccessibleIdentifiers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,6 +64,14 @@ final class ArtistSearchViewController: UIViewController {
         searchInformationView.isHidden = !withState
         searchInformationLabel.text = type.informationMessage
         searchInformationImageView.image = type.informationIcon
+    }
+    
+    func setUpAccessibleIdentifiers() {
+        searchCollectionView.accessibilityIdentifier = ArtistSearchAI.collectionView.rawValue
+        searchBar.accessibilityIdentifier = ArtistSearchAI.serachBar.rawValue
+        searchInformationView.accessibilityIdentifier = ArtistSearchAI.informationView.rawValue
+        searchInformationLabel.accessibilityIdentifier = ArtistSearchAI.informationLabel.rawValue
+        favoriteButton.accessibilityIdentifier = ArtistSearchAI.favoriteButton.rawValue
     }
 }
 

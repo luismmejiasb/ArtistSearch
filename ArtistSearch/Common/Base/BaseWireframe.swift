@@ -11,7 +11,7 @@ protocol WireframeInterface: class {
 }
 
 class BaseWireframe {
-    
+
     fileprivate unowned var _viewController: UIViewController
     
     //to retain view controller reference upon first access
@@ -21,7 +21,6 @@ class BaseWireframe {
         _temporaryStoredViewController = viewController
         _viewController = viewController
     }
-    
 }
 
 extension BaseWireframe: WireframeInterface {
@@ -33,12 +32,12 @@ extension BaseWireframe: WireframeInterface {
     func dismiss(animated: Bool) {
         navigationController?.dismiss(animated: animated)
     }
-    
+
     func showErrorAlert(with message: String?) {
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         showAlert(with: NSLocalizedString("generic_error", comment: ""), message: message, actions: [okAction])
     }
-    
+
     func showAlert(with title: String?, message: String?) {
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         showAlert(with: title, message: message, actions: [okAction])

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2803C8122319C9120064B569 /* ArtistSearchMockInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2803C8112319C9120064B569 /* ArtistSearchMockInteractor.swift */; };
+		2803C8142319C92F0064B569 /* ArtistSearchMockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2803C8132319C92F0064B569 /* ArtistSearchMockView.swift */; };
+		2803C8162319C94E0064B569 /* ArtistSearchMockWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2803C8152319C94E0064B569 /* ArtistSearchMockWireframe.swift */; };
+		2803C8182319CECE0064B569 /* MainUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2803C8172319CECE0064B569 /* MainUITest.swift */; };
 		28339434229323BD0011B5C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28339433229323BD0011B5C4 /* AppDelegate.swift */; };
 		2833943D229323BF0011B5C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2833943C229323BF0011B5C4 /* Assets.xcassets */; };
 		28339440229323BF0011B5C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2833943E229323BF0011B5C4 /* LaunchScreen.storyboard */; };
@@ -70,6 +74,10 @@
 /* Begin PBXFileReference section */
 		06CE0C9A557F2BF30A62FBAB /* Pods-ArtistSearchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtistSearchTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArtistSearchTests/Pods-ArtistSearchTests.release.xcconfig"; sourceTree = "<group>"; };
 		0C433504589481D29328B9DF /* libPods-ArtistSearchTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ArtistSearchTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2803C8112319C9120064B569 /* ArtistSearchMockInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchMockInteractor.swift; sourceTree = "<group>"; };
+		2803C8132319C92F0064B569 /* ArtistSearchMockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchMockView.swift; sourceTree = "<group>"; };
+		2803C8152319C94E0064B569 /* ArtistSearchMockWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchMockWireframe.swift; sourceTree = "<group>"; };
+		2803C8172319CECE0064B569 /* MainUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUITest.swift; sourceTree = "<group>"; };
 		28339430229323BD0011B5C4 /* ArtistSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtistSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28339433229323BD0011B5C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2833943C229323BF0011B5C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -161,6 +169,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2803C80F2319C8D00064B569 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				2803C8112319C9120064B569 /* ArtistSearchMockInteractor.swift */,
+				2803C8132319C92F0064B569 /* ArtistSearchMockView.swift */,
+				2803C8152319C94E0064B569 /* ArtistSearchMockWireframe.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		2803C8102319C8E70064B569 /* ArtistSearch */ = {
+			isa = PBXGroup;
+			children = (
+				2835DC8B2295DCF800BBFA9A /* Tests */,
+				2803C80F2319C8D00064B569 /* Mocks */,
+			);
+			path = ArtistSearch;
+			sourceTree = "<group>";
+		};
 		28339427229323BD0011B5C4 = {
 			isa = PBXGroup;
 			children = (
@@ -200,7 +227,7 @@
 		28339449229323BF0011B5C4 /* ArtistSearchTests */ = {
 			isa = PBXGroup;
 			children = (
-				2835DC8B2295DCF800BBFA9A /* Unit Tests */,
+				2803C8102319C8E70064B569 /* ArtistSearch */,
 				2835DC8A2295DCF000BBFA9A /* Viper */,
 				2835DC892295DCE600BBFA9A /* Application */,
 				2835DC882295DCDC00BBFA9A /* Entity */,
@@ -213,6 +240,7 @@
 		28339454229323BF0011B5C4 /* ArtistSearchUITests */ = {
 			isa = PBXGroup;
 			children = (
+				2803C8172319CECE0064B569 /* MainUITest.swift */,
 				28339455229323BF0011B5C4 /* ArtistSearchUITests.swift */,
 				28339457229323BF0011B5C4 /* Info.plist */,
 			);
@@ -243,12 +271,12 @@
 			path = Viper;
 			sourceTree = "<group>";
 		};
-		2835DC8B2295DCF800BBFA9A /* Unit Tests */ = {
+		2835DC8B2295DCF800BBFA9A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				2835DC7E2295D5FD00BBFA9A /* ArtistSearchTests.swift */,
 			);
-			path = "Unit Tests";
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		2837B93D229497AD001E2B04 /* Artist Detail */ = {
@@ -637,10 +665,12 @@
 				28625B2F2293538A0095D95A /* ArtistCollectionViewCell.swift in Sources */,
 				2837B93B229497AA001E2B04 /* ArtistDetailInteractor.swift in Sources */,
 				28625AC3229325060095D95A /* ArtistSearchInterfaces.swift in Sources */,
+				2803C8122319C9120064B569 /* ArtistSearchMockInteractor.swift in Sources */,
 				2837B939229497AA001E2B04 /* ArtistDetailPresenter.swift in Sources */,
 				28625AD6229325FA0095D95A /* Extensions.swift in Sources */,
 				28625AE0229328240095D95A /* FavoriteSearchPresenter.swift in Sources */,
 				2837B93022948878001E2B04 /* ArtistNavigationController.swift in Sources */,
+				2803C8142319C92F0064B569 /* ArtistSearchMockView.swift in Sources */,
 				28625ADF229328240095D95A /* FavoriteSearchInterfaces.swift in Sources */,
 				28625AC6229325060095D95A /* ArtistSearchInteractor.swift in Sources */,
 				28625AD3229325FA0095D95A /* InteractorInterface.swift in Sources */,
@@ -657,6 +687,7 @@
 				28625AC4229325060095D95A /* ArtistSearchPresenter.swift in Sources */,
 				28625AD7229325FA0095D95A /* ViewInterface.swift in Sources */,
 				28625B2C22934F510095D95A /* Enums.swift in Sources */,
+				2803C8162319C94E0064B569 /* ArtistSearchMockWireframe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,6 +707,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2803C8182319CECE0064B569 /* MainUITest.swift in Sources */,
 				28339456229323BF0011B5C4 /* ArtistSearchUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
