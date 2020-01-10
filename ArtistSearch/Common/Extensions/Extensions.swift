@@ -62,3 +62,7 @@ extension UIStoryboard {
     }
 
 }
+
+public enum ArtistSearchAI: String {
+    case collectionView = "ArtistSearch.collectionView", serachBar = "ArtistSearch.serachBar", informationView = "ArtistSearch.informationView", informationLabel = "ArtistSearch.informationLabel", favoriteButton = "ArtistSearch.favoriteButton"
+}

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3sV-Bt-Xq0">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3sV-Bt-Xq0">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,10 +13,10 @@
             <objects>
                 <viewController storyboardIdentifier="ArtistSearchViewController" title="Artist Search" id="w6n-lj-Isu" customClass="ArtistSearchViewController" customModule="ArtistSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8d0-AI-ELK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="FK9-qa-ezb">
+                            <searchBar contentMode="redraw" placeholder="Buscar" translatesAutoresizingMaskIntoConstraints="NO" id="FK9-qa-ezb">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="eJR-Ja-h1x"/>
@@ -54,7 +52,7 @@
                                 </constraints>
                             </stackView>
                             <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TGM-p5-O7u">
-                                <rect key="frame" x="9" y="66" width="356" height="537"/>
+                                <rect key="frame" x="9" y="66" width="356" height="557"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="356" id="7Wn-WH-zkP"/>
@@ -124,6 +122,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="favoriteButton" destination="1Nu-bD-X6z" id="SL5-PI-tLB"/>
                         <outlet property="searchBar" destination="FK9-qa-ezb" id="thD-Og-ZZ9"/>
                         <outlet property="searchCollectionView" destination="TGM-p5-O7u" id="vHO-bh-Tkc"/>
                         <outlet property="searchDisplayController" destination="yPJ-0h-BAt" id="Vyu-y0-HqD"/>
@@ -151,7 +150,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="d5u-vI-vSk"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="nhN-j8-n4E">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.062745098040000002" green="0.0" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">

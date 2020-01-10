@@ -41,5 +41,4 @@ class AppDelegateTests: XCTestCase {
         XCTAssertNotNil((appDelegate?.application(UIApplication.shared, didFinishLaunchingWithOptions: nil))!, "Method didFinishLaunchingWithOptions can't be nil")
         XCTAssertTrue((appDelegate?.application(UIApplication.shared, didFinishLaunchingWithOptions: nil))!, "Should return true from didFinishLaunchingWithOptions")
     }
-    
 }

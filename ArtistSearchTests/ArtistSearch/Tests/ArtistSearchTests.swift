@@ -16,9 +16,9 @@ class ArtistSearchTests: XCTestCase {
     // MARK: - Constants/Variables
     var artistSearchNavigationController: ArtistNavigationController = UIStoryboard.artistSearchNavigationController()
     var artistSearchViewController: ArtistSearchViewController? = ArtistSearchViewController()
-    var mockInteractor: MockInteractor! = MockInteractor()
-    var mockView: MockView! = MockView()
-    var mockWireFrame: MockWireFrame! = MockWireFrame()
+    var mockInteractor: ArtistSearchMockInteractor! = ArtistSearchMockInteractor()
+    var mockView: ArtistSearchMockView! = ArtistSearchMockView()
+    var mockWireFrame: ArtistSearchMockWireFrame! = ArtistSearchMockWireFrame()
     var mockPresenter: ArtistSearchPresenter?
     
     override func setUp() {
@@ -90,52 +90,4 @@ class ArtistSearchTests: XCTestCase {
         XCTAssertTrue(mockNavigationController.viewControllers.last is FavoriteSearchViewController, "The pushed viewController has to be FavoriteSearchViewController")
     }
     
-}
-
-class MockInteractor: ArtistSearchInteractorInterface {
-    
-    func searchTerm(withFilteringType filterType: FilteringType, and termString: String, completion: @escaping ([Artist], Int) -> Void) {
-        completion([Artist.init(artistId: 1, primaryGenreName: "Something", wrapperType: "Shomething", artistName: "Someone", artistType: "Some Type", artistLinkUrl: "Some URL", primaryGenreId: 2)], 200)
-    }
-    
-    func cancelAPIRequest() {
-        
-    }
-    
-}
-
-class MockView: ArtistSearchViewInterface {
-    
-    var viewReloaded = false
-    
-    func reloadDataInView(with artistsData: [Artist]) {
-        viewReloaded = true
-    }
-}
-
-class MockWireFrame: ArtistSearchWireframeInterface {
-    
-    func popFromNavigationController(animated: Bool) {
-        
-    }
-    
-    func dismiss(animated: Bool) {
-        
-    }
-    
-    func showErrorAlert(with message: String?) {
-        
-    }
-    
-    func showAlert(with title: String?, message: String?) {
-        
-    }
-    
-    func showAlert(with title: String?, message: String?, actions: [UIAlertAction]) {
-        
-    }
-    
-    func handdleHTTPError(withErrorCode errorCode: Int) {
-        
-    }
 }
