@@ -18,12 +18,11 @@ protocol FavoriteSearchViewProtocol: class {
 }
 
 protocol FavoriteSearchPresenterProtocol: class {
-    func presentFavoriteSearchs()
-    func didTapOnFavoriteArtist(witArtist artist: Artist)
-
     var view: FavoriteSearchViewProtocol? { get set }
     var interactor: FavoriteSearchInteractorProtocol? { get set }
     var router: FavoriteSearchRouterProtocol? { get set }
+
+    func presentArtistDetail(_ artist: Artist)
 }
 
 protocol FavoriteSearchInteractorProtocol: class {

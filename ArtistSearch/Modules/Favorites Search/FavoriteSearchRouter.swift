@@ -1,5 +1,5 @@
 //
-//  ArtistSerachRouter.swift
+//  FavoriteSearchRouter.swift
 //  ArtistSearch
 //
 //  Created by Luis Mejías on 28-12-19.
@@ -7,16 +7,11 @@
 //
 import UIKit
 
-class ArtistSearchRouter: ArtistSearchRouterProtocol {
-    var view: ArtistSearchViewController?
+class FavoriteSearchRouter: FavoriteSearchRouterProtocol {
+    var view: FavoriteSearchViewController?
 
     func presentArtistDetail(_ artist: Artist) {
         let artistDetailController = ArtistDetailWireframe.assemble(withSelectedArtist: artist)
         view?.navigationController?.pushViewController(artistDetailController, animated: true)
-    }
-
-    func presentFavoriteSearchs() {
-        let favoriteSearchController = FavoriteSearchWireframe.assemble()
-        view?.navigationController?.pushViewController(favoriteSearchController, animated: true)
     }
 }

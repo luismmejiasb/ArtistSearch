@@ -27,6 +27,7 @@ protocol ArtistSearchPresenterProtocol: class {
     func searchTerm(type filterType: FilteringType, and termString: String)
     func presentArtistDetail(_ artist: Artist)
     func cancelAPIRequest()
+    func presentFavoriteSearchs()
 }
 
 protocol ArtistSearchInteractorProtocol: class {
@@ -38,4 +39,5 @@ protocol ArtistSearchRouterProtocol: class {
     var view: ArtistSearchViewController? { get set }
     
     func presentArtistDetail(_ artist: Artist)
+    func presentFavoriteSearchs()
 }

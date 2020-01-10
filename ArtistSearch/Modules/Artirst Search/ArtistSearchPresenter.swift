@@ -49,4 +49,8 @@ extension ArtistSearchPresenter: ArtistSearchPresenterInterface {
     func presentArtistDetail(_ artist: Artist) {
         router?.presentArtistDetail(artist)
     }
+
+    func presentFavoriteSearchs() {
+        router?.presentFavoriteSearchs()
+    }
 }

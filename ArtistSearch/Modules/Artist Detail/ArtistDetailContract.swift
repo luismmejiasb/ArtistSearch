@@ -39,5 +39,5 @@ protocol ArtistDetailInteractorProtocol: class {
 }
 
 protocol ArtistDetailRouterProtocol: class {
-    var view: ArtistDetailViewProtocol? { get set }
+    var view: ArtistDetailViewController? { get set }
 }

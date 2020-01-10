@@ -6,18 +6,13 @@
 //  Copyright (c) 2019 Luis Mejías. All rights reserved.
 //
 //
-
 import UIKit
 import RealmSwift
 
-final class ArtistDetailPresenter {
-
-    // MARK: - Private properties -
-
-    private unowned let view: ArtistDetailViewInterface
-    private let interactor: ArtistDetailInteractorInterface
-    private let wireframe: ArtistDetailWireframeInterface
-    
+final class ArtistDetailPresenter: ArtistDetailPresenterProtocol {    
+    var view: ArtistDetailViewProtocol?
+    var interactor: ArtistDetailInteractorProtocol?
+    var router: ArtistDetailRouterProtocol?
     var selectedArtist: Artist?
 
     // MARK: - Lifecycle -

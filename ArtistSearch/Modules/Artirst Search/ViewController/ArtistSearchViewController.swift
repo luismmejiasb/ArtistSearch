@@ -55,7 +55,7 @@ class ArtistSearchViewController: UIViewController {
     }
 	
     @IBAction func showFavoriteSearchs(_ sender: Any) {
-        navigationController?.pushWireframe(FavoriteSearchWireframe())
+        presenter?.presentFavoriteSearchs()
     }
     
     func setUpUI() {
