@@ -23,9 +23,3 @@ class FavoriteSearchWireframe: FavoriteSearchWireframeProtocol {
         return view
     }
 }
-
-// MARK: - Extensions -
-
-extension FavoriteSearchWireframe: FavoriteSearchWireframeInterface {
-    
-}

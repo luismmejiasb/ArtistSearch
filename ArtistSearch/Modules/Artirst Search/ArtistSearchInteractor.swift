@@ -10,14 +10,9 @@
 import Foundation
 import Alamofire
 
-final class ArtistSearchInteractor {
+final class ArtistSearchInteractor: ArtistSearchInteractorProtocol {
     var apiRequestClient : Request?
-}
 
-// MARK: - Extensions -
-
-extension ArtistSearchInteractor: ArtistSearchInteractorInterface {
-    
     func searchTerm(withFilteringType filterType : FilteringType, and termString: String, completion: @escaping ([Artist], _ resultCode : Int) -> Void) {
         
         let enteredText: String = (termString.replacingOccurrences(of: " ", with: "+"))

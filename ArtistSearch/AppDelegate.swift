@@ -15,11 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        let initialNavController = ArtistNavigationController()
-        initialNavController.setRootWireframe(ArtistSearchWireframe())
+        let initialViewController = ArtistSearchWireframe.assemble()
 
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = initialNavController
+        window?.rootViewController = initialViewController
         window?.makeKeyAndVisible()
         
         return true

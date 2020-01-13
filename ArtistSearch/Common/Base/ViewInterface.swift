@@ -1,5 +1,4 @@
 import UIKit
-import SVProgressHUD
 
 protocol ViewInterface: class {
     func showProgressHUD()
@@ -9,11 +8,9 @@ protocol ViewInterface: class {
 extension ViewInterface {
     
     func showProgressHUD() {
-        SVProgressHUD.show()
     }
     
     func hideProgressHUD() {
-        SVProgressHUD.dismiss()
     }
     
 }

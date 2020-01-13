@@ -9,35 +9,24 @@
 
 import UIKit
 
-final class FavoriteSearchPresenter {
+final class FavoriteSearchPresenter: FavoriteSearchPresenterProtocol {
+    var view: FavoriteSearchViewProtocol?
+    var interactor: FavoriteSearchInteractorProtocol?
+    var router: FavoriteSearchRouterProtocol?
 
-    // MARK: - Private properties -
-
-    private unowned let view: FavoriteSearchViewInterface
-    private let interactor: FavoriteSearchInteractorInterface
-    private let wireframe: FavoriteSearchWireframeInterface
-
-    // MARK: - Lifecycle -
-
-    init(view: FavoriteSearchViewInterface, interactor: FavoriteSearchInteractorInterface, wireframe: FavoriteSearchWireframeInterface) {
-        self.view = view
+    init(interactor: FavoriteSearchInteractorProtocol, router: FavoriteSearchRouterProtocol) {
         self.interactor = interactor
-        self.wireframe = wireframe
+        self.router = router
     }
     
-}
-
-// MARK: - Extensions -
-
-extension FavoriteSearchPresenter: FavoriteSearchPresenterInterface {
-    
     func presentFavoriteSearchs() {
-        interactor.findAllFavoriteArtist { (artists) in
-            self.view.reloadDataInView(with: artists)
+        interactor?.findAllFavoriteArtist { (artists) in
+            self.view?.reloadDataInView(with: artists)
         }
     }
     
     func presentArtistDetail(_ artist: Artist) {
         router?.presentArtistDetail(artist)
     }
+    
 }

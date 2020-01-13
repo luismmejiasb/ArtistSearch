@@ -15,20 +15,11 @@ final class ArtistDetailPresenter: ArtistDetailPresenterProtocol {
     var router: ArtistDetailRouterProtocol?
     var selectedArtist: Artist?
 
-    // MARK: - Lifecycle -
-
-    init(view: ArtistDetailViewInterface, interactor: ArtistDetailInteractorInterface, wireframe: ArtistDetailWireframeInterface, selectedArtist: Artist) {
-        self.view = view
+    init(interactor: ArtistDetailInteractorProtocol, selectedArtist: Artist) {
         self.interactor = interactor
-        self.wireframe = wireframe
         self.selectedArtist = selectedArtist
         
     }
-}
-
-// MARK: - Extensions -
-
-extension ArtistDetailPresenter: ArtistDetailPresenterInterface {
     
     func displaySelectedArtistInformation(_ viewController: ArtistDetailViewController) {
         viewController.title = selectedArtist?.artistName
@@ -61,13 +52,13 @@ extension ArtistDetailPresenter: ArtistDetailPresenterInterface {
     }
     
     func markFavoriteArtist() {
-        interactor.saveArtist(selectedArtist!) { completion in
+        interactor?.saveArtist(selectedArtist!) { completion in
             if completion {
-                self.wireframe.showAlert(with: NSLocalizedString("success_action_title", comment: ""), 
-                                         message: NSLocalizedString("mark_favorite_success_message", comment: ""))
+                /*slf.wireframe.showAlert(with: NSLocalizedString("success_action_title", comment: ""), 
+                                         message: NSLocalizedString("mark_favorite_success_message", comment: ""))*/
             } else {
-                self.wireframe.showAlert(with: NSLocalizedString("failure_action_title", comment: ""), 
-                                         message: NSLocalizedString("mark_favorite_failure_message", comment: ""))
+                /*wireframe.showAlert(with: NSLocalizedString("failure_action_title", comment: ""), 
+                                         message: NSLocalizedString("mark_favorite_failure_message", comment: ""))*/
             }
             
             self.validateFavoriteArtist()
@@ -75,13 +66,13 @@ extension ArtistDetailPresenter: ArtistDetailPresenterInterface {
     }
     
     func unmarkFavoriteArtist() {
-        interactor.deleteArtist(selectedArtist!) { completion in
+        interactor?.deleteArtist(selectedArtist!) { completion in
             if completion {
-                self.wireframe.showAlert(with: NSLocalizedString("success_action_title", comment: ""), 
-                                         message: NSLocalizedString("unmark_favorite_success_message", comment: ""))
+                /*self.wireframe.showAlert(with: NSLocalizedString("success_action_title", comment: ""), 
+                                         message: NSLocalizedString("unmark_favorite_success_message", comment: ""))*/
             } else {
-                self.wireframe.showAlert(with: NSLocalizedString("failure_action_title", comment: ""), 
-                                         message: NSLocalizedString("unmark_favorite_failure_message", comment: ""))
+                /*self.wireframe.showAlert(with: NSLocalizedString("failure_action_title", comment: ""), 
+                                         message: NSLocalizedString("unmark_favorite_failure_message", comment: ""))*/
             }
             self.validateFavoriteArtist()
         }
@@ -89,9 +80,9 @@ extension ArtistDetailPresenter: ArtistDetailPresenterInterface {
     
     func validateFavoriteArtist() {
         if let artist = selectedArtist {
-            view.setFavoriteState(interactor.isFavorite(artist))
+            view?.setFavoriteState(interactor?.isFavorite(artist) ?? false)
         } else {
-            view.setFavoriteState(false)
+            view?.setFavoriteState(false)
         }
     }
 }

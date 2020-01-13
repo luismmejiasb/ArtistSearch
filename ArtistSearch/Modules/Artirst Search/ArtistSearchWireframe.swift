@@ -27,7 +27,3 @@ class ArtistSearchWireframe: ArtistSearchWireframeProtocol {
     }
 
 }
-
-// MARK: - Extensions -
-
-extension ArtistSearchWireframe: ArtistSearchWireframeInterface {}
