@@ -84,7 +84,7 @@ class ArtistSearchViewController: UIViewController {
 
 // MARK: - Extensions
 
-extension ArtistSearchViewController: ArtistSearchViewInterface {
+extension ArtistSearchViewController: ArtistSearchViewProtocol {
 
     func reloadDataInView(with artistData: [Artist]) {
         searchData = artistData
