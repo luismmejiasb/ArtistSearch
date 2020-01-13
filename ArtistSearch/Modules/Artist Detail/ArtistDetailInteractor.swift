@@ -15,7 +15,7 @@ final class ArtistDetailInteractor {
 
 // MARK: - Extensions -
 
-extension ArtistDetailInteractor: ArtistDetailInteractorInterface {
+extension ArtistDetailInteractor: ArtistDetailInteractorProtocol {
     
     func saveArtist(_ artist: Artist, completion: @escaping (Bool) -> Void) {
         

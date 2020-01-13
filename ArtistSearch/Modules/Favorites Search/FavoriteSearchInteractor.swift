@@ -16,7 +16,7 @@ final class FavoriteSearchInteractor {
 
 // MARK: - Extensions -
 
-extension FavoriteSearchInteractor: FavoriteSearchInteractorInterface {
+extension FavoriteSearchInteractor: FavoriteSearchInteractorProtocol {
     
     func findAllFavoriteArtist( completion: @escaping ([ArtistObject]) -> Void) {
         // swiftlint:disable force_try

@@ -1,6 +1,0 @@
-module Pods_ArtistSearchTests {
-  umbrella header "Pods-ArtistSearchTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
