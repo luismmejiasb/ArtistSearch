@@ -46,11 +46,8 @@ extension UINavigationController {
         navigationBar.isTranslucent = false
         navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: GColors.textColor]
         navigationBar.backItem?.titleView?.tintColor = GColors.lightTintColor
-        
-        if #available(iOS 11.0, *) {
-            navigationBar.prefersLargeTitles = true
-            navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: GColors.textColor]
-        }
+        navigationBar.prefersLargeTitles = true
+        navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: GColors.textColor]
     }
 }
 
