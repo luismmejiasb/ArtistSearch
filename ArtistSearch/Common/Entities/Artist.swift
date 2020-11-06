@@ -19,6 +19,8 @@ struct Artist {
     var artistLinkUrl: String = ""
     var primaryGenreId: Int = 0
     
+    init(){}
+    
     init(artistId: Int, primaryGenreName: String, wrapperType: String, artistName: String, artistType: String, artistLinkUrl: String, primaryGenreId: Int) {
         self.artistId = artistId
         self.primaryGenreName = primaryGenreName

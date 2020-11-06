@@ -54,7 +54,7 @@ extension UINavigationController {
     }
 }
 
-/*extension UIStoryboard {
+extension UIStoryboard {
     
     class func artistSearchStoryBoard() -> UIStoryboard {
         return UIStoryboard(name: "ArtistSearch", bundle: .main)
@@ -68,8 +68,8 @@ extension UINavigationController {
         return UIStoryboard(name: "FavoriteSearch", bundle: .main)
     }
 
-    class func artistSearchNavigationController() -> ArtistNavigationController {
-        return UIStoryboard.artistSearchStoryBoard().instantiateInitialViewController() as? ArtistNavigationController ?? ArtistNavigationController()
+    class func artistSearchNavigationController() -> UINavigationController {
+        return UIStoryboard.artistSearchStoryBoard().instantiateInitialViewController() as? UINavigationController ?? UINavigationController()
     }
     
     class func artistSearchViewController() -> ArtistSearchViewController {
@@ -84,7 +84,7 @@ extension UINavigationController {
         return UIStoryboard.favoriteSearchStoryBoard().instantiateInitialViewController() as? FavoriteSearchViewController ?? FavoriteSearchViewController()
     }
 
-}*/
+}
 
 public enum ArtistSearchAI: String {
     case collectionView = "ArtistSearch.collectionView", serachBar = "ArtistSearch.serachBar", informationView = "ArtistSearch.informationView", informationLabel = "ArtistSearch.informationLabel", favoriteButton = "ArtistSearch.favoriteButton"

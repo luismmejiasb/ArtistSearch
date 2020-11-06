@@ -9,7 +9,7 @@
 import XCTest
 @testable import ArtistSearch
 
-class ArtistSearchUITests: MainUITest {
+/*class ArtistSearchUITests: MainUITest {
 
     override func setUp() {
         continueAfterFailure = false
@@ -39,4 +39,4 @@ class ArtistSearchUITests: MainUITest {
         let resultCollectionCell = XCUIApplication().collectionViews["ArtistSearch.collectionView"].staticTexts["Coldplay"] 
         resultCollectionCell.tap()
     }
-}
+}*/
