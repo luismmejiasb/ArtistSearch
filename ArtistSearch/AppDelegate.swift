@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  ArtistSearch
-//
-//  Created by Luis Mejías on 5/20/19.
-//  Copyright © 2019 Luis Mejías. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
