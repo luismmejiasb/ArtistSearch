@@ -1,11 +1,3 @@
-//
-//  MovieCollectionCell.swift
-//  MovApp
-//
-//  Created by Luis Mejías on 2/1/19.
-//  Copyright © 2019 Luis Mejías. All rights reserved.
-//
-
 import Foundation
 import UIKit
 
