@@ -1,12 +1,3 @@
-//
-//  ArtistDetailInteractor.swift
-//  ArtistSearch
-//
-//  Created by Luis Mejías on 5/21/19.
-//  Copyright (c) 2019 Luis Mejías. All rights reserved.
-//
-//
-
 import Foundation
 import RealmSwift
 

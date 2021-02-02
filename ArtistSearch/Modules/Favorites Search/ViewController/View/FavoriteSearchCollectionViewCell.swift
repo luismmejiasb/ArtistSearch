@@ -1,11 +1,3 @@
-//
-//  FavoriteSearchCollectionViewCell.swift
-//  MovApp
-//
-//  Created by Luis Mejías on 10/01/2020
-//  Copyright © 2019 Luis Mejías. All rights reserved.
-//
-
 import Foundation
 import UIKit
 

@@ -1,10 +1,3 @@
-//
-//  ArtistSerachRouter.swift
-//  ArtistSearch
-//
-//  Created by Luis Mejías on 28-12-19.
-//  Copyright © 2019 Luis Mejías. All rights reserved.
-//
 import UIKit
 
 class ArtistSearchRouter: ArtistSearchRouterProtocol {
