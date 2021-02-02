@@ -25,9 +25,7 @@
 		28625AC4229325060095D95A /* ArtistSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28625ABE229325060095D95A /* ArtistSearchPresenter.swift */; };
 		28625AC5229325060095D95A /* ArtistSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28625ABF229325060095D95A /* ArtistSearchViewController.swift */; };
 		28625AC7229325060095D95A /* ArtistSearchWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28625AC1229325060095D95A /* ArtistSearchWireframe.swift */; };
-		28625AD5229325FA0095D95A /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28625AD0229325FA0095D95A /* BaseWireframe.swift */; };
 		28625AD6229325FA0095D95A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28625AD1229325FA0095D95A /* Extensions.swift */; };
-		28625AD7229325FA0095D95A /* ViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28625AD2229325FA0095D95A /* ViewInterface.swift */; };
 		28625AE0229328240095D95A /* FavoriteSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28625ADA229328240095D95A /* FavoriteSearchPresenter.swift */; };
 		28625AE1229328240095D95A /* FavoriteSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28625ADB229328240095D95A /* FavoriteSearchViewController.swift */; };
 		28625AE2229328240095D95A /* FavoriteSearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28625ADC229328240095D95A /* FavoriteSearchInteractor.swift */; };
@@ -99,11 +97,7 @@
 		28625ABF229325060095D95A /* ArtistSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchViewController.swift; sourceTree = "<group>"; };
 		28625AC0229325060095D95A /* ArtistSearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchInteractor.swift; sourceTree = "<group>"; };
 		28625AC1229325060095D95A /* ArtistSearchWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchWireframe.swift; sourceTree = "<group>"; };
-		28625ACE229325F90095D95A /* InteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractorInterface.swift; sourceTree = "<group>"; };
-		28625ACF229325F90095D95A /* PresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterInterface.swift; sourceTree = "<group>"; };
-		28625AD0229325FA0095D95A /* BaseWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWireframe.swift; sourceTree = "<group>"; };
 		28625AD1229325FA0095D95A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		28625AD2229325FA0095D95A /* ViewInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInterface.swift; sourceTree = "<group>"; };
 		28625ADA229328240095D95A /* FavoriteSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSearchPresenter.swift; sourceTree = "<group>"; };
 		28625ADB229328240095D95A /* FavoriteSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSearchViewController.swift; sourceTree = "<group>"; };
 		28625ADC229328240095D95A /* FavoriteSearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSearchInteractor.swift; sourceTree = "<group>"; };
@@ -279,24 +273,12 @@
 		28625ACB2293254C0095D95A /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				28625ACC229325540095D95A /* Base */,
 				28625B2A22934F3E0095D95A /* Enums */,
 				28625B2722934ED50095D95A /* Entities */,
 				28625B24229345900095D95A /* Constants */,
 				28625AE4229330D40095D95A /* Extensions */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		28625ACC229325540095D95A /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				28625AD0229325FA0095D95A /* BaseWireframe.swift */,
-				28625ACE229325F90095D95A /* InteractorInterface.swift */,
-				28625ACF229325F90095D95A /* PresenterInterface.swift */,
-				28625AD2229325FA0095D95A /* ViewInterface.swift */,
-			);
-			path = Base;
 			sourceTree = "<group>";
 		};
 		28625ACD229325C00095D95A /* Favorites Search */ = {
@@ -613,7 +595,6 @@
 				28625AE3229328240095D95A /* FavoriteSearchWireframe.swift in Sources */,
 				28483CE623CD0C81004CDE54 /* ArtistSearchRouter.swift in Sources */,
 				28625B26229345A40095D95A /* Constants.swift in Sources */,
-				28625AD5229325FA0095D95A /* BaseWireframe.swift in Sources */,
 				28625B2F2293538A0095D95A /* ArtistCollectionViewCell.swift in Sources */,
 				2837B93B229497AA001E2B04 /* ArtistDetailInteractor.swift in Sources */,
 				2837B939229497AA001E2B04 /* ArtistDetailPresenter.swift in Sources */,
@@ -634,7 +615,6 @@
 				28625AC5229325060095D95A /* ArtistSearchViewController.swift in Sources */,
 				28625AE2229328240095D95A /* FavoriteSearchInteractor.swift in Sources */,
 				28625AC4229325060095D95A /* ArtistSearchPresenter.swift in Sources */,
-				28625AD7229325FA0095D95A /* ViewInterface.swift in Sources */,
 				28625B2C22934F510095D95A /* Enums.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

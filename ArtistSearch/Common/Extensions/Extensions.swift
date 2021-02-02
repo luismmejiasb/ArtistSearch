@@ -8,16 +8,6 @@
 
 import UIKit
 
-extension UIStoryboard {
-    
-    func instantiateViewController<T: UIViewController>(ofType _: T.Type, withIdentifier identifier: String? = nil) -> T {
-        // swiftlint:disable force_cast
-        let identifier = identifier ?? String(describing: T.self)
-        return instantiateViewController(withIdentifier: identifier) as! T
-    }
-    
-}
-
 public struct GColors {
     static let blackTintColor      = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     static let darkTintColor       = #colorLiteral(red: 0.08276451379, green: 0, blue: 0.2638674974, alpha: 1)

@@ -9,17 +9,24 @@
 import Foundation
 import RealmSwift
 
-struct Artist {
+struct Artist: Codable {
+    var artistId: Int
+    var primaryGenreName: String
+    var wrapperType: String
+    var artistName: String
+    var artistType: String
+    var artistLinkUrl: String
+    var primaryGenreId: Int
     
-    var artistId: Int = 0
-    var primaryGenreName: String = ""
-    var wrapperType: String = ""
-    var artistName: String = ""
-    var artistType: String = ""
-    var artistLinkUrl: String = ""
-    var primaryGenreId: Int = 0
-    
-    init(){}
+    init(){
+        self.artistId =  0
+        self.primaryGenreName = ""
+        self.wrapperType = ""
+        self.artistName = ""
+        self.artistType = ""
+        self.artistLinkUrl = ""
+        self.primaryGenreId =  0
+    }
     
     init(artistId: Int, primaryGenreName: String, wrapperType: String, artistName: String, artistType: String, artistLinkUrl: String, primaryGenreId: Int) {
         self.artistId = artistId
@@ -33,58 +40,25 @@ struct Artist {
 }
 
 class ArtistObject: Object {
-    
-    @objc dynamic var artistId: Int = 0
-    @objc dynamic var primaryGenreName: String = ""
-    @objc dynamic var wrapperType: String = ""
-    @objc dynamic var artistName: String = ""
-    @objc dynamic var artistType: String = ""
-    @objc dynamic var artistLinkUrl: String = ""
-    @objc dynamic var primaryGenreId: Int = 0
+    @objc dynamic var artistId: Int
+    @objc dynamic var primaryGenreName: String
+    @objc dynamic var wrapperType: String
+    @objc dynamic var artistName: String
+    @objc dynamic var artistType: String
+    @objc dynamic var artistLinkUrl: String
+    @objc dynamic var primaryGenreId: Int
     
     override static func primaryKey() -> String? {
         return "artistId"
     }
-    
-}
 
-extension Artist: Decodable {
-    
-    enum MyStructKeys: String, CodingKey {
-        // swiftlint:disable redundant_string_enum_value
-        case artistId = "artistId"
-        case primaryGenreName = "primaryGenreName"
-        case wrapperType = "wrapperType"
-        case artistName = "artistName"
-        case artistType = "artistType"
-        case artistLinkUrl = "artistLinkUrl"
-        case primaryGenreId = "primaryGenreId"
-    }
-    
-    init(from decoder: Decoder) throws {
-        
-        let container = try decoder.container(keyedBy: MyStructKeys.self)
-        
-        let artistId: Int = try container.decodeIfPresent(Int.self, forKey: .artistId) ?? 0
-        
-        let primaryGenreName: String = try container.decodeIfPresent(String.self, forKey: .primaryGenreName) ?? "No information"
-        
-        let wrapperType: String = try container.decodeIfPresent(String.self, forKey: .wrapperType) ?? "No information"
-        
-        let artistName: String = try container.decodeIfPresent(String.self, forKey: .artistName) ?? "No information"
-        
-        let artistType: String = try container.decodeIfPresent(String.self, forKey: .artistType) ?? "No information"
-        
-        let artistLinkUrl: String = try container.decodeIfPresent(String.self, forKey: .artistLinkUrl) ?? "No information"
-        
-        let primaryGenreId: Int = try container.decodeIfPresent(Int.self, forKey: .primaryGenreId) ?? 0
-        
-        self.init(artistId: artistId, 
-                  primaryGenreName: primaryGenreName, 
-                  wrapperType: wrapperType, 
-                  artistName: artistName, 
-                  artistType: artistType, 
-                  artistLinkUrl: artistLinkUrl, 
-                  primaryGenreId: primaryGenreId)
+    required init() {
+        self.artistId =  0
+        self.primaryGenreName = ""
+        self.wrapperType = ""
+        self.artistName = ""
+        self.artistType = ""
+        self.artistLinkUrl = ""
+        self.primaryGenreId =  0
     }
 }
