@@ -1,8 +1,7 @@
 import UIKit
 import RealmSwift
 
-final class FavoriteSearchViewController: UIViewController {
-    // MARK: - IBOutlets
+class FavoriteSearchViewController: UIViewController {
     @IBOutlet weak var favoriteSearchCollectionView: UICollectionView! {
         didSet {
             favoriteSearchCollectionView.register(FavoriteSearchCollectionViewCell.nib, forCellWithReuseIdentifier: FavoriteSearchCollectionViewCell.reusableIdentifier)
@@ -17,8 +16,6 @@ final class FavoriteSearchViewController: UIViewController {
             favoriteSearchCollectionView.reloadData()
         }
     }
-    
-    // MARK: - Lifecycle -
     
     override func viewDidLoad() {
         super.viewDidLoad()

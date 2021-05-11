@@ -1,6 +1,6 @@
 import UIKit
 
-final class ArtistDetailViewController: UIViewController {
+class ArtistDetailViewController: UIViewController {
     @IBOutlet weak var favoriteSetterButton: UIButton!
     @IBOutlet weak var buttonSetterImageView: UIImageView!
     @IBOutlet weak var genderLabel: UILabel!

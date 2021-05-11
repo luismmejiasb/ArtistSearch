@@ -22,7 +22,6 @@ class ArtistSearchViewController: UIViewController {
     }
     var selectedFilterType: FilteringType = .artist
 
-    // MARK: - Lifecycle -
     
     override func viewDidLoad() {
         super.viewDidLoad()

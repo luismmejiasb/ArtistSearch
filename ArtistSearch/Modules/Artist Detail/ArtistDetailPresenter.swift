@@ -1,7 +1,7 @@
 import UIKit
 import RealmSwift
 
-final class ArtistDetailPresenter: ArtistDetailPresenterProtocol {    
+class ArtistDetailPresenter: ArtistDetailPresenterProtocol {    
     var view: ArtistDetailViewProtocol?
     var interactor: ArtistDetailInteractorProtocol?
     var router: ArtistDetailRouterProtocol?

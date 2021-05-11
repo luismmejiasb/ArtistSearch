@@ -1,13 +1,6 @@
-import Foundation
 import RealmSwift
 
-final class FavoriteSearchInteractor {
-    
-}
-
-// MARK: - Extensions -
-
-extension FavoriteSearchInteractor: FavoriteSearchInteractorProtocol {
+class FavoriteSearchInteractor: FavoriteSearchInteractorProtocol {
     
     func findAllFavoriteArtist( completion: @escaping ([ArtistObject]) -> Void) {
         // swiftlint:disable force_try
