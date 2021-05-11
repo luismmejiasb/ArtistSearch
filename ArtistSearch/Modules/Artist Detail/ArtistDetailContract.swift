@@ -1,12 +1,3 @@
-//
-//  ArtistDetailInterfaces.swift
-//  ArtistSearch
-//
-//  Created by Luis Mejías on 5/21/19.
-//  Copyright (c) 2019 Luis Mejías. All rights reserved.
-//
-//
-
 import UIKit
 
 protocol ArtistDetailWireFrameProtocol: class {
@@ -30,6 +21,7 @@ protocol ArtistDetailPresenterProtocol: class {
     func unmarkFavoriteArtist()
     func validateFavoriteArtist()
     func showFavoriteInformation(_ viewController: ArtistDetailViewController)
+    func displayAlert(withMessage message: String)
 }
 
 protocol ArtistDetailInteractorProtocol: class {
@@ -40,4 +32,6 @@ protocol ArtistDetailInteractorProtocol: class {
 
 protocol ArtistDetailRouterProtocol: class {
     var view: ArtistDetailViewController? { get set }
+    
+    func displayAlert(withMessage message: String)
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,7 +12,6 @@
             <connections>
                 <outlet property="searchBar" destination="Oz3-3Z-wVM" id="yZB-Kw-vqH"/>
                 <outlet property="searchCollectionView" destination="rAP-73-duI" id="Tpv-UY-t8o"/>
-                <outlet property="searchDisplayController" destination="MCx-cI-xSk" id="GAA-ec-1fA"/>
                 <outlet property="searchInformationImageView" destination="C5C-GX-ZVH" id="JvL-Ju-DXP"/>
                 <outlet property="searchInformationLabel" destination="yOh-ou-TGW" id="sfJ-3T-0Er"/>
                 <outlet property="searchInformationView" destination="z62-RN-Bwx" id="O5x-UQ-k7X"/>
@@ -20,7 +19,6 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <searchDisplayController id="MCx-cI-xSk"/>
         <view contentMode="scaleToFill" id="4Oj-j3-LNv">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -59,11 +57,10 @@
                                 <constraint firstAttribute="width" constant="100" id="nan-Vi-dTG"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information detail" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOh-ou-TGW">
-                            <rect key="frame" x="0.0" y="108" width="223" height="91"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information detail" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOh-ou-TGW">
+                            <rect key="frame" x="45" y="108" width="133" height="91"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="91" id="1W6-jk-2T4"/>
-                                <constraint firstAttribute="width" constant="223" id="e0u-aH-9o1"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="91" id="rY7-i5-DUp"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -71,11 +68,14 @@
                         </label>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="199" id="VGO-i7-6k9"/>
+                        <constraint firstAttribute="bottom" secondItem="yOh-ou-TGW" secondAttribute="bottom" id="1sV-NY-vFd"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="199" id="VGO-i7-6k9"/>
                         <constraint firstAttribute="width" constant="223" id="Xnd-l8-54D"/>
+                        <constraint firstItem="yOh-ou-TGW" firstAttribute="top" secondItem="C5C-GX-ZVH" secondAttribute="bottom" constant="8" symbolic="YES" id="t2l-k3-MC6"/>
                     </constraints>
                 </stackView>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="seD-Dl-0EM"/>
             <color key="backgroundColor" red="0.062745098039215685" green="0.0" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="rAP-73-duI" firstAttribute="leading" secondItem="seD-Dl-0EM" secondAttribute="leading" constant="9" id="2Ou-6g-kdB"/>
@@ -88,7 +88,6 @@
                 <constraint firstItem="z62-RN-Bwx" firstAttribute="top" secondItem="seD-Dl-0EM" secondAttribute="top" constant="89" id="xMD-2H-5vc"/>
                 <constraint firstItem="rAP-73-duI" firstAttribute="top" secondItem="seD-Dl-0EM" secondAttribute="top" constant="66" id="xYm-bq-CoH"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="seD-Dl-0EM"/>
             <point key="canvasLocation" x="565.60000000000002" y="-21.139430284857571"/>
         </view>
         <navigationItem title="Artist Search" id="t8u-gR-KHk">

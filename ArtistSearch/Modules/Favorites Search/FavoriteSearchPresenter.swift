@@ -1,15 +1,6 @@
-//
-//  FavoriteSearchPresenter.swift
-//  ArtistSearch
-//
-//  Created by Luis Mejías on 5/20/19.
-//  Copyright (c) 2019 Luis Mejías. All rights reserved.
-//
-//
-
 import UIKit
 
-final class FavoriteSearchPresenter: FavoriteSearchPresenterProtocol {
+class FavoriteSearchPresenter: FavoriteSearchPresenterProtocol {
     var view: FavoriteSearchViewProtocol?
     var interactor: FavoriteSearchInteractorProtocol?
     var router: FavoriteSearchRouterProtocol?

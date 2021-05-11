@@ -1,17 +1,7 @@
-//
-//  FavoriteSearchViewController.swift
-//  ArtistSearch
-//
-//  Created by Luis Mejías on 5/20/19.
-//  Copyright (c) 2019 Luis Mejías. All rights reserved.
-//
-//
-
 import UIKit
 import RealmSwift
 
-final class FavoriteSearchViewController: UIViewController {
-    // MARK: - IBOutlets
+class FavoriteSearchViewController: UIViewController {
     @IBOutlet weak var favoriteSearchCollectionView: UICollectionView! {
         didSet {
             favoriteSearchCollectionView.register(FavoriteSearchCollectionViewCell.nib, forCellWithReuseIdentifier: FavoriteSearchCollectionViewCell.reusableIdentifier)
@@ -26,8 +16,6 @@ final class FavoriteSearchViewController: UIViewController {
             favoriteSearchCollectionView.reloadData()
         }
     }
-    
-    // MARK: - Lifecycle -
     
     override func viewDidLoad() {
         super.viewDidLoad()

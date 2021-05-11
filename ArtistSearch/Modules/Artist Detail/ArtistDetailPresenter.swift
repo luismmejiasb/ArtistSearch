@@ -1,15 +1,7 @@
-//
-//  ArtistDetailPresenter.swift
-//  ArtistSearch
-//
-//  Created by Luis Mejías on 5/21/19.
-//  Copyright (c) 2019 Luis Mejías. All rights reserved.
-//
-//
 import UIKit
 import RealmSwift
 
-final class ArtistDetailPresenter: ArtistDetailPresenterProtocol {    
+class ArtistDetailPresenter: ArtistDetailPresenterProtocol {    
     var view: ArtistDetailViewProtocol?
     var interactor: ArtistDetailInteractorProtocol?
     var router: ArtistDetailRouterProtocol?
@@ -54,11 +46,9 @@ final class ArtistDetailPresenter: ArtistDetailPresenterProtocol {
     func markFavoriteArtist() {
         interactor?.saveArtist(selectedArtist!) { completion in
             if completion {
-                /*slf.wireframe.showAlert(with: NSLocalizedString("success_action_title", comment: ""), 
-                                         message: NSLocalizedString("mark_favorite_success_message", comment: ""))*/
+                self.router?.displayAlert(withMessage: NSLocalizedString("mark_favorite_success_message", comment: ""))
             } else {
-                /*wireframe.showAlert(with: NSLocalizedString("failure_action_title", comment: ""), 
-                                         message: NSLocalizedString("mark_favorite_failure_message", comment: ""))*/
+                self.router?.displayAlert(withMessage: NSLocalizedString("mark_favorite_failure_message", comment: ""))
             }
             
             self.validateFavoriteArtist()
@@ -68,12 +58,11 @@ final class ArtistDetailPresenter: ArtistDetailPresenterProtocol {
     func unmarkFavoriteArtist() {
         interactor?.deleteArtist(selectedArtist!) { completion in
             if completion {
-                /*self.wireframe.showAlert(with: NSLocalizedString("success_action_title", comment: ""), 
-                                         message: NSLocalizedString("unmark_favorite_success_message", comment: ""))*/
+                self.router?.displayAlert(withMessage: NSLocalizedString("unmark_favorite_success_message", comment: ""))
             } else {
-                /*self.wireframe.showAlert(with: NSLocalizedString("failure_action_title", comment: ""), 
-                                         message: NSLocalizedString("unmark_favorite_failure_message", comment: ""))*/
+                self.router?.displayAlert(withMessage: NSLocalizedString("unmark_favorite_failure_message", comment: ""))
             }
+
             self.validateFavoriteArtist()
         }
     }
@@ -84,5 +73,9 @@ final class ArtistDetailPresenter: ArtistDetailPresenterProtocol {
         } else {
             view?.setFavoriteState(false)
         }
+    }
+    
+    func displayAlert(withMessage message: String) {
+        router?.displayAlert(withMessage: message)
     }
 }

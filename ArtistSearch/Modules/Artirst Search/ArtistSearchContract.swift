@@ -1,11 +1,3 @@
-//
-//  ArtistSearchInterfaces.swift
-//  ArtistSearch
-//
-//  Created by Luis Mejías on 5/20/19.
-//  Copyright (c) 2019 Luis Mejías. All rights reserved.
-//
-//
 import Foundation
 import UIKit
 
@@ -40,4 +32,5 @@ protocol ArtistSearchRouterProtocol: class {
     
     func presentArtistDetail(_ artist: Artist)
     func presentFavoriteSearchs()
+    func displayAlert(withMessage message: String)
 }

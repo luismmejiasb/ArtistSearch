@@ -1,13 +1,5 @@
-//
-//  ArtistSearchPresenter.swift
-//  ArtistSearch
-//
-//  Created by Luis Mejías on 5/20/19.
-//  Copyright (c) 2019 Luis Mejías. All rights reserved.
-//
-//
-
 import UIKit
+import HTTPErrorMessage
 
 class ArtistSearchPresenter: ArtistSearchPresenterProtocol {
     var view: ArtistSearchViewProtocol?
@@ -18,12 +10,11 @@ class ArtistSearchPresenter: ArtistSearchPresenterProtocol {
         self.interactor = interactor
         self.router = router
     }
-    
+
     func searchTerm(type filterType: FilteringType, and termString: String) {
         interactor?.searchTerm(withFilteringType: filterType, and: termString) { artistsEntity, resultCode  in
             if resultCode != 200 {
-                //self.wireframe.handdleHTTPError(withErrorCode: resultCode)
-                return
+                self.router?.displayAlert(withMessage: HTTPErrorMessage.getHTTPError(withErrorCode: resultCode))
             }
             self.view?.reloadDataInView(with: artistsEntity)
         }
@@ -39,5 +30,9 @@ class ArtistSearchPresenter: ArtistSearchPresenterProtocol {
 
     func presentFavoriteSearchs() {
         router?.presentFavoriteSearchs()
+    }
+    
+    func displayAlert(withMessage message: String) {
+        router?.displayAlert(withMessage: message)
     }
 }

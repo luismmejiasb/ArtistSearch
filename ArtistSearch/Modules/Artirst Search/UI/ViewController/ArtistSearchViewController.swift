@@ -1,11 +1,3 @@
-//
-//  ArtistSearchViewController.swift
-//  ArtistSearch
-//
-//  Created by Luis Mejías on 5/20/19.
-//  Copyright (c) 2019 Luis Mejías. All rights reserved.
-//
-//
 import UIKit
 
 class ArtistSearchViewController: UIViewController {
@@ -30,7 +22,6 @@ class ArtistSearchViewController: UIViewController {
     }
     var selectedFilterType: FilteringType = .artist
 
-    // MARK: - Lifecycle -
     
     override func viewDidLoad() {
         super.viewDidLoad()

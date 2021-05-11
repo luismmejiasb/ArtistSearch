@@ -1,22 +1,8 @@
-//
-//  ArtistDetailInteractor.swift
-//  ArtistSearch
-//
-//  Created by Luis Mejías on 5/21/19.
-//  Copyright (c) 2019 Luis Mejías. All rights reserved.
-//
-//
-
 import Foundation
 import RealmSwift
 
-final class ArtistDetailInteractor {
-}
+class ArtistDetailInteractor: ArtistDetailInteractorProtocol {
 
-// MARK: - Extensions -
-
-extension ArtistDetailInteractor: ArtistDetailInteractorProtocol {
-    
     func saveArtist(_ artist: Artist, completion: @escaping (Bool) -> Void) {
         
         let selectedArtistObject: ArtistObject = ArtistObject()
@@ -27,6 +13,7 @@ extension ArtistDetailInteractor: ArtistDetailInteractorProtocol {
         selectedArtistObject.artistType = artist.artistType
         selectedArtistObject.artistLinkUrl = artist.artistLinkUrl
         selectedArtistObject.primaryGenreId = artist.primaryGenreId
+
         // swiftlint:disable force_try
         let realm = try! Realm()
         
