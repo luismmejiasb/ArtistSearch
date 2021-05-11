@@ -21,6 +21,7 @@ protocol ArtistDetailPresenterProtocol: class {
     func unmarkFavoriteArtist()
     func validateFavoriteArtist()
     func showFavoriteInformation(_ viewController: ArtistDetailViewController)
+    func displayAlert(withMessage message: String)
 }
 
 protocol ArtistDetailInteractorProtocol: class {
@@ -31,4 +32,6 @@ protocol ArtistDetailInteractorProtocol: class {
 
 protocol ArtistDetailRouterProtocol: class {
     var view: ArtistDetailViewController? { get set }
+    
+    func displayAlert(withMessage message: String)
 }
