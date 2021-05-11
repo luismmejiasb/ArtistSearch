@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28044343264B361F00C8C130 /* HTTPErrorMessage in Frameworks */ = {isa = PBXBuildFile; productRef = 28044342264B361F00C8C130 /* HTTPErrorMessage */; };
+		2804435D264B390F00C8C130 /* ArtistDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2804435C264B390F00C8C130 /* ArtistDetailRouter.swift */; };
 		2814115023CD085100181DBF /* FavoriteSearchContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2814114F23CD085100181DBF /* FavoriteSearchContract.swift */; };
 		2814115223CD089F00181DBF /* FavoriteSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2814115123CD089F00181DBF /* FavoriteSearchRouter.swift */; };
 		28339434229323BD0011B5C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28339433229323BD0011B5C4 /* AppDelegate.swift */; };
@@ -69,6 +71,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2804435C264B390F00C8C130 /* ArtistDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailRouter.swift; sourceTree = "<group>"; };
 		2814114F23CD085100181DBF /* FavoriteSearchContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteSearchContract.swift; sourceTree = "<group>"; };
 		2814115123CD089F00181DBF /* FavoriteSearchRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteSearchRouter.swift; sourceTree = "<group>"; };
 		28339430229323BD0011B5C4 /* ArtistSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtistSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +134,7 @@
 				28872E8423B96B59009E7963 /* RealmSwift in Frameworks */,
 				28872E8223B96B59009E7963 /* Realm in Frameworks */,
 				28872E7F23B96B1B009E7963 /* Alamofire in Frameworks */,
+				28044343264B361F00C8C130 /* HTTPErrorMessage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +172,33 @@
 				2803C80F2319C8D00064B569 /* Mocks */,
 			);
 			path = ArtistSearch;
+			sourceTree = "<group>";
+		};
+		2804436D264B3CB000C8C130 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				28FB941323C8EFF5008C56E4 /* Xibs */,
+				28625B2D229353610095D95A /* ViewController */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		2804436E264B3CC000C8C130 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				28FB942023C8F8B5008C56E4 /* Xibs */,
+				28FB942123C8F8BD008C56E4 /* ViewController */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		2804436F264B3CD600C8C130 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				28FB942523C90325008C56E4 /* Xib */,
+				28FB942423C90320008C56E4 /* ViewController */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		28339427229323BD0011B5C4 = {
@@ -236,12 +267,12 @@
 		2837B93D229497AD001E2B04 /* Artist Detail */ = {
 			isa = PBXGroup;
 			children = (
-				28FB942023C8F8B5008C56E4 /* Xib */,
-				28FB942123C8F8BD008C56E4 /* ViewController */,
+				2837B936229497AA001E2B04 /* ArtistDetailWireframe.swift */,
 				2837B932229497AA001E2B04 /* ArtistDetailContract.swift */,
 				2837B933229497AA001E2B04 /* ArtistDetailPresenter.swift */,
 				2837B935229497AA001E2B04 /* ArtistDetailInteractor.swift */,
-				2837B936229497AA001E2B04 /* ArtistDetailWireframe.swift */,
+				2804435C264B390F00C8C130 /* ArtistDetailRouter.swift */,
+				2804436E264B3CC000C8C130 /* UI */,
 			);
 			path = "Artist Detail";
 			sourceTree = "<group>";
@@ -249,13 +280,12 @@
 		28625AC82293250D0095D95A /* Artirst Search */ = {
 			isa = PBXGroup;
 			children = (
-				28FB941323C8EFF5008C56E4 /* Xib */,
-				28625B2D229353610095D95A /* ViewController */,
-				28483CE523CD0C81004CDE54 /* ArtistSearchRouter.swift */,
 				28809B1E23CD09A00024EB6F /* ArtistSearchContract.swift */,
+				28625AC1229325060095D95A /* ArtistSearchWireframe.swift */,
 				28625ABE229325060095D95A /* ArtistSearchPresenter.swift */,
 				28625AC0229325060095D95A /* ArtistSearchInteractor.swift */,
-				28625AC1229325060095D95A /* ArtistSearchWireframe.swift */,
+				28483CE523CD0C81004CDE54 /* ArtistSearchRouter.swift */,
+				2804436D264B3CB000C8C130 /* UI */,
 			);
 			path = "Artirst Search";
 			sourceTree = "<group>";
@@ -284,13 +314,12 @@
 		28625ACD229325C00095D95A /* Favorites Search */ = {
 			isa = PBXGroup;
 			children = (
-				28FB942523C90325008C56E4 /* Xib */,
-				28FB942423C90320008C56E4 /* ViewController */,
-				2814115123CD089F00181DBF /* FavoriteSearchRouter.swift */,
 				2814114F23CD085100181DBF /* FavoriteSearchContract.swift */,
+				28625ADD229328240095D95A /* FavoriteSearchWireframe.swift */,
 				28625ADA229328240095D95A /* FavoriteSearchPresenter.swift */,
 				28625ADC229328240095D95A /* FavoriteSearchInteractor.swift */,
-				28625ADD229328240095D95A /* FavoriteSearchWireframe.swift */,
+				2814115123CD089F00181DBF /* FavoriteSearchRouter.swift */,
+				2804436F264B3CD600C8C130 /* UI */,
 			);
 			path = "Favorites Search";
 			sourceTree = "<group>";
@@ -343,21 +372,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		28FB941323C8EFF5008C56E4 /* Xib */ = {
+		28FB941323C8EFF5008C56E4 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
 				28872E7823B968D5009E7963 /* ArtistSearchViewController.xib */,
 				28FB942D23C90812008C56E4 /* View */,
 			);
-			path = Xib;
+			path = Xibs;
 			sourceTree = "<group>";
 		};
-		28FB942023C8F8B5008C56E4 /* Xib */ = {
+		28FB942023C8F8B5008C56E4 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
 				28FB941B23C8F7AE008C56E4 /* ArtistDetailViewController.xib */,
 			);
-			path = Xib;
+			path = Xibs;
 			sourceTree = "<group>";
 		};
 		28FB942123C8F8BD008C56E4 /* ViewController */ = {
@@ -439,6 +468,7 @@
 				28872E7E23B96B1B009E7963 /* Alamofire */,
 				28872E8123B96B59009E7963 /* Realm */,
 				28872E8323B96B59009E7963 /* RealmSwift */,
+				28044342264B361F00C8C130 /* HTTPErrorMessage */,
 			);
 			productName = ArtistSearch;
 			productReference = 28339430229323BD0011B5C4 /* ArtistSearch.app */;
@@ -523,6 +553,7 @@
 			packageReferences = (
 				28872E7D23B96B1B009E7963 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				28872E8023B96B59009E7963 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				28044341264B361F00C8C130 /* XCRemoteSwiftPackageReference "HTTPErrorMessage" */,
 			);
 			productRefGroup = 28339431229323BD0011B5C4 /* Products */;
 			projectDirPath = "";
@@ -604,6 +635,7 @@
 				2814115223CD089F00181DBF /* FavoriteSearchRouter.swift in Sources */,
 				28FB942B23C9042F008C56E4 /* FavoriteSearchCollectionViewCell.swift in Sources */,
 				28625AE0229328240095D95A /* FavoriteSearchPresenter.swift in Sources */,
+				2804435D264B390F00C8C130 /* ArtistDetailRouter.swift in Sources */,
 				2814115023CD085100181DBF /* FavoriteSearchContract.swift in Sources */,
 				28339434229323BD0011B5C4 /* AppDelegate.swift in Sources */,
 				28625AE1229328240095D95A /* FavoriteSearchViewController.swift in Sources */,
@@ -984,6 +1016,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		28044341264B361F00C8C130 /* XCRemoteSwiftPackageReference "HTTPErrorMessage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/luismmejiasb/HTTPErrorMessage";
+			requirement = {
+				kind = exactVersion;
+				version = 1.0.0;
+			};
+		};
 		28872E7D23B96B1B009E7963 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -1003,6 +1043,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		28044342264B361F00C8C130 /* HTTPErrorMessage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 28044341264B361F00C8C130 /* XCRemoteSwiftPackageReference "HTTPErrorMessage" */;
+			productName = HTTPErrorMessage;
+		};
 		28872E7E23B96B1B009E7963 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 28872E7D23B96B1B009E7963 /* XCRemoteSwiftPackageReference "Alamofire" */;

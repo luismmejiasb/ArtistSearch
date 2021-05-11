@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "HTTPErrorMessage",
+        "repositoryURL": "https://github.com/luismmejiasb/HTTPErrorMessage",
+        "state": {
+          "branch": null,
+          "revision": "3f379cdcd0224ccf278f08f41c3d72c656c3cea9",
+          "version": "1.0.0"
+        }
+      },
+      {
         "package": "Realm",
         "repositoryURL": "https://github.com/realm/realm-cocoa",
         "state": {

@@ -1,6 +1,6 @@
 import UIKit
 
-final class FavoriteSearchPresenter: FavoriteSearchPresenterProtocol {
+class FavoriteSearchPresenter: FavoriteSearchPresenterProtocol {
     var view: FavoriteSearchViewProtocol?
     var interactor: FavoriteSearchInteractorProtocol?
     var router: FavoriteSearchRouterProtocol?

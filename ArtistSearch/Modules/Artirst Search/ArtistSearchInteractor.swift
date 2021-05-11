@@ -1,7 +1,7 @@
 import Foundation
 import Alamofire
 
-final class ArtistSearchInteractor: ArtistSearchInteractorProtocol {
+class ArtistSearchInteractor: ArtistSearchInteractorProtocol {
     var apiRequestClient : Request?
 
     func searchTerm(withFilteringType filterType : FilteringType, and termString: String, completion: @escaping ([Artist], _ resultCode : Int) -> Void) {

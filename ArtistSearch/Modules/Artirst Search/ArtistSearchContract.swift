@@ -32,4 +32,5 @@ protocol ArtistSearchRouterProtocol: class {
     
     func presentArtistDetail(_ artist: Artist)
     func presentFavoriteSearchs()
+    func displayAlert(withMessage message: String)
 }
