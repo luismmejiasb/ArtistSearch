@@ -1,6 +1,16 @@
 import Foundation
 import RealmSwift
 
+struct SearchResult: Codable {
+    var resultCount: Int
+    var results: [Artist]
+    
+    init(){
+        self.resultCount =  0
+        self.results = [Artist]()
+    }
+}
+
 struct Artist: Codable {
     var artistId: Int
     var primaryGenreName: String
