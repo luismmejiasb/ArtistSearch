@@ -1,6 +1,3 @@
-import UIKit
-import HTTPErrorMessage
-
 class ArtistSearchPresenter: ArtistSearchPresenterProtocol {
     var view: ArtistSearchViewProtocol?
     var interactor: ArtistSearchInteractorProtocol?
@@ -14,7 +11,7 @@ class ArtistSearchPresenter: ArtistSearchPresenterProtocol {
     func searchTerm(type filterType: FilteringType, and termString: String) {
         interactor?.searchTerm(withFilteringType: filterType, and: termString) { artistsEntity, resultCode  in
             if resultCode != 200 {
-                self.router?.displayAlert(withMessage: HTTPErrorMessage.getHTTPError(withErrorCode: resultCode))
+                self.router?.displayAlert(withMessage: ArtistSearchHTTPErrorMessageFacade.getHTTPError(withErrorCode: resultCode))
             }
             self.view?.reloadDataInView(with: artistsEntity)
         }

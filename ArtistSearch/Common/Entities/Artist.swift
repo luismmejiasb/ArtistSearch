@@ -44,7 +44,7 @@ class ArtistObject: Object {
         return "artistId"
     }
 
-    required init() {
+    required override init() {
         self.artistId =  0
         self.primaryGenreName = ""
         self.wrapperType = ""
