@@ -31,20 +31,11 @@ class ArtistSearchViewController: UIViewController {
         setUpUI()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         searchBar.becomeFirstResponder()
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
-        presenter?.cancelAPIRequest()
-    }
-	
+
     @IBAction func showFavoriteSearchs(_ sender: Any) {
         presenter?.presentFavoriteSearchs()
     }

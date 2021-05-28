@@ -18,13 +18,12 @@ protocol ArtistSearchPresenterProtocol: class {
 
     func searchTerm(type filterType: FilteringType, and termString: String)
     func presentArtistDetail(_ artist: Artist)
-    func cancelAPIRequest()
     func presentFavoriteSearchs()
 }
 
 protocol ArtistSearchInteractorProtocol: class {
-    func searchTerm(withFilteringType filterType: FilteringType, and termString: String, completion: @escaping ([Artist], _ resultCode : Int) -> Void)
-    func cancelAPIRequest()
+    var repository: ArtistSearchRepositoryProtocol? { get set }
+    func searchTerm(withFilteringType filterType : FilteringType, and termString: String)
 }
 
 protocol ArtistSearchDelegate: class {
@@ -34,7 +33,6 @@ protocol ArtistSearchDelegate: class {
 
     func searchTerm(type filterType: FilteringType, and termString: String)
     func presentArtistDetail(_ artist: Artist)
-    func cancelAPIRequest()
     func presentFavoriteSearchs()
 }
 

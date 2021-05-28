@@ -9,16 +9,9 @@ class ArtistSearchPresenter: ArtistSearchPresenterProtocol {
     }
 
     func searchTerm(type filterType: FilteringType, and termString: String) {
-        interactor?.searchTerm(withFilteringType: filterType, and: termString) { artistsEntity, resultCode  in
-            if resultCode != 200 {
-                self.router?.displayAlert(withMessage: ArtistSearchHTTPErrorMessageFacade.getHTTPError(withErrorCode: resultCode))
-            }
-            self.view?.reloadDataInView(with: artistsEntity)
-        }
-    }
-
-    func cancelAPIRequest() {
-        interactor?.cancelAPIRequest()
+        interactor?.searchTerm(withFilteringType: filterType, and: termString)
+        /*self.router?.displayAlert(withMessage: ArtistSearchHTTPErrorMessageFacade.getHTTPError(withErrorCode: resultCode))
+        self.view?.reloadDataInView(with: artistsEntity)*/
     }
 
     func presentArtistDetail(_ artist: Artist) {

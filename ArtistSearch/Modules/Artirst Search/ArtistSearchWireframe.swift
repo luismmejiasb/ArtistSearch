@@ -2,7 +2,9 @@ import UIKit
 
 class ArtistSearchWireframe: ArtistSearchWireframeProtocol {
     static func assemble() -> UINavigationController {
-        let interactor = ArtistSearchInteractor()
+        let cloudDataSource = ArtistSearchCloudDataSource()
+        let repository = ArtistSearchRepository(cloudDataSource: cloudDataSource)
+        let interactor = ArtistSearchInteractor(repository: repository)
         let router = ArtistSearchRouter()
         let presenter = ArtistSearchPresenter(interactor: interactor, router: router)
         let artistSearchViewController = ArtistSearchViewController()
