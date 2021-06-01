@@ -1,4 +1,4 @@
-enum HTTPErrors: Error {
+enum CloudSourceErrors: Error {
     case emptyResponse
     case responseCannotBeParsed
 }

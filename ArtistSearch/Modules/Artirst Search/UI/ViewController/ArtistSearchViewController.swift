@@ -1,6 +1,7 @@
 import UIKit
+import Combine
 
-class ArtistSearchViewController: UIViewController {
+class ArtistSearchViewController: UIViewController, ArtistSearchViewProtocol {
     @IBOutlet weak var searchCollectionView: UICollectionView! {
         didSet {
             searchCollectionView.register(ArtistCollectionViewCell.nib, forCellWithReuseIdentifier: ArtistCollectionViewCell.reusableIdentifier)
@@ -15,13 +16,14 @@ class ArtistSearchViewController: UIViewController {
         return favoriteButton
     }()
     var presenter: ArtistSearchPresenterProtocol?
-    var searchData: [Artist]! = [] {
+    var searchData: [Artist] = [] {
         didSet {
             searchCollectionView.reloadData()
         }
     }
     var selectedFilterType: FilteringType = .artist
-
+    var searchPublisher: PassthroughSubject<[Artist], Error>?
+    private var tokens = Set<AnyCancellable>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,7 @@ class ArtistSearchViewController: UIViewController {
         searchCollectionView.dataSource = self
         searchBar.delegate = self
         setUpUI()
+        presenter?.viewDidLoad()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -62,12 +65,7 @@ class ArtistSearchViewController: UIViewController {
         searchInformationLabel.accessibilityIdentifier = ArtistSearchAI.informationLabel.rawValue
         favoriteButton.accessibilityIdentifier = ArtistSearchAI.favoriteButton.rawValue
     }
-}
-
-// MARK: - Extensions
-
-extension ArtistSearchViewController: ArtistSearchViewProtocol {
-
+    
     func reloadDataInView(with artistData: [Artist]) {
         searchData = artistData
         showInformationView(searchData.isEmpty , type: .noResults)
@@ -79,8 +77,8 @@ extension ArtistSearchViewController: ArtistSearchViewProtocol {
 extension ArtistSearchViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let selectedArtist: Artist = searchData?[indexPath.row] {
-            presenter?.presentArtistDetail(selectedArtist)
+        if !searchData.isEmpty && searchData.indices.contains(indexPath.row) {
+            presenter?.presentArtistDetail(searchData[indexPath.row])
         }
     }
 }

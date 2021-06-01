@@ -400,7 +400,7 @@
 			children = (
 				28D01B05264C6052009E249F /* ArtistSearchDataContract.swift */,
 				28D01B14264C6088009E249F /* Repository */,
-				28D01B15264C608F009E249F /* DataSource */,
+				28D01B15264C608F009E249F /* DataSources */,
 			);
 			path = "Artist Search";
 			sourceTree = "<group>";
@@ -427,12 +427,12 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
-		28D01B15264C608F009E249F /* DataSource */ = {
+		28D01B15264C608F009E249F /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
 				28D01B17264C6102009E249F /* ArtistSearchCloudDataSource.swift */,
 			);
-			path = DataSource;
+			path = DataSources;
 			sourceTree = "<group>";
 		};
 		28F46E4926618C11001A11C7 /* Facade */ = {

@@ -13,15 +13,12 @@ class ArtistSearchCloudDataSource: ArtistSearchCloudDataSourceProtocol {
                 
                 switch response.result {
                 case .success(let response):
-                    print(response)
-
                     do {
                         let jsonData = try JSONSerialization.data(withJSONObject: response, options: .prettyPrinted)
                         let searchResult = try JSONDecoder().decode(SearchResult.self, from: jsonData)
                         return promise(.success(searchResult.results))
-                        
                     } catch {
-                        return promise(.failure(HTTPErrors.responseCannotBeParsed))
+                        return promise(.failure(CloudSourceErrors.responseCannotBeParsed))
                     }
                     
                 case .failure(let error):

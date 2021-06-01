@@ -1,29 +1,27 @@
 import Foundation
-import Alamofire
 import Combine
 
 class ArtistSearchInteractor: ArtistSearchInteractorProtocol {
     var repository: ArtistSearchRepositoryProtocol?
-    var searchTermAnyCancellable: AnyCancellable?
-    
+    private var searchTermAnyTokens = Set<AnyCancellable>()
+    var publisher: PassthroughSubject<ArtistSearchPublisherAction, Error>?
+
     init(repository: ArtistSearchRepositoryProtocol?) {
         self.repository = repository
     }
 
     func searchTerm(withFilteringType filterType : FilteringType, and termString: String) {
-        searchTermAnyCancellable = repository?.searchArtist(withFilteringType: filterType, and: termString)
-            .receive(on: DispatchQueue.main)
+        repository?.searchArtist(withFilteringType: filterType, and: termString)
             .sink(
                 receiveCompletion: { (completion) in
                     switch completion {
                     case .finished:
                         print("Publisher stopped obversing")
                     case .failure(let error):
-                        print("This is any other passed to our future", error)
+                        self.publisher?.send(ArtistSearchPublisherAction.displayErrorAlert(error))
                     }
-                    
                 }, receiveValue: { (artists) in
-                    print("Result: \(artists)")
-                })
+                    self.publisher?.send(ArtistSearchPublisherAction.displayData(artists))
+                }).store(in: &searchTermAnyTokens)
     }
 }
