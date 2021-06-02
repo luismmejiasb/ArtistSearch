@@ -24,6 +24,10 @@
 		2837B93C229497AA001E2B04 /* ArtistDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2837B936229497AA001E2B04 /* ArtistDetailWireframe.swift */; };
 		28483CE623CD0C81004CDE54 /* ArtistSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28483CE523CD0C81004CDE54 /* ArtistSearchRouter.swift */; };
 		28483CE723CD0D3C004CDE54 /* ArtistSearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28625AC0229325060095D95A /* ArtistSearchInteractor.swift */; };
+		284DF753266726A300F8EF91 /* ArtistSearchViewController+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284DF752266726A300F8EF91 /* ArtistSearchViewController+UICollectionViewDelegate.swift */; };
+		284DF758266726DE00F8EF91 /* ArtistSearchViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284DF757266726DD00F8EF91 /* ArtistSearchViewController+UICollectionViewDataSource.swift */; };
+		284DF75D2667272C00F8EF91 /* ArtistSearchViewController+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284DF75C2667272C00F8EF91 /* ArtistSearchViewController+UICollectionViewDelegateFlowLayout.swift */; };
+		284DF7622667276200F8EF91 /* ArtistSearchViewController+UISearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284DF7612667276200F8EF91 /* ArtistSearchViewController+UISearchBarDelegate.swift */; };
 		28625AC4229325060095D95A /* ArtistSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28625ABE229325060095D95A /* ArtistSearchPresenter.swift */; };
 		28625AC5229325060095D95A /* ArtistSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28625ABF229325060095D95A /* ArtistSearchViewController.swift */; };
 		28625AC7229325060095D95A /* ArtistSearchWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28625AC1229325060095D95A /* ArtistSearchWireframe.swift */; };
@@ -101,6 +105,10 @@
 		2837B935229497AA001E2B04 /* ArtistDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailInteractor.swift; sourceTree = "<group>"; };
 		2837B936229497AA001E2B04 /* ArtistDetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailWireframe.swift; sourceTree = "<group>"; };
 		28483CE523CD0C81004CDE54 /* ArtistSearchRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArtistSearchRouter.swift; path = "ArtistSearch/Modules/Artirst Search/ArtistSearchRouter.swift"; sourceTree = SOURCE_ROOT; };
+		284DF752266726A300F8EF91 /* ArtistSearchViewController+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArtistSearchViewController+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
+		284DF757266726DD00F8EF91 /* ArtistSearchViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArtistSearchViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		284DF75C2667272C00F8EF91 /* ArtistSearchViewController+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArtistSearchViewController+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
+		284DF7612667276200F8EF91 /* ArtistSearchViewController+UISearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArtistSearchViewController+UISearchBarDelegate.swift"; sourceTree = "<group>"; };
 		28625ABE229325060095D95A /* ArtistSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchPresenter.swift; sourceTree = "<group>"; };
 		28625ABF229325060095D95A /* ArtistSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchViewController.swift; sourceTree = "<group>"; };
 		28625AC0229325060095D95A /* ArtistSearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchInteractor.swift; sourceTree = "<group>"; };
@@ -374,6 +382,10 @@
 			children = (
 				28FB942823C903FB008C56E4 /* View */,
 				28625ABF229325060095D95A /* ArtistSearchViewController.swift */,
+				284DF752266726A300F8EF91 /* ArtistSearchViewController+UICollectionViewDelegate.swift */,
+				284DF757266726DD00F8EF91 /* ArtistSearchViewController+UICollectionViewDataSource.swift */,
+				284DF75C2667272C00F8EF91 /* ArtistSearchViewController+UICollectionViewDelegateFlowLayout.swift */,
+				284DF7612667276200F8EF91 /* ArtistSearchViewController+UISearchBarDelegate.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -700,6 +712,7 @@
 				28483CE623CD0C81004CDE54 /* ArtistSearchRouter.swift in Sources */,
 				28F46E4C26618C30001A11C7 /* ArtistSearchHTTPErrorMessageFacade.swift in Sources */,
 				28625B26229345A40095D95A /* Constants.swift in Sources */,
+				284DF753266726A300F8EF91 /* ArtistSearchViewController+UICollectionViewDelegate.swift in Sources */,
 				28D01B26264C7606009E249F /* Errors.swift in Sources */,
 				28625B2F2293538A0095D95A /* ArtistCollectionViewCell.swift in Sources */,
 				28D01B06264C6052009E249F /* ArtistSearchDataContract.swift in Sources */,
@@ -708,10 +721,12 @@
 				28625AD6229325FA0095D95A /* Extensions.swift in Sources */,
 				2814115223CD089F00181DBF /* FavoriteSearchRouter.swift in Sources */,
 				28FB942B23C9042F008C56E4 /* FavoriteSearchCollectionViewCell.swift in Sources */,
+				284DF7622667276200F8EF91 /* ArtistSearchViewController+UISearchBarDelegate.swift in Sources */,
 				28625AE0229328240095D95A /* FavoriteSearchPresenter.swift in Sources */,
 				2804435D264B390F00C8C130 /* ArtistDetailRouter.swift in Sources */,
 				2814115023CD085100181DBF /* FavoriteSearchContract.swift in Sources */,
 				28D01B0B264C6064009E249F /* ArtistSearchRepository.swift in Sources */,
+				284DF75D2667272C00F8EF91 /* ArtistSearchViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				28339434229323BD0011B5C4 /* AppDelegate.swift in Sources */,
 				28625AE1229328240095D95A /* FavoriteSearchViewController.swift in Sources */,
 				2837B93C229497AA001E2B04 /* ArtistDetailWireframe.swift in Sources */,
@@ -724,6 +739,7 @@
 				28625AC7229325060095D95A /* ArtistSearchWireframe.swift in Sources */,
 				28625AC5229325060095D95A /* ArtistSearchViewController.swift in Sources */,
 				28625AE2229328240095D95A /* FavoriteSearchInteractor.swift in Sources */,
+				284DF758266726DE00F8EF91 /* ArtistSearchViewController+UICollectionViewDataSource.swift in Sources */,
 				28625AC4229325060095D95A /* ArtistSearchPresenter.swift in Sources */,
 				28625B2C22934F510095D95A /* Enums.swift in Sources */,
 			);
