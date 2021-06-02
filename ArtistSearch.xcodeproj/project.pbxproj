@@ -24,6 +24,13 @@
 		2837B93C229497AA001E2B04 /* ArtistDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2837B936229497AA001E2B04 /* ArtistDetailWireframe.swift */; };
 		28483CE623CD0C81004CDE54 /* ArtistSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28483CE523CD0C81004CDE54 /* ArtistSearchRouter.swift */; };
 		28483CE723CD0D3C004CDE54 /* ArtistSearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28625AC0229325060095D95A /* ArtistSearchInteractor.swift */; };
+		284DF753266726A300F8EF91 /* ArtistSearchViewController+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284DF752266726A300F8EF91 /* ArtistSearchViewController+UICollectionViewDelegate.swift */; };
+		284DF758266726DE00F8EF91 /* ArtistSearchViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284DF757266726DD00F8EF91 /* ArtistSearchViewController+UICollectionViewDataSource.swift */; };
+		284DF75D2667272C00F8EF91 /* ArtistSearchViewController+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284DF75C2667272C00F8EF91 /* ArtistSearchViewController+UICollectionViewDelegateFlowLayout.swift */; };
+		284DF7622667276200F8EF91 /* ArtistSearchViewController+UISearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284DF7612667276200F8EF91 /* ArtistSearchViewController+UISearchBarDelegate.swift */; };
+		284DF76B2667302900F8EF91 /* ArtistDetailDataContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284DF76A2667302900F8EF91 /* ArtistDetailDataContract.swift */; };
+		284DF7752667306700F8EF91 /* ArtistDetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284DF7742667306700F8EF91 /* ArtistDetailRepository.swift */; };
+		284DF77A2667309A00F8EF91 /* ArtistDetailLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284DF7792667309A00F8EF91 /* ArtistDetailLocalDataSource.swift */; };
 		28625AC4229325060095D95A /* ArtistSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28625ABE229325060095D95A /* ArtistSearchPresenter.swift */; };
 		28625AC5229325060095D95A /* ArtistSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28625ABF229325060095D95A /* ArtistSearchViewController.swift */; };
 		28625AC7229325060095D95A /* ArtistSearchWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28625AC1229325060095D95A /* ArtistSearchWireframe.swift */; };
@@ -34,8 +41,15 @@
 		28625AE3229328240095D95A /* FavoriteSearchWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28625ADD229328240095D95A /* FavoriteSearchWireframe.swift */; };
 		28625B26229345A40095D95A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28625B25229345A40095D95A /* Constants.swift */; };
 		28625B2922934EE60095D95A /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28625B2822934EE60095D95A /* Artist.swift */; };
-		28625B2C22934F510095D95A /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28625B2B22934F510095D95A /* Enums.swift */; };
+		28625B2C22934F510095D95A /* FilteringType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28625B2B22934F510095D95A /* FilteringType.swift */; };
 		28625B2F2293538A0095D95A /* ArtistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28625B2E2293538A0095D95A /* ArtistCollectionViewCell.swift */; };
+		2863D76E2667D3E400387552 /* FavoriteSearchDataContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2863D76D2667D3E400387552 /* FavoriteSearchDataContract.swift */; };
+		2863D7792667D4DB00387552 /* FavoriteSearchLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2863D7782667D4DB00387552 /* FavoriteSearchLocalDataSource.swift */; };
+		2863D77E2667D4E700387552 /* FavoriteSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2863D77D2667D4E700387552 /* FavoriteSearchRepository.swift */; };
+		2863D7922667DF4E00387552 /* FavoriteSearchViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2863D78E2667DF4E00387552 /* FavoriteSearchViewController+UICollectionViewDataSource.swift */; };
+		2863D7932667DF4E00387552 /* FavoriteSearchViewController+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2863D78F2667DF4E00387552 /* FavoriteSearchViewController+UICollectionViewDelegate.swift */; };
+		2863D7952667DF4E00387552 /* FavoriteSearchViewController+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2863D7912667DF4E00387552 /* FavoriteSearchViewController+UICollectionViewDelegateFlowLayout.swift */; };
+		2863D7A02667E03E00387552 /* InformationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2863D79F2667E03E00387552 /* InformationType.swift */; };
 		28809B1F23CD09A00024EB6F /* ArtistSearchContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28809B1E23CD09A00024EB6F /* ArtistSearchContract.swift */; };
 		28872E7623B968D5009E7963 /* ArtistSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28872E7823B968D5009E7963 /* ArtistSearchViewController.xib */; };
 		28872E7F23B96B1B009E7963 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 28872E7E23B96B1B009E7963 /* Alamofire */; };
@@ -46,6 +60,11 @@
 		28BE53AA2555DF7800BB777C /* ArtistSearchPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BE53A92555DF7800BB777C /* ArtistSearchPresenterTests.swift */; };
 		28BE53B72555E6E600BB777C /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 28BE53B62555E6E600BB777C /* Realm */; };
 		28BE53B92555E9B000BB777C /* ArtistSearchViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BE53B82555E9B000BB777C /* ArtistSearchViewControllerTests.swift */; };
+		28D01B06264C6052009E249F /* ArtistSearchDataContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D01B05264C6052009E249F /* ArtistSearchDataContract.swift */; };
+		28D01B0B264C6064009E249F /* ArtistSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D01B0A264C6064009E249F /* ArtistSearchRepository.swift */; };
+		28D01B18264C6102009E249F /* ArtistSearchCloudDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D01B17264C6102009E249F /* ArtistSearchCloudDataSource.swift */; };
+		28D01B26264C7606009E249F /* CloudSourceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D01B25264C7606009E249F /* CloudSourceErrors.swift */; };
+		28F46E4C26618C30001A11C7 /* ArtistSearchHTTPErrorMessageFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F46E4B26618C30001A11C7 /* ArtistSearchHTTPErrorMessageFacade.swift */; };
 		28FB941523C8F10B008C56E4 /* ArtistCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28FB941423C8F10B008C56E4 /* ArtistCollectionViewCell.xib */; };
 		28FB941923C8F7AE008C56E4 /* ArtistDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28FB941B23C8F7AE008C56E4 /* ArtistDetailViewController.xib */; };
 		28FB942323C9031A008C56E4 /* FavoriteSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28FB942223C9031A008C56E4 /* FavoriteSearchViewController.xib */; };
@@ -96,6 +115,13 @@
 		2837B935229497AA001E2B04 /* ArtistDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailInteractor.swift; sourceTree = "<group>"; };
 		2837B936229497AA001E2B04 /* ArtistDetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailWireframe.swift; sourceTree = "<group>"; };
 		28483CE523CD0C81004CDE54 /* ArtistSearchRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArtistSearchRouter.swift; path = "ArtistSearch/Modules/Artirst Search/ArtistSearchRouter.swift"; sourceTree = SOURCE_ROOT; };
+		284DF752266726A300F8EF91 /* ArtistSearchViewController+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArtistSearchViewController+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
+		284DF757266726DD00F8EF91 /* ArtistSearchViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArtistSearchViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		284DF75C2667272C00F8EF91 /* ArtistSearchViewController+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArtistSearchViewController+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
+		284DF7612667276200F8EF91 /* ArtistSearchViewController+UISearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArtistSearchViewController+UISearchBarDelegate.swift"; sourceTree = "<group>"; };
+		284DF76A2667302900F8EF91 /* ArtistDetailDataContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailDataContract.swift; sourceTree = "<group>"; };
+		284DF7742667306700F8EF91 /* ArtistDetailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailRepository.swift; sourceTree = "<group>"; };
+		284DF7792667309A00F8EF91 /* ArtistDetailLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailLocalDataSource.swift; sourceTree = "<group>"; };
 		28625ABE229325060095D95A /* ArtistSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchPresenter.swift; sourceTree = "<group>"; };
 		28625ABF229325060095D95A /* ArtistSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchViewController.swift; sourceTree = "<group>"; };
 		28625AC0229325060095D95A /* ArtistSearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchInteractor.swift; sourceTree = "<group>"; };
@@ -107,8 +133,15 @@
 		28625ADD229328240095D95A /* FavoriteSearchWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSearchWireframe.swift; sourceTree = "<group>"; };
 		28625B25229345A40095D95A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		28625B2822934EE60095D95A /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
-		28625B2B22934F510095D95A /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		28625B2B22934F510095D95A /* FilteringType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteringType.swift; sourceTree = "<group>"; };
 		28625B2E2293538A0095D95A /* ArtistCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistCollectionViewCell.swift; sourceTree = "<group>"; };
+		2863D76D2667D3E400387552 /* FavoriteSearchDataContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSearchDataContract.swift; sourceTree = "<group>"; };
+		2863D7782667D4DB00387552 /* FavoriteSearchLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSearchLocalDataSource.swift; sourceTree = "<group>"; };
+		2863D77D2667D4E700387552 /* FavoriteSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSearchRepository.swift; sourceTree = "<group>"; };
+		2863D78E2667DF4E00387552 /* FavoriteSearchViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FavoriteSearchViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		2863D78F2667DF4E00387552 /* FavoriteSearchViewController+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FavoriteSearchViewController+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
+		2863D7912667DF4E00387552 /* FavoriteSearchViewController+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FavoriteSearchViewController+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
+		2863D79F2667E03E00387552 /* InformationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationType.swift; sourceTree = "<group>"; };
 		28809B1E23CD09A00024EB6F /* ArtistSearchContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistSearchContract.swift; sourceTree = "<group>"; };
 		28872E7723B968D5009E7963 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ArtistSearchViewController.xib; sourceTree = "<group>"; };
 		28872E7A23B968E5009E7963 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ArtistSearchViewController.strings; sourceTree = "<group>"; };
@@ -117,6 +150,11 @@
 		28BE53A52555D9C900BB777C /* ArtistSearchRouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchRouterMock.swift; sourceTree = "<group>"; };
 		28BE53A92555DF7800BB777C /* ArtistSearchPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchPresenterTests.swift; sourceTree = "<group>"; };
 		28BE53B82555E9B000BB777C /* ArtistSearchViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchViewControllerTests.swift; sourceTree = "<group>"; };
+		28D01B05264C6052009E249F /* ArtistSearchDataContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchDataContract.swift; sourceTree = "<group>"; };
+		28D01B0A264C6064009E249F /* ArtistSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchRepository.swift; sourceTree = "<group>"; };
+		28D01B17264C6102009E249F /* ArtistSearchCloudDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchCloudDataSource.swift; sourceTree = "<group>"; };
+		28D01B25264C7606009E249F /* CloudSourceErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudSourceErrors.swift; sourceTree = "<group>"; };
+		28F46E4B26618C30001A11C7 /* ArtistSearchHTTPErrorMessageFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchHTTPErrorMessageFacade.swift; sourceTree = "<group>"; };
 		28FB941423C8F10B008C56E4 /* ArtistCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtistCollectionViewCell.xib; sourceTree = "<group>"; };
 		28FB941A23C8F7AE008C56E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ArtistDetailViewController.xib; sourceTree = "<group>"; };
 		28FB941D23C8F7B2008C56E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ArtistDetailViewController.strings; sourceTree = "<group>"; };
@@ -267,14 +305,30 @@
 		2837B93D229497AD001E2B04 /* Artist Detail */ = {
 			isa = PBXGroup;
 			children = (
-				2837B936229497AA001E2B04 /* ArtistDetailWireframe.swift */,
 				2837B932229497AA001E2B04 /* ArtistDetailContract.swift */,
+				2837B936229497AA001E2B04 /* ArtistDetailWireframe.swift */,
 				2837B933229497AA001E2B04 /* ArtistDetailPresenter.swift */,
 				2837B935229497AA001E2B04 /* ArtistDetailInteractor.swift */,
 				2804435C264B390F00C8C130 /* ArtistDetailRouter.swift */,
 				2804436E264B3CC000C8C130 /* UI */,
 			);
 			path = "Artist Detail";
+			sourceTree = "<group>";
+		};
+		284DF76F2667302F00F8EF91 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				284DF7742667306700F8EF91 /* ArtistDetailRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		284DF7702667303600F8EF91 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				284DF7792667309A00F8EF91 /* ArtistDetailLocalDataSource.swift */,
+			);
+			path = DataSources;
 			sourceTree = "<group>";
 		};
 		28625AC82293250D0095D95A /* Artirst Search */ = {
@@ -293,6 +347,8 @@
 		28625ACA2293253C0095D95A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				28F46E4926618C11001A11C7 /* Facade */,
+				28D01AF5264C5EA5009E249F /* Data */,
 				28625AC82293250D0095D95A /* Artirst Search */,
 				2837B93D229497AD001E2B04 /* Artist Detail */,
 				28625ACD229325C00095D95A /* Favorites Search */,
@@ -351,7 +407,9 @@
 		28625B2A22934F3E0095D95A /* Enums */ = {
 			isa = PBXGroup;
 			children = (
-				28625B2B22934F510095D95A /* Enums.swift */,
+				28625B2B22934F510095D95A /* FilteringType.swift */,
+				28D01B25264C7606009E249F /* CloudSourceErrors.swift */,
+				2863D79F2667E03E00387552 /* InformationType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -361,8 +419,28 @@
 			children = (
 				28FB942823C903FB008C56E4 /* View */,
 				28625ABF229325060095D95A /* ArtistSearchViewController.swift */,
+				284DF752266726A300F8EF91 /* ArtistSearchViewController+UICollectionViewDelegate.swift */,
+				284DF757266726DD00F8EF91 /* ArtistSearchViewController+UICollectionViewDataSource.swift */,
+				284DF75C2667272C00F8EF91 /* ArtistSearchViewController+UICollectionViewDelegateFlowLayout.swift */,
+				284DF7612667276200F8EF91 /* ArtistSearchViewController+UISearchBarDelegate.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2863D7682667D3B800387552 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				2863D77D2667D4E700387552 /* FavoriteSearchRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		2863D7692667D3C000387552 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				2863D7782667D4DB00387552 /* FavoriteSearchLocalDataSource.swift */,
+			);
+			path = DataSources;
 			sourceTree = "<group>";
 		};
 		28BE53AB2555E45F00BB777C /* Frameworks */ = {
@@ -370,6 +448,70 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		28D01AF5264C5EA5009E249F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				28D01AF9264C5EAC009E249F /* Artist Search */,
+				28D01B00264C5EF7009E249F /* Artist Detail */,
+				28D01B01264C5F00009E249F /* Favorite Search */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		28D01AF9264C5EAC009E249F /* Artist Search */ = {
+			isa = PBXGroup;
+			children = (
+				28D01B05264C6052009E249F /* ArtistSearchDataContract.swift */,
+				28D01B14264C6088009E249F /* Repository */,
+				28D01B15264C608F009E249F /* DataSources */,
+			);
+			path = "Artist Search";
+			sourceTree = "<group>";
+		};
+		28D01B00264C5EF7009E249F /* Artist Detail */ = {
+			isa = PBXGroup;
+			children = (
+				284DF76A2667302900F8EF91 /* ArtistDetailDataContract.swift */,
+				284DF76F2667302F00F8EF91 /* Repository */,
+				284DF7702667303600F8EF91 /* DataSources */,
+			);
+			path = "Artist Detail";
+			sourceTree = "<group>";
+		};
+		28D01B01264C5F00009E249F /* Favorite Search */ = {
+			isa = PBXGroup;
+			children = (
+				2863D76D2667D3E400387552 /* FavoriteSearchDataContract.swift */,
+				2863D7682667D3B800387552 /* Repository */,
+				2863D7692667D3C000387552 /* DataSources */,
+			);
+			path = "Favorite Search";
+			sourceTree = "<group>";
+		};
+		28D01B14264C6088009E249F /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				28D01B0A264C6064009E249F /* ArtistSearchRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		28D01B15264C608F009E249F /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				28D01B17264C6102009E249F /* ArtistSearchCloudDataSource.swift */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		28F46E4926618C11001A11C7 /* Facade */ = {
+			isa = PBXGroup;
+			children = (
+				28F46E4B26618C30001A11C7 /* ArtistSearchHTTPErrorMessageFacade.swift */,
+			);
+			path = Facade;
 			sourceTree = "<group>";
 		};
 		28FB941323C8EFF5008C56E4 /* Xibs */ = {
@@ -401,6 +543,9 @@
 			isa = PBXGroup;
 			children = (
 				28625ADB229328240095D95A /* FavoriteSearchViewController.swift */,
+				2863D78E2667DF4E00387552 /* FavoriteSearchViewController+UICollectionViewDataSource.swift */,
+				2863D78F2667DF4E00387552 /* FavoriteSearchViewController+UICollectionViewDelegate.swift */,
+				2863D7912667DF4E00387552 /* FavoriteSearchViewController+UICollectionViewDelegateFlowLayout.swift */,
 				28FB942923C90413008C56E4 /* View */,
 			);
 			path = ViewController;
@@ -625,18 +770,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				284DF77A2667309A00F8EF91 /* ArtistDetailLocalDataSource.swift in Sources */,
 				28625AE3229328240095D95A /* FavoriteSearchWireframe.swift in Sources */,
 				28483CE623CD0C81004CDE54 /* ArtistSearchRouter.swift in Sources */,
+				28F46E4C26618C30001A11C7 /* ArtistSearchHTTPErrorMessageFacade.swift in Sources */,
 				28625B26229345A40095D95A /* Constants.swift in Sources */,
+				284DF753266726A300F8EF91 /* ArtistSearchViewController+UICollectionViewDelegate.swift in Sources */,
+				28D01B26264C7606009E249F /* CloudSourceErrors.swift in Sources */,
+				284DF76B2667302900F8EF91 /* ArtistDetailDataContract.swift in Sources */,
 				28625B2F2293538A0095D95A /* ArtistCollectionViewCell.swift in Sources */,
+				284DF7752667306700F8EF91 /* ArtistDetailRepository.swift in Sources */,
+				28D01B06264C6052009E249F /* ArtistSearchDataContract.swift in Sources */,
 				2837B93B229497AA001E2B04 /* ArtistDetailInteractor.swift in Sources */,
 				2837B939229497AA001E2B04 /* ArtistDetailPresenter.swift in Sources */,
 				28625AD6229325FA0095D95A /* Extensions.swift in Sources */,
+				2863D76E2667D3E400387552 /* FavoriteSearchDataContract.swift in Sources */,
 				2814115223CD089F00181DBF /* FavoriteSearchRouter.swift in Sources */,
+				2863D7A02667E03E00387552 /* InformationType.swift in Sources */,
 				28FB942B23C9042F008C56E4 /* FavoriteSearchCollectionViewCell.swift in Sources */,
+				284DF7622667276200F8EF91 /* ArtistSearchViewController+UISearchBarDelegate.swift in Sources */,
 				28625AE0229328240095D95A /* FavoriteSearchPresenter.swift in Sources */,
 				2804435D264B390F00C8C130 /* ArtistDetailRouter.swift in Sources */,
 				2814115023CD085100181DBF /* FavoriteSearchContract.swift in Sources */,
+				28D01B0B264C6064009E249F /* ArtistSearchRepository.swift in Sources */,
+				2863D7792667D4DB00387552 /* FavoriteSearchLocalDataSource.swift in Sources */,
+				284DF75D2667272C00F8EF91 /* ArtistSearchViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
+				2863D7932667DF4E00387552 /* FavoriteSearchViewController+UICollectionViewDelegate.swift in Sources */,
 				28339434229323BD0011B5C4 /* AppDelegate.swift in Sources */,
 				28625AE1229328240095D95A /* FavoriteSearchViewController.swift in Sources */,
 				2837B93C229497AA001E2B04 /* ArtistDetailWireframe.swift in Sources */,
@@ -644,12 +803,17 @@
 				2837B93A229497AA001E2B04 /* ArtistDetailViewController.swift in Sources */,
 				28809B1F23CD09A00024EB6F /* ArtistSearchContract.swift in Sources */,
 				2837B938229497AA001E2B04 /* ArtistDetailContract.swift in Sources */,
+				28D01B18264C6102009E249F /* ArtistSearchCloudDataSource.swift in Sources */,
 				28483CE723CD0D3C004CDE54 /* ArtistSearchInteractor.swift in Sources */,
 				28625AC7229325060095D95A /* ArtistSearchWireframe.swift in Sources */,
 				28625AC5229325060095D95A /* ArtistSearchViewController.swift in Sources */,
 				28625AE2229328240095D95A /* FavoriteSearchInteractor.swift in Sources */,
+				2863D7952667DF4E00387552 /* FavoriteSearchViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
+				2863D77E2667D4E700387552 /* FavoriteSearchRepository.swift in Sources */,
+				284DF758266726DE00F8EF91 /* ArtistSearchViewController+UICollectionViewDataSource.swift in Sources */,
 				28625AC4229325060095D95A /* ArtistSearchPresenter.swift in Sources */,
-				28625B2C22934F510095D95A /* Enums.swift in Sources */,
+				2863D7922667DF4E00387552 /* FavoriteSearchViewController+UICollectionViewDataSource.swift in Sources */,
+				28625B2C22934F510095D95A /* FilteringType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -859,12 +1023,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z49VYP2WN4;
 				INFOPLIST_FILE = ArtistSearch/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.2;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = personal.artistsearch.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -879,12 +1043,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z49VYP2WN4;
 				INFOPLIST_FILE = ArtistSearch/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.2;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = personal.artistsearch.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1029,7 +1193,7 @@
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
 				kind = exactVersion;
-				version = 4.9.1;
+				version = 5.4.3;
 			};
 		};
 		28872E8023B96B59009E7963 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
@@ -1037,7 +1201,7 @@
 			repositoryURL = "https://github.com/realm/realm-cocoa";
 			requirement = {
 				kind = exactVersion;
-				version = 4.3.0;
+				version = 10.7.6;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

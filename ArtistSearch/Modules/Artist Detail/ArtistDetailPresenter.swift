@@ -1,16 +1,46 @@
 import UIKit
-import RealmSwift
+import Combine
 
 class ArtistDetailPresenter: ArtistDetailPresenterProtocol {    
     var view: ArtistDetailViewProtocol?
     var interactor: ArtistDetailInteractorProtocol?
     var router: ArtistDetailRouterProtocol?
     var selectedArtist: Artist?
+    private var artistDetailTokens = Set<AnyCancellable>()
 
     init(interactor: ArtistDetailInteractorProtocol, selectedArtist: Artist) {
         self.interactor = interactor
         self.selectedArtist = selectedArtist
         
+    }
+
+    func viewDidLoad() {
+        subscribePublishers()
+    }
+
+    private func subscribePublishers() {
+        interactor?.publisher?.sink(
+            receiveCompletion: { [weak self] (completion) in
+                switch completion {
+                case .finished:
+                    print("Publisher stopped obversing")
+                case .failure(let error):
+                    self?.router?.displayAlert(withMessage: error.localizedDescription)
+                }
+            }, receiveValue: { [weak self] (action) in
+                switch action {
+                case .artistSavedSuccess():
+                    self?.router?.displayAlert(withMessage: NSLocalizedString("mark_favorite_success_message", comment: ""))
+                    self?.validateFavoriteArtist()
+                case .artistSavedError(let error):
+                    self?.router?.displayAlert(withMessage: NSLocalizedString("mark_favorite_failure_message", comment: "") + "\(error)")
+                case .artistDeletedSuccess():
+                    self?.router?.displayAlert(withMessage: NSLocalizedString("unmark_favorite_success_message", comment: ""))
+                    self?.validateFavoriteArtist()
+                case .artistDeletedError(let error):
+                    self?.router?.displayAlert(withMessage: NSLocalizedString("unmark_favorite_failure_message", comment: "") + "\(error)")
+                }
+            }).store(in: &artistDetailTokens)
     }
     
     func displaySelectedArtistInformation(_ viewController: ArtistDetailViewController) {
@@ -18,7 +48,7 @@ class ArtistDetailPresenter: ArtistDetailPresenterProtocol {
         viewController.genderLabel.text = selectedArtist?.primaryGenreName
     }
     
-    func showItunesProfileFrom() {
+    func showItunesProfile() {
         guard let artistLinkUrlString = selectedArtist?.artistLinkUrl, let artistLinkUrl = URL(string: artistLinkUrlString) else {
             return
         }
@@ -30,41 +60,16 @@ class ArtistDetailPresenter: ArtistDetailPresenterProtocol {
         }
     }
     
-    func showFavoriteInformation(_ viewController: ArtistDetailViewController) {
-
-        let messageString = NSLocalizedString("favorite_artist_alert_message", comment: "")
-
-        let alert = UIAlertController(title: NSLocalizedString("favorite_artist_alert_title", comment: ""), 
-                                      message: String(format: messageString, 
-                                                      selectedArtist?.artistName ?? NSLocalizedString("favorite_artist_alert_message_conecting", 
-                                                      comment: "")), 
-                                      preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        viewController.present(alert, animated: true, completion: nil)
+    func showFavoriteInformation() {
+        router?.showFavoriteInformation(withArtist: selectedArtist ?? Artist())
     }
     
     func markFavoriteArtist() {
-        interactor?.saveArtist(selectedArtist!) { completion in
-            if completion {
-                self.router?.displayAlert(withMessage: NSLocalizedString("mark_favorite_success_message", comment: ""))
-            } else {
-                self.router?.displayAlert(withMessage: NSLocalizedString("mark_favorite_failure_message", comment: ""))
-            }
-            
-            self.validateFavoriteArtist()
-        }
+        interactor?.saveArtist(selectedArtist!)
     }
     
     func unmarkFavoriteArtist() {
-        interactor?.deleteArtist(selectedArtist!) { completion in
-            if completion {
-                self.router?.displayAlert(withMessage: NSLocalizedString("unmark_favorite_success_message", comment: ""))
-            } else {
-                self.router?.displayAlert(withMessage: NSLocalizedString("unmark_favorite_failure_message", comment: ""))
-            }
-
-            self.validateFavoriteArtist()
-        }
+        interactor?.deleteArtist(selectedArtist!)
     }
     
     func validateFavoriteArtist() {

@@ -1,6 +1,16 @@
 import Foundation
 import RealmSwift
 
+struct SearchResult: Codable {
+    var resultCount: Int
+    var results: [Artist]
+    
+    init(){
+        self.resultCount =  0
+        self.results = [Artist]()
+    }
+}
+
 struct Artist: Codable {
     var artistId: Int
     var primaryGenreName: String
@@ -29,6 +39,16 @@ struct Artist: Codable {
         self.artistLinkUrl = artistLinkUrl
         self.primaryGenreId = primaryGenreId
     }
+    
+    init(artistObject: ArtistObject) {
+        self.artistId = artistObject.artistId
+        self.primaryGenreName = artistObject.primaryGenreName
+        self.wrapperType = artistObject.wrapperType
+        self.artistName = artistObject.artistName
+        self.artistType = artistObject.artistType
+        self.artistLinkUrl = artistObject.artistLinkUrl
+        self.primaryGenreId = artistObject.primaryGenreId
+    }
 }
 
 class ArtistObject: Object {
@@ -44,7 +64,7 @@ class ArtistObject: Object {
         return "artistId"
     }
 
-    required init() {
+    required override init() {
         self.artistId =  0
         self.primaryGenreName = ""
         self.wrapperType = ""

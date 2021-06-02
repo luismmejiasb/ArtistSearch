@@ -1,11 +1,13 @@
+import RealmSwift
 import UIKit
+import Combine
 
 protocol FavoriteSearchWireframeProtocol: class {
     static func assemble() -> FavoriteSearchViewController
 }
 
 protocol FavoriteSearchViewProtocol: class {
-    func reloadDataInView(with artistsData : [ArtistObject])
+    func reloadDataInView(with artistsData: [ArtistObject])
 }
 
 protocol FavoriteSearchPresenterProtocol: class {
@@ -17,11 +19,19 @@ protocol FavoriteSearchPresenterProtocol: class {
 }
 
 protocol FavoriteSearchInteractorProtocol: class {
-    func findAllFavoriteArtist( completion: @escaping ([ArtistObject]) -> Void)
+    var publisher: PassthroughSubject<FavoriteSearchPublisherAction, Error>? { get set }
+
+    func findAllFavoriteArtist()
 }
 
 protocol FavoriteSearchRouterProtocol: class {
     var view: FavoriteSearchViewController? { get set }
     
     func presentArtistDetail(_ artist: Artist)
+    func displayAlert(withMessage message: String)
+}
+
+enum FavoriteSearchPublisherAction {
+    case favoriteSearchFetched([ArtistObject])
+    case favoriteSearchFetchFailure(Error)
 }

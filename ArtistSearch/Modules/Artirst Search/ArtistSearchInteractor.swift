@@ -1,47 +1,27 @@
 import Foundation
-import Alamofire
+import Combine
 
 class ArtistSearchInteractor: ArtistSearchInteractorProtocol {
-    var apiRequestClient : Request?
+    var repository: ArtistSearchRepositoryProtocol?
+    private var searchTermTokens = Set<AnyCancellable>()
+    var publisher: PassthroughSubject<ArtistSearchPublisherAction, Error>?
 
-    func searchTerm(withFilteringType filterType : FilteringType, and termString: String, completion: @escaping ([Artist], _ resultCode : Int) -> Void) {
-        
-        let enteredText: String = (termString.replacingOccurrences(of: " ", with: "+"))
-        
-        let requestUrlString: String = filterType.filteringTypeURL + enteredText
-        
-        apiRequestClient = Alamofire.request(requestUrlString, method: .get, parameters : nil, headers : nil).validate().responseJSON { response in
-            
-            switch response.result {
-                
-            case .success:
-                var artistsData: [Artist] = []
-                
-                if let responseObject: NSDictionary =  response.result.value as? NSDictionary, let resultsArray = responseObject["results"] as? [NSDictionary] {
-                    do {
-                        let jsonData = try JSONSerialization.data(withJSONObject: resultsArray, options: .prettyPrinted)
-                        
-                        artistsData = try JSONDecoder().decode([Artist].self, from: jsonData) as [Artist]
-                        
-                        completion(artistsData, 200)
-                        
-                    } catch {
-                        completion(artistsData, 0)
-                        print(error.localizedDescription)
-                    }
-                } else {
-                    completion(artistsData, 0)
-                }
-                
-            case .failure(let error):
-                if error._code != NSURLErrorCancelled {
-                    completion([], error._code)
-                }   
-            }
-        }
+    init(repository: ArtistSearchRepositoryProtocol?) {
+        self.repository = repository
     }
-    
-    func cancelAPIRequest() {
-        apiRequestClient?.cancel()
+
+    func searchTerm(withFilteringType filterType : FilteringType, and termString: String) {
+        repository?.searchArtist(withFilteringType: filterType, and: termString)
+            .sink(
+                receiveCompletion: { (completion) in
+                    switch completion {
+                    case .finished:
+                        print("Publisher stopped obversing")
+                    case .failure(let error):
+                        self.publisher?.send(ArtistSearchPublisherAction.displayErrorAlert(error))
+                    }
+                }, receiveValue: { (artists) in
+                    self.publisher?.send(ArtistSearchPublisherAction.displayFoundArtists(artists))
+                }).store(in: &searchTermTokens)
     }
 }
