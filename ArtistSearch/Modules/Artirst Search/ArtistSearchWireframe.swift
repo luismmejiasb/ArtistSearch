@@ -11,6 +11,7 @@ class ArtistSearchWireframe: ArtistSearchWireframeProtocol {
         let presenter = ArtistSearchPresenter(interactor: interactor, router: router)
         let artistSearchViewController = ArtistSearchViewController()
         let navigationController = UINavigationController()
+
         navigationController.setUpNavigationController()
         navigationController.setViewControllers([artistSearchViewController], animated: false)
         

@@ -17,7 +17,7 @@ class FavoriteSearchInteractor: FavoriteSearchInteractorProtocol {
                     case .finished:
                         print("Publisher stopped obversing")
                     case .failure(let error):
-                        self.publisher?.send(FavoriteSearchPublisherAction.favoriteSearchFetcheFailure(error))
+                        self.publisher?.send(FavoriteSearchPublisherAction.favoriteSearchFetchFailure(error))
                     }
                 }, receiveValue: { (artists) in
                     self.publisher?.send(FavoriteSearchPublisherAction.favoriteSearchFetched(artists))

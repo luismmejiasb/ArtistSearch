@@ -29,7 +29,7 @@ class FavoriteSearchPresenter: FavoriteSearchPresenterProtocol {
                 switch action {
                 case .favoriteSearchFetched(let artists):
                     self?.view?.reloadDataInView(with: artists)
-                case .favoriteSearchFetcheFailure(let error):
+                case .favoriteSearchFetchFailure(let error):
                     print(error)
                 }
             }).store(in: &favoriteSearchTokens)
