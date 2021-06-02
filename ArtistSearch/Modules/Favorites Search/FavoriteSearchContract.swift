@@ -33,5 +33,5 @@ protocol FavoriteSearchRouterProtocol: class {
 
 enum FavoriteSearchPublisherAction {
     case favoriteSearchFetched([ArtistObject])
-    case favoriteSearchFetcheFailure(Error)
+    case favoriteSearchFetchFailure(Error)
 }

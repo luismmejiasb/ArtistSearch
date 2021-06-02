@@ -455,7 +455,7 @@
 			children = (
 				28D01AF9264C5EAC009E249F /* Artist Search */,
 				28D01B00264C5EF7009E249F /* Artist Detail */,
-				28D01B01264C5F00009E249F /* Favorites Search */,
+				28D01B01264C5F00009E249F /* Favorite Search */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -480,14 +480,14 @@
 			path = "Artist Detail";
 			sourceTree = "<group>";
 		};
-		28D01B01264C5F00009E249F /* Favorites Search */ = {
+		28D01B01264C5F00009E249F /* Favorite Search */ = {
 			isa = PBXGroup;
 			children = (
 				2863D76D2667D3E400387552 /* FavoriteSearchDataContract.swift */,
 				2863D7682667D3B800387552 /* Repository */,
 				2863D7692667D3C000387552 /* DataSources */,
 			);
-			path = "Favorites Search";
+			path = "Favorite Search";
 			sourceTree = "<group>";
 		};
 		28D01B14264C6088009E249F /* Repository */ = {
