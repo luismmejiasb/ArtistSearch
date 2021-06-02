@@ -1,6 +1,7 @@
 import UIKit
+import Combine
 
-class ArtistSearchViewController: UIViewController {
+class ArtistSearchViewController: UIViewController, ArtistSearchViewProtocol {
     @IBOutlet weak var searchCollectionView: UICollectionView! {
         didSet {
             searchCollectionView.register(ArtistCollectionViewCell.nib, forCellWithReuseIdentifier: ArtistCollectionViewCell.reusableIdentifier)
@@ -15,13 +16,14 @@ class ArtistSearchViewController: UIViewController {
         return favoriteButton
     }()
     var presenter: ArtistSearchPresenterProtocol?
-    var searchData: [Artist]! = [] {
+    var searchData: [Artist] = [] {
         didSet {
             searchCollectionView.reloadData()
         }
     }
     var selectedFilterType: FilteringType = .artist
-
+    var searchPublisher: PassthroughSubject<[Artist], Error>?
+    private var tokens = Set<AnyCancellable>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,22 +31,14 @@ class ArtistSearchViewController: UIViewController {
         searchCollectionView.dataSource = self
         searchBar.delegate = self
         setUpUI()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        presenter?.viewDidLoad()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         searchBar.becomeFirstResponder()
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
-        presenter?.cancelAPIRequest()
-    }
-	
+
     @IBAction func showFavoriteSearchs(_ sender: Any) {
         presenter?.presentFavoriteSearchs()
     }
@@ -71,111 +65,9 @@ class ArtistSearchViewController: UIViewController {
         searchInformationLabel.accessibilityIdentifier = ArtistSearchAI.informationLabel.rawValue
         favoriteButton.accessibilityIdentifier = ArtistSearchAI.favoriteButton.rawValue
     }
-}
-
-// MARK: - Extensions
-
-extension ArtistSearchViewController: ArtistSearchViewProtocol {
-
+    
     func reloadDataInView(with artistData: [Artist]) {
         searchData = artistData
         showInformationView(searchData.isEmpty , type: .noResults)
-    }
-}
-
-// MARK: - UICollectionViewDelegate methods
-
-extension ArtistSearchViewController: UICollectionViewDelegate {
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let selectedArtist: Artist = searchData?[indexPath.row] {
-            presenter?.presentArtistDetail(selectedArtist)
-        }
-    }
-}
-
-// MARK: - UICollectionViewDataSource methods
-
-extension ArtistSearchViewController: UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return searchData.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell: ArtistCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: ArtistCollectionViewCell.reusableIdentifier,
-                                                                                      for: indexPath) as? ArtistCollectionViewCell else {
-                                                                                        return UICollectionViewCell()
-        }
-        
-        let artist: Artist = searchData[indexPath.row]
-
-        cell.configureCell(with: artist)
-        
-        return cell
-    }
-}
-
-// MARK: - UICollectionViewDelegateFlowLayout methods
-
-extension ArtistSearchViewController : UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let width: CGFloat = collectionView.bounds.width / 2 - 4
-        let height: CGFloat = 60.0
-        
-        return CGSize(width: width, height: height)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, 
-                        layout collectionViewLayout: UICollectionViewLayout, 
-                        insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets.zero
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, 
-                        layout collectionViewLayout: UICollectionViewLayout, 
-                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 2
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, 
-                        layout collectionViewLayout: UICollectionViewLayout, 
-                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
-    }
-    
-}
-
-// MARK: - UISearchBarDelegate methods
-
-extension ArtistSearchViewController: UISearchBarDelegate {
-    
-    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        searchBar.setShowsCancelButton(true, animated: true)
-        return true
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.text = ""
-        searchData = []
-        searchCollectionView.isHidden = true
-        searchBar.resignFirstResponder()
-        searchBar.setShowsCancelButton(false, animated: true)
-        showInformationView(true, type: .defaultInformation)
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchBarText = searchBar.text else {
-            searchData = []
-            searchCollectionView.isHidden = true
-            showInformationView(true, type: .defaultInformation)
-            return
-        }
-        searchBar.resignFirstResponder()
-        searchCollectionView.isHidden = false
-        presenter?.searchTerm(type: selectedFilterType, and: searchBarText)
-        showInformationView(false, type: .defaultInformation)
     }
 }

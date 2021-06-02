@@ -16,16 +16,17 @@ class ArtistDetailViewController: UIViewController {
         
         setUpUI()
 
+        presenter?.viewDidLoad()
         presenter?.displaySelectedArtistInformation(self)
         presenter?.validateFavoriteArtist()
     }
 	
     @IBAction func favoriteArtistInformation(_ sender: Any) {
-        presenter?.showFavoriteInformation(self)
+        presenter?.showFavoriteInformation()
     }
     
     @IBAction func seeArtistItunesProfile(_ sender: Any) {
-        presenter?.showItunesProfileFrom()
+        presenter?.showItunesProfile()
     }
     
     @IBAction func changeFavoriteState(_ sender: Any) {
@@ -43,7 +44,7 @@ class ArtistDetailViewController: UIViewController {
     }
 }
 
-// MARK: - Extensions -
+// MARK: - Extensions
 
 extension ArtistDetailViewController: ArtistDetailViewProtocol {
     
