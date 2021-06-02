@@ -19,6 +19,8 @@ class FavoriteSearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.viewDidLoad()
+
         favoriteSearchCollectionView.delegate = self
         favoriteSearchCollectionView.dataSource = self
         

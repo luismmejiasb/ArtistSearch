@@ -3,10 +3,10 @@ import Combine
 
 class ArtistSearchWireframe: ArtistSearchWireframeProtocol {
     static func assemble() -> UINavigationController {
-        let publisher = PassthroughSubject<ArtistSearchPublisherAction, Error>()
         let cloudDataSource = ArtistSearchCloudDataSource()
         let repository = ArtistSearchRepository(cloudDataSource: cloudDataSource)
         let interactor = ArtistSearchInteractor(repository: repository)
+        let publisher = PassthroughSubject<ArtistSearchPublisherAction, Error>()
         let router = ArtistSearchRouter()
         let presenter = ArtistSearchPresenter(interactor: interactor, router: router)
         let artistSearchViewController = ArtistSearchViewController()

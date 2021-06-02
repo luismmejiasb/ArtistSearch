@@ -1,4 +1,5 @@
 import UIKit
+import Combine
 
 protocol ArtistDetailWireFrameProtocol: class {
     static func assemble(withSelectedArtist: Artist)-> ArtistDetailViewController
@@ -15,18 +16,21 @@ protocol ArtistDetailPresenterProtocol: class {
     var interactor: ArtistDetailInteractorProtocol? { get set }
     var router: ArtistDetailRouterProtocol? { get set }
 
+    func viewDidLoad()
     func displaySelectedArtistInformation(_ viewController: ArtistDetailViewController)
-    func showItunesProfileFrom() 
+    func showItunesProfile() 
     func markFavoriteArtist()
     func unmarkFavoriteArtist()
     func validateFavoriteArtist()
-    func showFavoriteInformation(_ viewController: ArtistDetailViewController)
+    func showFavoriteInformation()
     func displayAlert(withMessage message: String)
 }
 
 protocol ArtistDetailInteractorProtocol: class {
-    func saveArtist(_ artist: Artist, completion: @escaping (Bool) -> Void)
-    func deleteArtist(_ artist: Artist, completion: @escaping (Bool) -> Void)
+    var publisher: PassthroughSubject<ArtistDetailPublisherAction, Error>? { get set }
+
+    func saveArtist(_ artist: Artist)
+    func deleteArtist(_ artist: Artist)
     func isFavorite(_ artist : Artist) -> Bool
 }
 
@@ -34,4 +38,12 @@ protocol ArtistDetailRouterProtocol: class {
     var view: ArtistDetailViewController? { get set }
     
     func displayAlert(withMessage message: String)
+    func showFavoriteInformation(withArtist artist: Artist)
+}
+
+enum ArtistDetailPublisherAction {
+    case artistSavedSuccess(Void)
+    case artistDeletedSuccess(Void)
+    case artistSavedError(Error)
+    case artistDeletedError(Error)
 }

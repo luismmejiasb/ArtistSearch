@@ -1,50 +1,46 @@
 import Foundation
-import RealmSwift
+import Combine
 
 class ArtistDetailInteractor: ArtistDetailInteractorProtocol {
+    var repository: ArtistDetailRepositoryProtocol?
+    private var artistDetailTokens = Set<AnyCancellable>()
+    var publisher: PassthroughSubject<ArtistDetailPublisherAction, Error>?
 
-    func saveArtist(_ artist: Artist, completion: @escaping (Bool) -> Void) {
-        
-        let selectedArtistObject: ArtistObject = ArtistObject()
-        selectedArtistObject.artistId = artist.artistId
-        selectedArtistObject.primaryGenreName = artist.primaryGenreName
-        selectedArtistObject.wrapperType = artist.wrapperType
-        selectedArtistObject.artistName = artist.artistName
-        selectedArtistObject.artistType = artist.artistType
-        selectedArtistObject.artistLinkUrl = artist.artistLinkUrl
-        selectedArtistObject.primaryGenreId = artist.primaryGenreId
+    init(repository: ArtistDetailRepositoryProtocol?) {
+        self.repository = repository
+    }
 
-        // swiftlint:disable force_try
-        let realm = try! Realm()
-        
-        try! realm.write {
-            realm.add(selectedArtistObject)
-            completion(true)
-        }
-        
-        completion(false)
+    func saveArtist(_ artist: Artist) {
+        repository?.saveArtist(artist)
+            .sink(
+                receiveCompletion: { (completion) in
+                    switch completion {
+                    case .finished:
+                        print("Publisher stopped obversing")
+                    case .failure(let error):
+                        self.publisher?.send(ArtistDetailPublisherAction.artistSavedError(error))
+                    }
+                }, receiveValue: { (artists) in
+                    self.publisher?.send(ArtistDetailPublisherAction.artistSavedSuccess(()))
+                }).store(in: &artistDetailTokens)
     }
     
-    func deleteArtist(_ artist: Artist, completion: @escaping (Bool) -> Void) {
-        let realm = try! Realm()
-        
-        guard let artist = realm.objects(ArtistObject.self).filter("artistId == %@", artist.artistId).first else {
-            completion(false)
-            return
-        }
-        
-        try! realm.write {
-            realm.delete(artist)
-            completion(true)
-        }
-        
-        completion(false)
-        
+    func deleteArtist(_ artist: Artist) {
+        repository?.deleteArtist(artist)
+            .sink(
+                receiveCompletion: { (completion) in
+                    switch completion {
+                    case .finished:
+                        print("Publisher stopped obversing")
+                    case .failure(let error):
+                        self.publisher?.send(ArtistDetailPublisherAction.artistDeletedError(error))
+                    }
+                }, receiveValue: { (artists) in
+                    self.publisher?.send(ArtistDetailPublisherAction.artistDeletedSuccess(()))
+                }).store(in: &artistDetailTokens)
     }
     
     func isFavorite(_ artist : Artist) -> Bool {
-        let realm = try! Realm()
-        let artistResult = realm.objects(ArtistObject.self).filter("artistId == %@", artist.artistId)
-        return !artistResult.isEmpty
+        return repository?.isFavorite(artist) ?? false
     }
 }

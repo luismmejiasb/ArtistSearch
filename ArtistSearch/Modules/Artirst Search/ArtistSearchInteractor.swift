@@ -3,7 +3,7 @@ import Combine
 
 class ArtistSearchInteractor: ArtistSearchInteractorProtocol {
     var repository: ArtistSearchRepositoryProtocol?
-    private var searchTermAnyTokens = Set<AnyCancellable>()
+    private var searchTermTokens = Set<AnyCancellable>()
     var publisher: PassthroughSubject<ArtistSearchPublisherAction, Error>?
 
     init(repository: ArtistSearchRepositoryProtocol?) {
@@ -21,7 +21,7 @@ class ArtistSearchInteractor: ArtistSearchInteractorProtocol {
                         self.publisher?.send(ArtistSearchPublisherAction.displayErrorAlert(error))
                     }
                 }, receiveValue: { (artists) in
-                    self.publisher?.send(ArtistSearchPublisherAction.displayData(artists))
-                }).store(in: &searchTermAnyTokens)
+                    self.publisher?.send(ArtistSearchPublisherAction.displayFoundArtists(artists))
+                }).store(in: &searchTermTokens)
     }
 }
