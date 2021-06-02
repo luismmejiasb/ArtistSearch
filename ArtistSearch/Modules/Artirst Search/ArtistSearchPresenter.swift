@@ -4,8 +4,7 @@ class ArtistSearchPresenter: ArtistSearchPresenterProtocol {
     var view: ArtistSearchViewProtocol?
     var interactor: ArtistSearchInteractorProtocol?
     var router: ArtistSearchRouterProtocol?
-
-    private var searchTermAnyTokens = Set<AnyCancellable>()
+    private var searchTermTokens = Set<AnyCancellable>()
 
     init(interactor: ArtistSearchInteractorProtocol, router: ArtistSearchRouterProtocol) {
         self.interactor = interactor
@@ -27,12 +26,12 @@ class ArtistSearchPresenter: ArtistSearchPresenterProtocol {
                 }
             }, receiveValue: { [weak self] (action) in
                 switch action {
-                case .displayData(let artists):
+                case .displayFoundArtists(let artists):
                     self?.view?.reloadDataInView(with: artists)
                 case .displayErrorAlert(let error):
                     self?.router?.displayAlert(withMessage: error.localizedDescription)
                 }
-            }).store(in: &searchTermAnyTokens)
+            }).store(in: &searchTermTokens)
     }
 
     func searchTerm(type filterType: FilteringType, and termString: String) {

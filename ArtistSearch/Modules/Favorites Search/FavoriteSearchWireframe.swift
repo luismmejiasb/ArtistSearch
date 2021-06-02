@@ -1,8 +1,12 @@
 import UIKit
+import Combine
 
 class FavoriteSearchWireframe: FavoriteSearchWireframeProtocol {
     static func assemble() -> FavoriteSearchViewController {
-        let interactor = FavoriteSearchInteractor()
+        let localDataSource = FavoriteSearchLocalDataSource()
+        let repository = FavoriteSearchRepository(localDataSource: localDataSource)
+        let publisher = PassthroughSubject<FavoriteSearchPublisherAction, Error>()
+        let interactor = FavoriteSearchInteractor(repository: repository)
         let router = FavoriteSearchRouter()
         let presenter = FavoriteSearchPresenter(interactor: interactor, router: router)
         let view = FavoriteSearchViewController()
@@ -10,6 +14,7 @@ class FavoriteSearchWireframe: FavoriteSearchWireframeProtocol {
         router.view = view
         view.presenter = presenter
         presenter.view = view
+        interactor.publisher = publisher
         
         return view
     }

@@ -29,16 +29,6 @@ protocol ArtistSearchInteractorProtocol: class {
     func searchTerm(withFilteringType filterType : FilteringType, and termString: String)
 }
 
-protocol ArtistSearchDelegate: class {
-    var view: ArtistSearchViewProtocol? { get set }
-    var interactor: ArtistSearchInteractorProtocol? { get set }
-    var router: ArtistSearchRouterProtocol? { get set }
-
-    func searchTerm(type filterType: FilteringType, and termString: String)
-    func presentArtistDetail(_ artist: Artist)
-    func presentFavoriteSearchs()
-}
-
 protocol ArtistSearchRouterProtocol: class {
     var view: ArtistSearchViewController? { get set }
     
@@ -48,6 +38,6 @@ protocol ArtistSearchRouterProtocol: class {
 }
 
 enum ArtistSearchPublisherAction {
-    case displayData([Artist])
+    case displayFoundArtists([Artist])
     case displayErrorAlert(Error)
 }
