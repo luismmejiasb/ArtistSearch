@@ -1,8 +1,8 @@
-import UIKit
 import Combine
+import UIKit
 
 protocol ArtistDetailWireFrameProtocol: class {
-    static func assemble(withSelectedArtist: Artist)-> ArtistDetailViewController
+    static func assemble(withSelectedArtist: Artist) -> ArtistDetailViewController
 }
 
 protocol ArtistDetailViewProtocol: class {
@@ -18,7 +18,7 @@ protocol ArtistDetailPresenterProtocol: class {
 
     func viewDidLoad()
     func displaySelectedArtistInformation(_ viewController: ArtistDetailViewController)
-    func showItunesProfile() 
+    func showItunesProfile()
     func markFavoriteArtist()
     func unmarkFavoriteArtist()
     func validateFavoriteArtist()
@@ -31,12 +31,12 @@ protocol ArtistDetailInteractorProtocol: class {
 
     func saveArtist(_ artist: Artist)
     func deleteArtist(_ artist: Artist)
-    func isFavorite(_ artist : Artist) -> Bool
+    func isFavorite(_ artist: Artist) -> Bool
 }
 
 protocol ArtistDetailRouterProtocol: class {
     var view: ArtistDetailViewController? { get set }
-    
+
     func displayAlert(withMessage message: String)
     func showFavoriteInformation(withArtist artist: Artist)
 }

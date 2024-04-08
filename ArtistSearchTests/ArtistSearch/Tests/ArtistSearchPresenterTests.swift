@@ -9,16 +9,16 @@ class ArtistSearchPresenterTests: XCTestCase {
     let presentArtistDetailSelector = "presentArtistDetail(_:)"
     let cancelAPIRequestSelector = "cancelAPIRequest()"
     let presentFavoriteSearchs = "presentFavoriteSearchs()"
-    
+
     override func setUp() {
         super.setUp()
         presenterToTest = ArtistSearchPresenter(interactor: interactorMock, router: routerMock)
     }
-    
+
     override func tearDown() {
         super.tearDown()
     }
-    
+
     func testSearchTerm() {
         let filterType: FilteringType = .artist
         let searchTerm = "Cold Play"
@@ -36,7 +36,7 @@ class ArtistSearchPresenterTests: XCTestCase {
     func testPresentArtistDetail() {
         let artist = Artist()
         presenterToTest!.presentArtistDetail(artist)
-        
+
         let expectedFunctionsCalled = 1
         let functionsCalled = routerMock.functionsCalled
         if expectedFunctionsCalled == functionsCalled.count {
@@ -45,10 +45,10 @@ class ArtistSearchPresenterTests: XCTestCase {
             XCTAssertTrue(false, "Expected functions called must equal to called functions after test")
         }
     }
-    
+
     func testCancelAPIRequest() {
         presenterToTest!.cancelAPIRequest()
-        
+
         let expectedFunctionsCalled = 1
         let functionsCalled = interactorMock.functionsCalled
         if expectedFunctionsCalled == functionsCalled.count {
@@ -60,7 +60,7 @@ class ArtistSearchPresenterTests: XCTestCase {
 
     func testPresentFavoriteSearchs() {
         presenterToTest!.presentFavoriteSearchs()
-        
+
         let expectedFunctionsCalled = 1
         let functionsCalled = routerMock.functionsCalled
         if expectedFunctionsCalled == functionsCalled.count {
@@ -69,5 +69,4 @@ class ArtistSearchPresenterTests: XCTestCase {
             XCTAssertTrue(false, "Expected functions called must equal to called functions after test")
         }
     }
-
 }

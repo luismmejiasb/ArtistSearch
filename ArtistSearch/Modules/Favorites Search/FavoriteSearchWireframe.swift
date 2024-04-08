@@ -1,5 +1,5 @@
-import UIKit
 import Combine
+import UIKit
 
 class FavoriteSearchWireframe: FavoriteSearchWireframeProtocol {
     static func assemble() -> FavoriteSearchViewController {
@@ -15,7 +15,7 @@ class FavoriteSearchWireframe: FavoriteSearchWireframeProtocol {
         view.presenter = presenter
         presenter.view = view
         interactor.publisher = publisher
-        
+
         return view
     }
 }
