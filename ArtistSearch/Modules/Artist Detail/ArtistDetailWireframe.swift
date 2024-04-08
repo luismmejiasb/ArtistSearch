@@ -1,7 +1,7 @@
 import Combine
 import UIKit
 
-class ArtistDetailWireframe: ArtistDetailWireFrameProtocol {
+final class ArtistDetailWireframe: ArtistDetailWireFrameProtocol {
     static func assemble(withSelectedArtist: Artist) -> ArtistDetailViewController {
         let localDataSource = ArtistDetailLocalDataSource()
         let repository = ArtistDetailRepository(localDataSource: localDataSource)

@@ -1,7 +1,7 @@
 import Combine
 import Foundation
 
-class ArtistSearchInteractor: ArtistSearchInteractorProtocol {
+final class ArtistSearchInteractor: ArtistSearchInteractorProtocol {
     var repository: ArtistSearchRepositoryProtocol?
     private var searchTermTokens = Set<AnyCancellable>()
     var publisher: PassthroughSubject<ArtistSearchPublisherAction, Error>?

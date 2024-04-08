@@ -1,7 +1,7 @@
 import Combine
 import UIKit
 
-class FavoriteSearchWireframe: FavoriteSearchWireframeProtocol {
+final class FavoriteSearchWireframe: FavoriteSearchWireframeProtocol {
     static func assemble() -> FavoriteSearchViewController {
         let localDataSource = FavoriteSearchLocalDataSource()
         let repository = FavoriteSearchRepository(localDataSource: localDataSource)

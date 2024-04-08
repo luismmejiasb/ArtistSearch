@@ -1,17 +1,17 @@
 import Combine
 import UIKit
 
-protocol ArtistSearchWireframeProtocol: class {
+protocol ArtistSearchWireframeProtocol: AnyObject {
     static func assemble() -> UINavigationController
 }
 
-protocol ArtistSearchViewProtocol: class {
+protocol ArtistSearchViewProtocol: AnyObject {
     var presenter: ArtistSearchPresenterProtocol? { get set }
 
     func reloadDataInView(with artistData: [Artist])
 }
 
-protocol ArtistSearchPresenterProtocol: class {
+protocol ArtistSearchPresenterProtocol: AnyObject {
     var view: ArtistSearchViewProtocol? { get set }
     var interactor: ArtistSearchInteractorProtocol? { get set }
     var router: ArtistSearchRouterProtocol? { get set }
@@ -22,14 +22,14 @@ protocol ArtistSearchPresenterProtocol: class {
     func presentFavoriteSearchs()
 }
 
-protocol ArtistSearchInteractorProtocol: class {
+protocol ArtistSearchInteractorProtocol: AnyObject {
     var repository: ArtistSearchRepositoryProtocol? { get set }
     var publisher: PassthroughSubject<ArtistSearchPublisherAction, Error>? { get set }
 
     func searchTerm(withFilteringType filterType: FilteringType, and termString: String)
 }
 
-protocol ArtistSearchRouterProtocol: class {
+protocol ArtistSearchRouterProtocol: AnyObject {
     var view: ArtistSearchViewController? { get set }
 
     func presentArtistDetail(_ artist: Artist)

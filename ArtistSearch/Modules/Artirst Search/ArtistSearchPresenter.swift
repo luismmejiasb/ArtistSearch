@@ -1,6 +1,6 @@
 import Combine
 
-class ArtistSearchPresenter: ArtistSearchPresenterProtocol {
+final class ArtistSearchPresenter: ArtistSearchPresenterProtocol {
     var view: ArtistSearchViewProtocol?
     var interactor: ArtistSearchInteractorProtocol?
     var router: ArtistSearchRouterProtocol?
