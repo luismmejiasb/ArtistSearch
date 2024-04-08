@@ -9,13 +9,9 @@
 import Foundation
 
 class ArtistSearchMockInteractor: ArtistSearchInteractorInterface {
-    
-    func searchTerm(withFilteringType filterType: FilteringType, and termString: String, completion: @escaping ([Artist], Int) -> Void) {
-        completion([Artist.init(artistId: 1, primaryGenreName: "Something", wrapperType: "Shomething", artistName: "Someone", artistType: "Some Type", artistLinkUrl: "Some URL", primaryGenreId: 2)], 200)
+    func searchTerm(withFilteringType _: FilteringType, and _: String, completion: @escaping ([Artist], Int) -> Void) {
+        completion([Artist(artistId: 1, primaryGenreName: "Something", wrapperType: "Shomething", artistName: "Someone", artistType: "Some Type", artistLinkUrl: "Some URL", primaryGenreId: 2)], 200)
     }
-    
-    func cancelAPIRequest() {
-        
-    }
-    
+
+    func cancelAPIRequest() {}
 }

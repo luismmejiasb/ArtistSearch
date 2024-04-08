@@ -1,6 +1,6 @@
+import Combine
 import RealmSwift
 import UIKit
-import Combine
 
 protocol FavoriteSearchWireframeProtocol: class {
     static func assemble() -> FavoriteSearchViewController
@@ -26,7 +26,7 @@ protocol FavoriteSearchInteractorProtocol: class {
 
 protocol FavoriteSearchRouterProtocol: class {
     var view: FavoriteSearchViewController? { get set }
-    
+
     func presentArtistDetail(_ artist: Artist)
     func displayAlert(withMessage message: String)
 }

@@ -1,8 +1,8 @@
-import UIKit
 import Combine
+import UIKit
 
 protocol ArtistSearchWireframeProtocol: class {
-    static func assemble()-> UINavigationController
+    static func assemble() -> UINavigationController
 }
 
 protocol ArtistSearchViewProtocol: class {
@@ -26,12 +26,12 @@ protocol ArtistSearchInteractorProtocol: class {
     var repository: ArtistSearchRepositoryProtocol? { get set }
     var publisher: PassthroughSubject<ArtistSearchPublisherAction, Error>? { get set }
 
-    func searchTerm(withFilteringType filterType : FilteringType, and termString: String)
+    func searchTerm(withFilteringType filterType: FilteringType, and termString: String)
 }
 
 protocol ArtistSearchRouterProtocol: class {
     var view: ArtistSearchViewController? { get set }
-    
+
     func presentArtistDetail(_ artist: Artist)
     func presentFavoriteSearchs()
     func displayAlert(withMessage message: String)

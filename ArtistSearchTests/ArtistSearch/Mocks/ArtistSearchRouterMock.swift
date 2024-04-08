@@ -1,15 +1,14 @@
 @testable import ArtistSearch
 
 class ArtistSearchRouterMock: ArtistSearchRouterProtocol {
-    var functionsCalled: [String] = [String]()
+    var functionsCalled: [String] = .init()
     var view: ArtistSearchViewController?
-    
-    func presentArtistDetail(_ artist: Artist) {
+
+    func presentArtistDetail(_: Artist) {
         functionsCalled.append(#function)
     }
 
     func presentFavoriteSearchs() {
         functionsCalled.append(#function)
     }
-
 }

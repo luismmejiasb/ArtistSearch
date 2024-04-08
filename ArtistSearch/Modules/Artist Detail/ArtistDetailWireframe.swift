@@ -1,5 +1,5 @@
-import UIKit
 import Combine
+import UIKit
 
 class ArtistDetailWireframe: ArtistDetailWireFrameProtocol {
     static func assemble(withSelectedArtist: Artist) -> ArtistDetailViewController {
@@ -8,7 +8,7 @@ class ArtistDetailWireframe: ArtistDetailWireFrameProtocol {
         let interactor = ArtistDetailInteractor(repository: repository)
         let publisher = PassthroughSubject<ArtistDetailPublisherAction, Error>()
         let presenter = ArtistDetailPresenter(interactor: interactor, selectedArtist: withSelectedArtist)
-        let router =  ArtistDetailRouter()
+        let router = ArtistDetailRouter()
         let view = ArtistDetailViewController()
 
         router.view = view
@@ -16,8 +16,7 @@ class ArtistDetailWireframe: ArtistDetailWireFrameProtocol {
         presenter.view = view
         presenter.router = router
         interactor.publisher = publisher
-        
+
         return view
     }
-
 }

@@ -6,12 +6,12 @@
 //  Copyright © 2019 Luis Mejías. All rights reserved.
 //
 
-import XCTest
 import Foundation
+import XCTest
 
 class MainUITest: XCTestCase {
     var app: XCUIApplication!
-    
+
     override func setUp() {
         super.setUp()
     }
