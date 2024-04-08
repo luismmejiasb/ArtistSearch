@@ -1,7 +1,6 @@
 import UIKit
 
 extension ArtistSearchViewController: UISearchBarDelegate {
-
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         searchBar.setShowsCancelButton(true, animated: true)
         return true
@@ -29,4 +28,3 @@ extension ArtistSearchViewController: UISearchBarDelegate {
         showInformationView(false, type: .defaultInformation)
     }
 }
-

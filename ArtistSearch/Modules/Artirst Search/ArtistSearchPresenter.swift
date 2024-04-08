@@ -10,28 +10,29 @@ class ArtistSearchPresenter: ArtistSearchPresenterProtocol {
         self.interactor = interactor
         self.router = router
     }
-    
+
     func viewDidLoad() {
         subscribePublishers()
     }
 
     func subscribePublishers() {
         interactor?.publisher?.sink(
-            receiveCompletion: { [weak self] (completion) in
+            receiveCompletion: { [weak self] completion in
                 switch completion {
                 case .finished:
                     print("Publisher stopped obversing")
-                case .failure(let error):
+                case let .failure(error):
                     self?.router?.displayAlert(withMessage: error.localizedDescription)
                 }
-            }, receiveValue: { [weak self] (action) in
+            }, receiveValue: { [weak self] action in
                 switch action {
-                case .displayFoundArtists(let artists):
+                case let .displayFoundArtists(artists):
                     self?.view?.reloadDataInView(with: artists)
-                case .displayErrorAlert(let error):
+                case let .displayErrorAlert(error):
                     self?.router?.displayAlert(withMessage: error.localizedDescription)
                 }
-            }).store(in: &searchTermTokens)
+            }
+        ).store(in: &searchTermTokens)
     }
 
     func searchTerm(type filterType: FilteringType, and termString: String) {
@@ -45,7 +46,7 @@ class ArtistSearchPresenter: ArtistSearchPresenterProtocol {
     func presentFavoriteSearchs() {
         router?.presentFavoriteSearchs()
     }
-    
+
     func displayAlert(withMessage message: String) {
         router?.displayAlert(withMessage: message)
     }

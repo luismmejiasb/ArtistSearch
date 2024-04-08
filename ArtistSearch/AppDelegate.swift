@@ -4,8 +4,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
+    func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let initialViewController = ArtistSearchWireframe.assemble()
 
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -15,18 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    func applicationWillResignActive(_ application: UIApplication) {
-    }
+    func applicationWillResignActive(_: UIApplication) {}
 
-    func applicationDidEnterBackground(_ application: UIApplication) {
-    }
+    func applicationDidEnterBackground(_: UIApplication) {}
 
-    func applicationWillEnterForeground(_ application: UIApplication) {
-    }
+    func applicationWillEnterForeground(_: UIApplication) {}
 
-    func applicationDidBecomeActive(_ application: UIApplication) {
-    }
- 
-    func applicationWillTerminate(_ application: UIApplication) {
-    }
+    func applicationDidBecomeActive(_: UIApplication) {}
+
+    func applicationWillTerminate(_: UIApplication) {}
 }

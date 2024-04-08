@@ -1,5 +1,5 @@
-import Combine
 import Alamofire
+import Combine
 import Foundation
 
 class ArtistSearchCloudDataSource: ArtistSearchCloudDataSourceProtocol {
@@ -10,9 +10,9 @@ class ArtistSearchCloudDataSource: ArtistSearchCloudDataSourceProtocol {
             let requestUrlString: String = filterType.filteringTypeURL + enteredText
 
             AF.request(requestUrlString, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { response in
-                
+
                 switch response.result {
-                case .success(let response):
+                case let .success(response):
                     do {
                         let jsonData = try JSONSerialization.data(withJSONObject: response, options: .prettyPrinted)
                         let searchResult = try JSONDecoder().decode(SearchResult.self, from: jsonData)
@@ -20,8 +20,8 @@ class ArtistSearchCloudDataSource: ArtistSearchCloudDataSourceProtocol {
                     } catch {
                         return promise(.failure(CloudSourceErrors.responseCannotBeParsed))
                     }
-                    
-                case .failure(let error):
+
+                case let .failure(error):
                     promise(.failure(error))
                 }
             }

@@ -1,5 +1,5 @@
-import UIKit
 import Combine
+import UIKit
 
 class FavoriteSearchPresenter: FavoriteSearchPresenterProtocol {
     var view: FavoriteSearchViewProtocol?
@@ -11,36 +11,36 @@ class FavoriteSearchPresenter: FavoriteSearchPresenterProtocol {
         self.interactor = interactor
         self.router = router
     }
-    
+
     func viewDidLoad() {
         subscribePublishers()
     }
-    
+
     private func subscribePublishers() {
         interactor?.publisher?.sink(
-            receiveCompletion: { [weak self] (completion) in
+            receiveCompletion: { [weak self] completion in
                 switch completion {
                 case .finished:
                     print("Publisher stopped obversing")
-                case .failure(let error):
+                case let .failure(error):
                     self?.router?.displayAlert(withMessage: error.localizedDescription)
                 }
-            }, receiveValue: { [weak self] (action) in
+            }, receiveValue: { [weak self] action in
                 switch action {
-                case .favoriteSearchFetched(let artists):
+                case let .favoriteSearchFetched(artists):
                     self?.view?.reloadDataInView(with: artists)
-                case .favoriteSearchFetchFailure(let error):
+                case let .favoriteSearchFetchFailure(error):
                     print(error)
                 }
-            }).store(in: &favoriteSearchTokens)
+            }
+        ).store(in: &favoriteSearchTokens)
     }
-    
+
     func presentFavoriteSearchs() {
         interactor?.findAllFavoriteArtist()
     }
-    
+
     func presentArtistDetail(_ artist: Artist) {
         router?.presentArtistDetail(artist)
     }
-    
 }

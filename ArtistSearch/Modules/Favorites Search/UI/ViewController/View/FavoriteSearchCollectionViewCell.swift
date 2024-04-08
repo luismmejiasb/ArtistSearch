@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 class FavoriteSearchCollectionViewCell: UICollectionViewCell {
-    @IBOutlet private weak var artistNameLabel: UILabel!
+    @IBOutlet private var artistNameLabel: UILabel!
     static let reusableIdentifier = "artistCollectionCell"
 
     override func awakeFromNib() {
@@ -14,7 +14,7 @@ class FavoriteSearchCollectionViewCell: UICollectionViewCell {
         artistNameLabel.text = artistData.artistName
         artistNameLabel.textColor = GColors.textColor
     }
-    
+
     private func setupUI() {
         layer.cornerRadius = 5
         layer.borderWidth = 0.5

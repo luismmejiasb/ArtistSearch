@@ -1,5 +1,5 @@
-import UIKit
 import Combine
+import UIKit
 
 class ArtistSearchWireframe: ArtistSearchWireframeProtocol {
     static func assemble() -> UINavigationController {
@@ -14,13 +14,12 @@ class ArtistSearchWireframe: ArtistSearchWireframeProtocol {
 
         navigationController.setUpNavigationController()
         navigationController.setViewControllers([artistSearchViewController], animated: false)
-        
+
         router.view = artistSearchViewController
         artistSearchViewController.presenter = presenter
         presenter.view = artistSearchViewController
         interactor.publisher = publisher
-        
+
         return navigationController
     }
-
 }

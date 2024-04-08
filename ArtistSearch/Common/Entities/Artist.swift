@@ -4,10 +4,10 @@ import RealmSwift
 struct SearchResult: Codable {
     var resultCount: Int
     var results: [Artist]
-    
-    init(){
-        self.resultCount =  0
-        self.results = [Artist]()
+
+    init() {
+        resultCount = 0
+        results = [Artist]()
     }
 }
 
@@ -19,17 +19,17 @@ struct Artist: Codable {
     var artistType: String
     var artistLinkUrl: String
     var primaryGenreId: Int
-    
-    init(){
-        self.artistId =  0
-        self.primaryGenreName = ""
-        self.wrapperType = ""
-        self.artistName = ""
-        self.artistType = ""
-        self.artistLinkUrl = ""
-        self.primaryGenreId =  0
+
+    init() {
+        artistId = 0
+        primaryGenreName = ""
+        wrapperType = ""
+        artistName = ""
+        artistType = ""
+        artistLinkUrl = ""
+        primaryGenreId = 0
     }
-    
+
     init(artistId: Int, primaryGenreName: String, wrapperType: String, artistName: String, artistType: String, artistLinkUrl: String, primaryGenreId: Int) {
         self.artistId = artistId
         self.primaryGenreName = primaryGenreName
@@ -39,15 +39,15 @@ struct Artist: Codable {
         self.artistLinkUrl = artistLinkUrl
         self.primaryGenreId = primaryGenreId
     }
-    
+
     init(artistObject: ArtistObject) {
-        self.artistId = artistObject.artistId
-        self.primaryGenreName = artistObject.primaryGenreName
-        self.wrapperType = artistObject.wrapperType
-        self.artistName = artistObject.artistName
-        self.artistType = artistObject.artistType
-        self.artistLinkUrl = artistObject.artistLinkUrl
-        self.primaryGenreId = artistObject.primaryGenreId
+        artistId = artistObject.artistId
+        primaryGenreName = artistObject.primaryGenreName
+        wrapperType = artistObject.wrapperType
+        artistName = artistObject.artistName
+        artistType = artistObject.artistType
+        artistLinkUrl = artistObject.artistLinkUrl
+        primaryGenreId = artistObject.primaryGenreId
     }
 }
 
@@ -59,18 +59,18 @@ class ArtistObject: Object {
     @objc dynamic var artistType: String
     @objc dynamic var artistLinkUrl: String
     @objc dynamic var primaryGenreId: Int
-    
+
     override static func primaryKey() -> String? {
         return "artistId"
     }
 
-    required override init() {
-        self.artistId =  0
-        self.primaryGenreName = ""
-        self.wrapperType = ""
-        self.artistName = ""
-        self.artistType = ""
-        self.artistLinkUrl = ""
-        self.primaryGenreId =  0
+    override required init() {
+        artistId = 0
+        primaryGenreName = ""
+        wrapperType = ""
+        artistName = ""
+        artistType = ""
+        artistLinkUrl = ""
+        primaryGenreId = 0
     }
 }

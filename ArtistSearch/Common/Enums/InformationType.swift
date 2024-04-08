@@ -4,7 +4,7 @@ import UIKit
 public enum InformationType: Int {
     case defaultInformation
     case noResults
-    
+
     public var informationMessage: String {
         switch self {
         case .defaultInformation:
@@ -13,7 +13,7 @@ public enum InformationType: Int {
             return NSLocalizedString("search_artist_nothing_found_information", comment: "")
         }
     }
-    
+
     public var informationIcon: UIImage {
         switch self {
         case .defaultInformation:

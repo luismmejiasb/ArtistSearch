@@ -1,5 +1,5 @@
-import Foundation
 import Combine
+import Foundation
 
 class ArtistDetailInteractor: ArtistDetailInteractorProtocol {
     var repository: ArtistDetailRepositoryProtocol?
@@ -13,34 +13,36 @@ class ArtistDetailInteractor: ArtistDetailInteractorProtocol {
     func saveArtist(_ artist: Artist) {
         repository?.saveArtist(artist)
             .sink(
-                receiveCompletion: { (completion) in
+                receiveCompletion: { completion in
                     switch completion {
                     case .finished:
                         print("Publisher stopped obversing")
-                    case .failure(let error):
+                    case let .failure(error):
                         self.publisher?.send(ArtistDetailPublisherAction.artistSavedError(error))
                     }
-                }, receiveValue: { (artists) in
+                }, receiveValue: { _ in
                     self.publisher?.send(ArtistDetailPublisherAction.artistSavedSuccess(()))
-                }).store(in: &artistDetailTokens)
+                }
+            ).store(in: &artistDetailTokens)
     }
-    
+
     func deleteArtist(_ artist: Artist) {
         repository?.deleteArtist(artist)
             .sink(
-                receiveCompletion: { (completion) in
+                receiveCompletion: { completion in
                     switch completion {
                     case .finished:
                         print("Publisher stopped obversing")
-                    case .failure(let error):
+                    case let .failure(error):
                         self.publisher?.send(ArtistDetailPublisherAction.artistDeletedError(error))
                     }
-                }, receiveValue: { (artists) in
+                }, receiveValue: { _ in
                     self.publisher?.send(ArtistDetailPublisherAction.artistDeletedSuccess(()))
-                }).store(in: &artistDetailTokens)
+                }
+            ).store(in: &artistDetailTokens)
     }
-    
-    func isFavorite(_ artist : Artist) -> Bool {
+
+    func isFavorite(_ artist: Artist) -> Bool {
         return repository?.isFavorite(artist) ?? false
     }
 }
