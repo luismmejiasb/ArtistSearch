@@ -1,7 +1,7 @@
 import Combine
 import UIKit
 
-class ArtistSearchWireframe: ArtistSearchWireframeProtocol {
+final class ArtistSearchWireframe: ArtistSearchWireframeProtocol {
     static func assemble() -> UINavigationController {
         let cloudDataSource = ArtistSearchCloudDataSource()
         let repository = ArtistSearchRepository(cloudDataSource: cloudDataSource)

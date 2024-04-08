@@ -1,0 +1,86 @@
+{
+<<<<<<< Updated upstream
+  "object": {
+    "pins": [
+      {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire",
+        "state": {
+          "branch": null,
+          "revision": "f96b619bcb2383b43d898402283924b80e2c4bae",
+          "version": "5.4.3"
+        }
+      },
+      {
+        "package": "HTTPErrorMessage",
+        "repositoryURL": "https://github.com/luismmejiasb/HTTPErrorMessage",
+        "state": {
+          "branch": null,
+          "revision": "3f379cdcd0224ccf278f08f41c3d72c656c3cea9",
+          "version": "1.0.0"
+        }
+      },
+      {
+        "package": "Realm",
+        "repositoryURL": "https://github.com/realm/realm-cocoa",
+        "state": {
+          "branch": null,
+          "revision": "7e5c77fd7fbb30259e8e6e6a41f32289f72e0812",
+          "version": "10.7.6"
+        }
+      },
+      {
+        "package": "RealmDatabase",
+        "repositoryURL": "https://github.com/realm/realm-core",
+        "state": {
+          "branch": null,
+          "revision": "018adb3469c2882904febca251778129ef4a9b70",
+          "version": "10.7.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+=======
+  "originHash" : "5054636a76670c7455ce8faa2992399f80d2ec3615e923e6054d9f5e057d3caa",
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire",
+      "state" : {
+        "revision" : "f96b619bcb2383b43d898402283924b80e2c4bae",
+        "version" : "5.4.3"
+      }
+    },
+    {
+      "identity" : "httperrormessage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/luismmejiasb/HTTPErrorMessage",
+      "state" : {
+        "revision" : "3f379cdcd0224ccf278f08f41c3d72c656c3cea9",
+        "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "realm-cocoa",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/realm/realm-cocoa",
+      "state" : {
+        "revision" : "7e5c77fd7fbb30259e8e6e6a41f32289f72e0812",
+        "version" : "10.7.6"
+      }
+    },
+    {
+      "identity" : "realm-core",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/realm/realm-core",
+      "state" : {
+        "revision" : "018adb3469c2882904febca251778129ef4a9b70",
+        "version" : "10.7.2"
+      }
+    }
+  ],
+  "version" : 3
+>>>>>>> Stashed changes
+}

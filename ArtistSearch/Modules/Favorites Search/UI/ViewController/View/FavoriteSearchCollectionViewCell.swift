@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class FavoriteSearchCollectionViewCell: UICollectionViewCell {
+final class FavoriteSearchCollectionViewCell: UICollectionViewCell {
     @IBOutlet private var artistNameLabel: UILabel!
     static let reusableIdentifier = "artistCollectionCell"
 

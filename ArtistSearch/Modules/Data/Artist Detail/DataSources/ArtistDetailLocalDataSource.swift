@@ -1,7 +1,7 @@
 import Combine
 import RealmSwift
 
-class ArtistDetailLocalDataSource: ArtistDetailLocalDataSourceProtocol {
+final class ArtistDetailLocalDataSource: ArtistDetailLocalDataSourceProtocol {
     func saveArtist(_ artist: Artist) -> Future<Bool, Error> {
         return Future { promise in
             let artistToSave = ArtistObject()

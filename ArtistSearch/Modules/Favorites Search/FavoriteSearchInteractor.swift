@@ -1,6 +1,6 @@
 import Combine
 
-class FavoriteSearchInteractor: FavoriteSearchInteractorProtocol {
+final class FavoriteSearchInteractor: FavoriteSearchInteractorProtocol {
     var repository: FavoriteSearchRepositoryProtocol?
     private var favoriteSearchTokens = Set<AnyCancellable>()
     var publisher: PassthroughSubject<FavoriteSearchPublisherAction, Error>?

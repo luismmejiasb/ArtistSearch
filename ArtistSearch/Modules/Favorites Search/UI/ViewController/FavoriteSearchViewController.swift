@@ -1,7 +1,7 @@
 import RealmSwift
 import UIKit
 
-class FavoriteSearchViewController: UIViewController, FavoriteSearchViewProtocol {
+final class FavoriteSearchViewController: UIViewController, FavoriteSearchViewProtocol {
     @IBOutlet var favoriteSearchCollectionView: UICollectionView! {
         didSet {
             favoriteSearchCollectionView.register(FavoriteSearchCollectionViewCell.nib, forCellWithReuseIdentifier: FavoriteSearchCollectionViewCell.reusableIdentifier)
@@ -34,9 +34,9 @@ class FavoriteSearchViewController: UIViewController, FavoriteSearchViewProtocol
     }
 
     func setUpUI() {
+        title = "Favorite Searchs"
         view.backgroundColor = GColors.darkTintColor
         showInformationView(true)
-        title = "Favorite Searchs"
     }
 
     func showInformationView(_ withState: Bool) {

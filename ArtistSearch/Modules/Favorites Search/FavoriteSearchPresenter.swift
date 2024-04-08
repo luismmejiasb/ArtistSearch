@@ -1,7 +1,7 @@
 import Combine
 import UIKit
 
-class FavoriteSearchPresenter: FavoriteSearchPresenterProtocol {
+final class FavoriteSearchPresenter: FavoriteSearchPresenterProtocol {
     var view: FavoriteSearchViewProtocol?
     var interactor: FavoriteSearchInteractorProtocol?
     var router: FavoriteSearchRouterProtocol?
@@ -25,7 +25,8 @@ class FavoriteSearchPresenter: FavoriteSearchPresenterProtocol {
                 case let .failure(error):
                     self?.router?.displayAlert(withMessage: error.localizedDescription)
                 }
-            }, receiveValue: { [weak self] action in
+            },
+            receiveValue: { [weak self] action in
                 switch action {
                 case let .favoriteSearchFetched(artists):
                     self?.view?.reloadDataInView(with: artists)

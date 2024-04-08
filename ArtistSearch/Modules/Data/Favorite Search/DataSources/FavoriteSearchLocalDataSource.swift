@@ -1,7 +1,7 @@
 import Combine
 import RealmSwift
 
-class FavoriteSearchLocalDataSource: FavoriteSearchLocalDataSourceProtocol {
+final class FavoriteSearchLocalDataSource: FavoriteSearchLocalDataSourceProtocol {
     func fetchAllFavoriteArtist() -> Future<[ArtistObject], Error> {
         return Future { promise in
             let realm = try! Realm()

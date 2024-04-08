@@ -1,17 +1,17 @@
 import Combine
 import UIKit
 
-protocol ArtistDetailWireFrameProtocol: class {
+protocol ArtistDetailWireFrameProtocol: AnyObject {
     static func assemble(withSelectedArtist: Artist) -> ArtistDetailViewController
 }
 
-protocol ArtistDetailViewProtocol: class {
+protocol ArtistDetailViewProtocol: AnyObject {
     var presenter: ArtistDetailPresenterProtocol? { get set }
 
     func setFavoriteState(_ state: Bool)
 }
 
-protocol ArtistDetailPresenterProtocol: class {
+protocol ArtistDetailPresenterProtocol: AnyObject {
     var view: ArtistDetailViewProtocol? { get set }
     var interactor: ArtistDetailInteractorProtocol? { get set }
     var router: ArtistDetailRouterProtocol? { get set }
@@ -23,10 +23,10 @@ protocol ArtistDetailPresenterProtocol: class {
     func unmarkFavoriteArtist()
     func validateFavoriteArtist()
     func showFavoriteInformation()
-    func displayAlert(withMessage message: String)
+    func displayAlert(with AlertType: AlertType)
 }
 
-protocol ArtistDetailInteractorProtocol: class {
+protocol ArtistDetailInteractorProtocol: AnyObject {
     var publisher: PassthroughSubject<ArtistDetailPublisherAction, Error>? { get set }
 
     func saveArtist(_ artist: Artist)
@@ -34,10 +34,33 @@ protocol ArtistDetailInteractorProtocol: class {
     func isFavorite(_ artist: Artist) -> Bool
 }
 
-protocol ArtistDetailRouterProtocol: class {
+public enum AlertType {
+    case artistSavedSuccess
+    case artistSavedError(Error)
+    case artistDeletedSuccess
+    case artistDeletedError(Error)
+    case generic(Error)
+
+    var title: String {
+        switch self {
+        case .artistSavedSuccess:
+            return NSLocalizedString("artist_saved_success_title", comment: "")
+        case .artistSavedError:
+            return NSLocalizedString("artist_saved_error_title", comment: "")
+        case .artistDeletedSuccess:
+            return NSLocalizedString("artist_deleted_success_title", comment: "")
+        case .artistDeletedError:
+            return NSLocalizedString("artist_deleted_error_title", comment: "")
+        case .generic:
+            return NSLocalizedString("generic_error_title", comment: "")
+        }
+    }
+}
+
+protocol ArtistDetailRouterProtocol: AnyObject {
     var view: ArtistDetailViewController? { get set }
 
-    func displayAlert(withMessage message: String)
+    func displayAlert(with alertType: AlertType)
     func showFavoriteInformation(withArtist artist: Artist)
 }
 

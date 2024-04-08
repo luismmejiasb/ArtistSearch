@@ -1,6 +1,6 @@
 import UIKit
 
-class ArtistSearchRouter: ArtistSearchRouterProtocol {
+final class ArtistSearchRouter: ArtistSearchRouterProtocol {
     var view: ArtistSearchViewController?
 
     func presentArtistDetail(_ artist: Artist) {

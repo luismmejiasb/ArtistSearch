@@ -1,7 +1,7 @@
 import Combine
 import UIKit
 
-class ArtistDetailPresenter: ArtistDetailPresenterProtocol {
+final class ArtistDetailPresenter: ArtistDetailPresenterProtocol {
     var view: ArtistDetailViewProtocol?
     var interactor: ArtistDetailInteractorProtocol?
     var router: ArtistDetailRouterProtocol?
@@ -24,20 +24,24 @@ class ArtistDetailPresenter: ArtistDetailPresenterProtocol {
                 case .finished:
                     print("Publisher stopped obversing")
                 case let .failure(error):
-                    self?.router?.displayAlert(withMessage: error.localizedDescription)
+                    self?.router?.displayAlert(with: .generic(error))
                 }
-            }, receiveValue: { [weak self] action in
+            },
+            receiveValue: { [weak self] action in
                 switch action {
-                case .artistSavedSuccess():
-                    self?.router?.displayAlert(withMessage: NSLocalizedString("mark_favorite_success_message", comment: ""))
+                case .artistSavedSuccess:
+                    self?.router?.displayAlert(with: .artistSavedSuccess)
                     self?.validateFavoriteArtist()
+
+                case .artistDeletedSuccess:
+                    self?.router?.displayAlert(with: .artistDeletedSuccess)
+                    self?.validateFavoriteArtist()
+
                 case let .artistSavedError(error):
-                    self?.router?.displayAlert(withMessage: NSLocalizedString("mark_favorite_failure_message", comment: "") + "\(error)")
-                case .artistDeletedSuccess():
-                    self?.router?.displayAlert(withMessage: NSLocalizedString("unmark_favorite_success_message", comment: ""))
-                    self?.validateFavoriteArtist()
+                    self?.router?.displayAlert(with: .artistSavedError(error))
+
                 case let .artistDeletedError(error):
-                    self?.router?.displayAlert(withMessage: NSLocalizedString("unmark_favorite_failure_message", comment: "") + "\(error)")
+                    self?.router?.displayAlert(with: .artistDeletedError(error))
                 }
             }
         ).store(in: &artistDetailTokens)
@@ -53,11 +57,7 @@ class ArtistDetailPresenter: ArtistDetailPresenterProtocol {
             return
         }
 
-        if #available(iOS 10.0, *) {
-            UIApplication.shared.open(artistLinkUrl, options: [:], completionHandler: nil)
-        } else {
-            UIApplication.shared.openURL(artistLinkUrl)
-        }
+        UIApplication.shared.open(artistLinkUrl, options: [:], completionHandler: nil)
     }
 
     func showFavoriteInformation() {
@@ -80,7 +80,7 @@ class ArtistDetailPresenter: ArtistDetailPresenterProtocol {
         }
     }
 
-    func displayAlert(withMessage message: String) {
-        router?.displayAlert(withMessage: message)
+    func displayAlert(with alertType: AlertType) {
+        router?.displayAlert(with: alertType)
     }
 }

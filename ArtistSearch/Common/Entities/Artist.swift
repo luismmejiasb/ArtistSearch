@@ -30,7 +30,15 @@ struct Artist: Codable {
         primaryGenreId = 0
     }
 
-    init(artistId: Int, primaryGenreName: String, wrapperType: String, artistName: String, artistType: String, artistLinkUrl: String, primaryGenreId: Int) {
+    init(
+        artistId: Int,
+        primaryGenreName: String,
+        wrapperType: String,
+        artistName: String,
+        artistType: String,
+        artistLinkUrl: String,
+        primaryGenreId: Int
+    ) {
         self.artistId = artistId
         self.primaryGenreName = primaryGenreName
         self.wrapperType = wrapperType
@@ -50,6 +58,8 @@ struct Artist: Codable {
         primaryGenreId = artistObject.primaryGenreId
     }
 }
+
+// MARK: - Realm
 
 class ArtistObject: Object {
     @objc dynamic var artistId: Int

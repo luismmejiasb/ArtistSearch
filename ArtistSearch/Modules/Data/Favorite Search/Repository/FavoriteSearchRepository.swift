@@ -1,6 +1,6 @@
 import Combine
 
-class FavoriteSearchRepository: FavoriteSearchRepositoryProtocol {
+final class FavoriteSearchRepository: FavoriteSearchRepositoryProtocol {
     var localDataSource: FavoriteSearchLocalDataSourceProtocol
 
     init(localDataSource: FavoriteSearchLocalDataSourceProtocol) {

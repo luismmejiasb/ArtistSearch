@@ -34,5 +34,9 @@ extension UINavigationController {
 }
 
 public enum ArtistSearchAI: String {
-    case collectionView = "ArtistSearch.collectionView", serachBar = "ArtistSearch.serachBar", informationView = "ArtistSearch.informationView", informationLabel = "ArtistSearch.informationLabel", favoriteButton = "ArtistSearch.favoriteButton"
+    case collectionView = "ArtistSearch.collectionView"
+    case serachBar = "ArtistSearch.serachBar"
+    case informationView = "ArtistSearch.informationView"
+    case informationLabel = "ArtistSearch.informationLabel"
+    case favoriteButton = "ArtistSearch.favoriteButton"
 }
